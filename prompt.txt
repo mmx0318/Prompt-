@@ -1,0 +1,1036 @@
+人类 (Human)角色相关tag大全：
+Main Category: 人物外观 (Character Appearance)
+Sub-category: 视角视线 (Perspective and Gaze)
+中文词 (Chinese Translation)	Danbooru Tag
+动态角度	dynamic_angle
+从左侧视角	from_left_perspective
+从右侧视角	from_right_perspective
+从上方	from_above
+从下面	from_below
+从下往上看	looking_up_from_below
+从上往下看	looking_down_from_above
+从正上方往下看	looking_down_directly_from_above
+从侧面往上看	looking_up_from_side
+从侧面往下看	looking_down_from_side
+从人物的角度往上看	looking_up_from_character's_perspective
+从人物的角度往下看	looking_down_from_character's_perspective
+在地面往上看	looking_up_from_ground
+在地面往下看	looking_down_from_ground
+全景	panorama
+广角宽景	wide_angle_broad_view
+广角	wide_angle
+空中俯瞰视图	aerial_view
+在高处往下看	looking_down_from_high_place
+鸟瞰视角	bird's_eye_view
+蚯蚓视角	worm's_eye_view
+带有角度的视角	angled_view
+低角度视角	low_angle_view
+俯视视角	overhead_view
+放大镜效果	magnifying_glass_effect
+缩小镜效果	shrinking_glass_effect
+俯视	overlook
+高角度视角	high_angle_view
+平视	eye_level
+特写	close_up  
+极端特写	extreme_close_up
+面对画面或观众	facing_screen_or_audience
+两个角色对视	two_characters_looking_at_each_other
+看着别的方	looking_elsewhere
+回头看	looking_back
+向上看	looking_up
+
+Sub-category: 人物及年龄 (Character and Age)
+中文词 (Chinese Translation)	Danbooru Tag
+1个女孩	1girl  
+1个男孩	1boy  
+1个其他人	1_other_person
+多个女孩	multiple_girls  
+青少年（13-19）	teenager
+青少年早期（11-15）	early_teenager
+大人	adult
+老人	elderly
+子供	child
+幼稚園	kindergarten
+幼儿	toddler
+萝莉	loli
+正太	shota
+
+Sub-category: 肤色及体型 (Skin Color and Body Type)
+中文词 (Chinese Translation)	Danbooru Tag
+苍白	pale_skin
+褐色	brown_skin
+有光泽	glossy_skin
+有色皮肤	colored_skin  
+白 (White) - white_skin
+黑 (Black) - dark_skin
+橄榄色 (Olive) - olive_skin
+晒黑的 (Tanned) - tanned_skin
+古铜色 (Bronze) - bronze_skin
+粉色 (Pink) - pink_skin
+红色 (Red) - red_skin
+蓝色 (Blue) - blue_skin
+绿色 (Green) - green_skin
+紫色 (Purple) - purple_skin
+灰色 (Grey) - grey_skin
+黄色 (Yellow) - yellow_skin
+日晒	sun_tanned
+日晒痕迹	tan_lines  
+纹身	tattoo
+油性	oily
+运动员	athlete
+模特	model
+苗条	slim
+诱惑	seductive
+丰满	plump
+肥胖	obese
+高大	tall
+纤弱	delicate
+Q版	chibi
+妊娠	pregnant
+肌肉	muscle
+细腰	thin_waist
+大屁股	big_butt
+平胸	flat_chest  
+小胸	small_chest
+普通胸	normal_chest
+大胸	large_breasts  
+超大胸	extra_large_chest
+腋窝	armpit  
+鎖骨	collarbone  
+肚脐	navel
+屁股	buttocks
+大腿	thigh
+
+Sub-category: 人物五官 (Character Facial Features)
+中文词 (Chinese Translation)	Danbooru Tag
+浓眉	thick_eyebrows  
+眉毛翘起	eyebrows_raised
+短眉毛	short_eyebrows
+V字眉	v_shaped_eyebrows  
+黒色眼睛	black_eyes
+白色眼睛	white_eyes
+红色眼睛	red_eyes  
+蓝色眼睛	blue_eyes  
+绿色眼睛	green_eyes  
+紫色眼睛	purple_eyes  
+银色眼睛	silver_eyes
+金色眼睛	gold_eyes
+灰色眼睛	grey_eyes
+水色眼睛	aqua_eyes
+茶色眼睛	brown_eyes
+粉色眼睛	pink_eyes  
+橙色眼睛	orange_eyes
+异色眼睛	heterochromatic_eyes
+空洞眼睛	hollow_eyes
+睁大眼睛	wide_open_eyes
+闭上一只眼	one_eye_closed
+半闭眼睛	half_closed_eyes
+渐变眼	gradient_eyes
+水汪汪大眼	big_watery_eyes
+翻白眼	rolling_eyes
+斗鸡眼	cross_eyed
+猫眼	cat_eyes
+布满血丝的眼睛	bloodshot_eyes
+发光眼睛	glowing_eyes
+吊眼角	upturned_eyes
+垂眼角	downturned_eyes
+恶魔眼	demon_eyes
+收缩的瞳孔	constricted_pupils
+魔瞳	magic_eyes
+蛇瞳	snake_pupils
+闪闪发光瞳	sparkling_pupils
+花形瞳	flower_shaped_pupils
+爱心瞳	heart_shaped_pupils  
+异色瞳	heterochromia
+美瞳	cosmetic_contact_lenses
+长睫毛	long_eyelashes
+彩色睫毛	colored_eyelashes
+眼下痣	mole_under_eye
+栗子嘴	chestnut_mouth
+厚嘴唇	thick_lips
+嘴唇浮肿	swollen_lips
+口红	lipstick
+心形嘴	heart_shaped_mouth
+嘟嘴	pouting
+张嘴	open_mouth
+闭嘴	closed_mouth  
+猫咪嘴	cat_mouth
+鲨鱼嘴	shark_mouth
+吐舌头	sticking_out_tongue
+分开嘴唇	parted_lips  
+嘴下痣	mole_under_mouth
+精灵耳	elf_ears
+动物耳朵	animal_ears  
+猫耳朵	cat_ears  
+狗耳朵	dog_ears
+狐狸耳朵	fox_ears  
+兔子耳朵	rabbit_ears
+熊耳朵	bear_ears
+胡须	beard
+小胡子	mustache
+山羊胡	goatee
+长鬓角	long_sideburns
+尖牙	fangs  
+虎牙	canine_teeth
+咬紧牙关	gritting_teeth
+
+Sub-category: 人物表情 (Character Expressions)
+
+中文词 (Chinese Translation)	Danbooru Tag
+笑	laugh
+微笑	smile  
+惨笑	wry_smile
+邪恶笑	evil_laugh
+天使笑	angel_smile
+强笑	forced_smile
+诱人笑	seductive_smile
+咧嘴笑	grin
+邪恶咧嘴笑	evil_grin
+傻笑	giggle
+怒	angry
+悲伤	sad
+哭	cry
+泪	tears
+恐怖	horror
+不好的	bad
+恼怒	annoyed
+黑暗人格	dark_personality
+多亚脸	doya_face
+脸红	blush  
+脸通红	flushed_face
+无聊	bored
+罪恶感	guilt
+无感情	emotionless
+决心	determined  
+接吻	kiss
+失望	disappointed
+轻蔑	contempt
+嫉妒	jealousy
+厌恶	disgust
+困惑	confused
+烦恼挑眉	troubled_raised_eyebrows
+V型眉	v_shaped_eyebrows  
+羞耻	shame
+顽皮	naughty
+困乏	sleepy
+表情符号/风格化	:d (大笑), ^_^ (笑脸), o_o (惊讶), >_< (痛苦/害羞), ;) (眨眼)
+
+Sub-category: 人物发色 (Character Hair Color)
+中文词 (Chinese Translation)	Danbooru Tag
+黒髪	black_hair  
+金髪	blonde_hair  
+棕髪	brown_hair  
+红髪	red_hair
+粉髪	pink_hair  
+蓝髪	blue_hair  
+水色髪	aqua_hair
+緑髪	green_hair  
+紫髪	purple_hair  
+橙髪	orange_hair
+銀髪	silver_hair
+灰髪	grey_hair
+白髪	white_hair
+五颜六色	colorful
+条纹色	striped_color
+渐变色	gradient_color
+内侧彩发	inner_colored_hair
+分色(着重发梢)	split_color_(emphasis_on_hair_tips)
+
+Sub-category: 人物发型 (Character Hair Style)
+中文词 (Chinese Translation)	Danbooru Tag
+极短发	extremely_short_hair
+短发	short_hair  
+中等	medium
+长发	long_hair  
+超长	super_long
+超超长（超过屁股)	super_super_long_(past_buttocks)
+凌乱	messy
+直发	straight_hair
+卷发	curly_hair
+倒立	inverted
+非対称	asymmetrical
+马尾	ponytail
+高马尾	high_ponytail
+低马尾	low_ponytail
+前马尾	front_ponytail
+侧马尾	side_ponytail
+分股马尾	divided_ponytail
+折叠马尾	folded_ponytail
+短马尾	short_ponytail
+双马尾	twintails  
+低双马尾	low_twin_tails
+短双马尾	short_twin_tails
+三尾	triple_tails
+四尾	quadruple_tails
+辫子	braid  
+盘辫	braided_bun
+一面朝上	one_side_up
+两面朝上	two_sides_up  
+多辫	multiple_braids
+头顶结	top_knot
+巻毛	ringlets
+钻孔	drill_hair
+双头螺柱	twin_drills
+发卷儿	hair_roll
+蝴蝶结	bow  
+丸子頭	bun  
+带发圈	with_hair_tie
+脏辫	dreadlocks
+平刘海	blunt_bangs
+非対称	asymmetrical
+遮盖眼睛	covering_eyes
+遮一只眼睛	covering_one_eye
+分缝的齐刘海	parted_blunt_bangs
+齐刘海	blunt_bangs
+单竖刘海	single_vertical_bang
+发片	hair_strands
+头量	hair_volume
+侧锁（侧面看起来整齐）	side_lock_(looks_neat_from_side)
+
+Main Category: 人物姿势 (Character Pose)
+Sub-category: 人物姿势 (Character Pose)
+中文词 (Chinese Translation)	Danbooru Tag
+站立	standing  
+弯腰	bending_over  
+弓背	arched_back
+拉伸	stretching
+躺着	lying_down
+趴着	lying_on_stomach
+侧躺	lying_on_side
+坐着	sitting  
+w_sitting	w_sitting
+跨坐	straddling  
+四肢着地	on_all_fours
+jack-o	jack_o_pose
+双腿过头	legs_over_head
+胎儿姿势	fetal_position  
+自拍	selfie
+通过腿看	looking_through_legs
+二郎腿	legs_crossed
+跪姿	kneeling
+萝莉坐	loli_sit
+裸露的肩膀	bare_shoulders  
+坐在地上	sitting_on_ground
+提裙	lifting_skirt
+一字马	splits
+手臂在背后	arms_behind_back
+狗趴式	doggy_style  
+鸭子坐（女子座）	duck_sit
+泡温泉	soaking_in_hot_spring
+张开腿	legs_spread
+趴着翘臀	lying_on_stomach_with_raised_buttocks
+開腳	legs_open
+漏腋	exposed_armpit
+坐在地上(XWX)	sitting_on_ground_(xwx)
+战斗姿态	combat_stance
+坐在椅子上	sitting_on_chair
+瑜伽	yoga
+绝对空域（大腿三角）	zettai_ryouiki  
+骑马	riding_horse
+掀裙子	lifting_skirt
+行走	walking
+正骑乘	front_riding  
+祈祷	praying
+蹲着	squatting
+坐在床上	sitting_on_bed
+翘PP	raised_buttocks
+抱膝	knees_hugged
+公主抱	princess_carry
+侧躺着	lying_on_side
+抚摸	stroking
+撩起衣服	lifting_clothes
+盘腿坐	cross_legged_sitting
+动态姿势	dynamic_pose  
+敬礼	salute
+侧身坐	sitting_sideways
+鸭子坐	duck_sit
+盘腿	cross_legged
+跪着	kneeling
+躬躯	bowing  
+膝枕	lap_pillow
+学猫叫	meowing_like_a_cat
+单膝跪地	one_knee_down
+蜷起身子侧躺	curled_up_lying_on_side
+仰卧	supine
+俯卧	prone
+坐着	sitting  
+屈膝抱腿坐	sitting_with_knees_bent_and_legs_hugged
+立式跨骑	standing_straddle
+站着	standing  
+蹲着	squatting
+绑在十字架上	tied_to_cross
+双腿缠绕	legs_entwined
+四肢着地	on_all_fours
+戴耳机	wearing_headphones
+鬼姿势	ghost_pose
+回头	looking_back
+歪头	tilting_head
+前倾	leaning_forward
+
+Sub-category: 人物手势 (Character Hand Gestures)
+中文词 (Chinese Translation)	Danbooru Tag
+嘘手势	shush_gesture
+翘大拇指	thumbs_up
+手放脑后	hands_behind_head
+手放身后	hands_behind_back
+手插口袋	hands_in_pockets
+双手插口袋	both_hands_in_pockets
+十指相扣	fingers_interlocked  
+V字手势	v_sign
+手在地板上	hand_on_floor
+手在额头上	hand_on_forehead
+手在肚子上	hand_on_stomach
+手在肩膀上	hand_on_shoulder
+手搭别人的腿	hand_on_someone_else's_leg
+手搭别人的腰	hand_on_someone_else's_waist
+双手合十	hands_clasped
+翼展双臂	arms_spread_wide
+手放嘴边	hand_to_mouth
+手枪手势	gun_hand_gesture
+猫爪手势	cat_paw_gesture
+
+Sub-category: 人物视线 (Character Gaze)
+中文词 (Chinese Translation)	Danbooru Tag
+远眺	gazing_into_distance
+照镜子	looking_in_mirror
+看手机	looking_at_phone
+看向别处	looking_elsewhere
+透过刘海看	looking_through_bangs
+透过眼镜看	looking_through_glasses
+面向观者	facing_viewer
+靠近观者	close_to_viewer
+动态角度	dynamic_angle
+舞台角度	stage_angle
+凝视	gaze
+向上看	looking_up
+向下看	looking_down
+看向旁边	looking_sideways
+移开目光	averting_gaze
+
+Sub-category: 整体动作 (Overall Actions)
+中文词 (Chinese Translation)	Danbooru Tag
+嗅闻	sniffing
+公主抱	princess_carry
+拥抱	hug
+背对背	back_to_back  
+耶	yay
+调整过膝袜	adjusting_over_the_knee_socks
+抓住	grabbing  
+战斗姿态	combat_stance
+走	walk
+跑	run
+跨坐	straddling  
+跳	jump
+飞	fly  
+靠墙	leaning_against_wall
+躺	lie
+从背后抱	hug_from_behind
+遛狗	walking_dog
+提裙	lifting_skirt
+泡温泉	soaking_in_hot_spring
+骑马	riding_horse
+自拍	selfie
+一字马	splits
+敬礼	salute
+祈祷	praying
+冥想	meditation
+
+Sub-category: 上半身动作 (Upper Body Actions)
+中文词 (Chinese Translation)	Danbooru Tag
+伸懒腰	stretching
+托腮	cupping_chin
+牵手	holding_hands
+单手叉腰	one_hand_on_hip  
+双手叉腰	both_hands_on_hips
+招手	waving
+撮头发	twirling_hair
+拉头发	pulling_hair
+抓别人的头发	grabbing_someone_else's_hair
+竖中指	flipping_the_bird
+弯腰	bending_over  
+亲吻脸颊	kissing_cheek
+亲吻额头	kissing_forehead
+踮起脚尖吻	kissing_on_tiptoes
+头顶水果	fruit_on_head  
+咬手套	biting_glove
+脸贴脸	face_to_face  
+手牵手	holding_hands
+双手交叉	arms_crossed
+双手张开伸直	arms_spread_out_straight
+挥动手臂	waving_arms
+伸出手臂	extending_arms  
+用手臂支撑	supporting_with_arms
+搂着手臂	arm_around
+拿着	holding  
+拿着餐刀	holding_dinner_knife
+拿着枪	holding_gun  
+拿着杯子	holding_cup
+拿着食物	holding_food
+拿着书	holding_book
+拿着魔杖	holding_wand
+打着伞	holding_umbrella
+捧着花	holding_flowers
+拿着麦克风	holding_microphone
+抱着物品	holding_object
+抱着心	holding_heart
+
+Main Category: 人物服装 (Character Clothing)
+**A. 清纯可爱 (Innocent & Cute)**
+* 比基尼 (Bikini): bikini (部分款式，如印花比基尼)
+* 学校泳衣 (School Swimsuit): school_swimsuit
+* 校服 (School Uniform): school_uniform
+* 布鲁玛 (Bloomers): bloomers
+* 连身裙 (Dress): dress (如日常款、蓬蓬裙)
+* 毛衣连身裙 (Sweater Dress): sweater_dress
+* 小可爱露腹短上衣 (Crop Top): crop_top (搭配得当可清纯)
+* 夏日长裙 (Summer Maxi Dress): summer_maxi_dress
+* 甜美可爱的洛丽塔 (Sweet and Cute Lolita): sweet_and_cute_lolita
+* 浴衣 (Yukata): yukata
+* 圣诞装 (Christmas Outfit): christmas_outfit
+* 水手裙 (Sailor Skirt): sailor_skirt
+* 短款和服 (Short Kimono): short_kimono
+* 南瓜裙 (Pumpkin Skirt): pumpkin_skirt
+* 万圣节服装 (Halloween Costume): halloween_costume (部分可爱主题)
+
+
+**B. 妖娆色气 (Alluring & Provocative)**
+* 系绳比基尼 (String Bikini): string_bikini
+* 解开比基尼 (Untied Bikini): untied_bikini
+* 前系带比基尼上着 (Front-tie Bikini Top): front_tie_bikini_top
+* 侧系带比基尼下着 (Side-tie Bikini Bottom): side_tie_bikini_bottom
+* 微小比基尼 (Micro Bikini): micro_bikini
+* 泳装 (Swimsuit): swimsuit (部分性感设计)
+* 连体泳衣 (One-piece Swimsuit): one_piece_swimsuit (部分高叉、露背设计)
+* 竞赛泳衣 (Competition Swimsuit): competition_swimsuit
+* 紧身衣 (Leotard): leotard
+* 无肩带紧身衣 (Strapless Leotard): strapless_leotard
+* 高叉紧身衣 (High-cut Leotard): high_cut_leotard
+* 丁字紧身衣 (Thong Leotard): thong_leotard
+* 衣服下紧身衣 (Leotard Under Clothes): leotard_under_clothes
+* 紧身衣服 (Tight Clothes): tight_clothes
+* 紧身衬衫 (Tight Shirt): tight_shirt
+* 薄纱连衣裙 (Tulle Dress): tulle_dress
+* 雪纺连衣裙 (Chiffon Dress): chiffon_dress
+* 紧身衣裤 (Tights): tights
+* 露背连身裙 (Backless Dress): backless_dress
+* 绕颈连身裙 (Halter Dress): halter_dress
+* 露背装 (Backless Outfit): backless_outfit
+* 开胸毛衣 (Open Chest Sweater): open_chest_sweater
+* 肩膀切口 (Shoulder Cutout): shoulder_cutout
+* 臀部切口 (Hip Cutout): hip_cutout
+* 心型切口 (Heart-shaped Cutout): heart_shaped_cutout
+* 后背切口 (Back Cutout): back_cutout
+* 下胸切口 (Underbust Cutout): underbust_cutout
+* 束腹 (Corset): corset
+* 乳胶紧身衣 (Latex Bodysuit): latex_bodysuit
+* 迷你比基尼 (Mini Bikini): mini_bikini
+* 颈带 (Neck Strap): neck_strap
+* 无胸罩 (No Bra): no_bra
+* 黑丝连体衣 (Black Stocking Bodysuit): black_stocking_bodysuit
+* 奶牛比基尼 (Cow Bikini): cow_bikini
+* 露背毛衣 (Backless Sweater): backless_sweater
+* 晒痕 (Tan Lines): tan_lines
+* 透明衣服 (Transparent Clothes): transparent_clothes
+* 晚礼服 (Evening Gown): evening_gown (部分性感设计)
+* 礼服 (Gown): gown (部分性感设计)
+* 网纹衣 (Mesh Clothing): mesh_clothing
+* 无裆内裤 (Crotchless Panties): crotchless_panties
+* 湿润的衣服 (Wet Clothes): wet_clothes
+* 无内衣 (No Underwear): no_underwear
+* 紧身连体衣 (Tight Bodysuit): tight_bodysuit
+* 皮衣 (Leather Clothes): leather_clothes
+* 蛛网纹路 (Spiderweb Pattern): spiderweb_pattern
+* 史莱姆装 (Slime Suit): slime_suit
+* 撕裂的衣服 (Torn Clothes): torn_clothes
+* 无衣服 (No Clothes): no_clothes
+* 乳胶衣 (Latex Suit): latex_suit
+* 中式死库水（辉木） (Chinese Sukumizu (Huimu)): chinese_sukumizu_(huimu)
+* 透明晚礼服 by czz (Transparent Evening Gown by czz): transparent_evening_gown_by_czz
+* 浸湿（如果有内衣会透的更明显） (Soaked (if wearing underwear, it will be more transparent)): soaked_(if_wearing_underwear,_it_will_be_more_transparent)
+* 透过衣服能看到胸罩 (Bra Visible Through Clothes): bra_visible_through_clothes
+* 蕾丝边胸罩 (Lace-edged Bra): lace_edged_bra
+* 肚皮舞者 (Belly Dancer): belly_dancer
+* 连体白丝 (One Piece White Stockings): one_piece_white_stockings
+* 透明水手服 (Transparent Sailor Uniform): transparent_sailor_uniform
+* 高叉泳衣 (High-cut Swimsuit): high_cut_swimsuit
+* 紧身连衣裤 (Tight Jumpsuit): tight_jumpsuit
+* V领针织毛衣（无袖背心） (V Neck Knit Sweater (Sleeveless Vest)): v_neck_knit_sweater_(sleeveless_vest)
+
+**C. 职业/制服 (Professional/Uniform)**
+* 运动服 (Sportswear): sportswear
+* 排球服 (Volleyball Uniform): volleyball_uniform
+* 旗袍 (Cheongsam): cheongsam (可作日常职业装或特殊场合礼服)
+* 水手服 (Sailor Uniform): sailor_uniform
+* 高领衬衫 (High Neck Shirt): high_neck_shirt
+* 赛车服 (Racing Suit): racing_suit
+* 护士服 (Nurse Uniform): nurse_uniform
+* 白大褂 (Lab Coat): lab_coat
+* 便利店工作服 (Convenience Store Uniform): convenience_store_uniform
+* 西装 (Suit): suit
+* 女仆装 (Maid Outfit): maid_outfit
+* 西服(black黑) (Suit (Black)): suit_(black)
+* 啦啦隊 (Cheerleader): cheerleader
+* 兜帽斗篷 (Hooded Cloak): hooded_cloak
+* 修女服 (Nun's Habit): nun's_habit
+* 军装 (Military Uniform): military_uniform
+* 婚纱 (Wedding Dress): wedding_dress
+* 披风 (Cape): cape
+* 白色风衣 (White Trench Coat): white_trench_coat
+* 风衣 (Trench Coat): trench_coat
+* 运动制服 (Sports Uniform): sports_uniform
+* 战斗服 (Combat Uniform): combat_uniform
+* 实验袍 (Lab Gown): lab_gown
+* 学校制服 (School Uniform): school_uniform
+* 巫女服 (Miko Outfit): miko_outfit
+* 大衣 (Coat): coat
+* 长袍 (Robe): robe
+* 战壕风衣 (Trench Coat): trench_coat
+* 派克大衣 (Parka): parka
+* 防弹衣 (Bulletproof Vest): bulletproof_vest
+* 雨衣 (Raincoat): raincoat
+* 修女 (Nun): nun
+* 铠甲 (Armor): armor
+* 外套 (Jacket): jacket
+* 连帽衫(带帽卫衣) (Hoodie): hoodie
+* 圆领卫衣 (Crewneck Sweatshirt): crewneck_sweatshirt
+* 神父/修生黑袍 (Priest/Seminarian Black Robe): priest_seminarian_black_robe
+* 动力甲 (Power Armor): power_armor
+* 长袖运动服（直译为立领长风衣） (Long-sleeved Sportswear (literally stand collar long windbreaker)): long_sleeved_sportswear_(literally_stand_collar_long_windbreaker)
+* 工装 (Workwear): workwear
+* 病号服 (Hospital Gown): hospital_gown
+* 希腊服饰 (Greek Clothing): greek_clothing
+
+**D. 日常/休闲 (Casual/Everyday)**
+* 背心 (Vest): vest
+* 睡袍 (Nightgown): nightgown
+* 毛衣 (Sweater): sweater
+* 高领毛衣 (Turtleneck Sweater): turtleneck_sweater
+* 罗纹毛衣 (Ribbed Sweater): ribbed_sweater
+* 露肩毛衣 (Off Shoulder Sweater): off_shoulder_sweater
+* 休闲服(素上衣、牛仔裤) (Casual Wear (Plain Top, Jeans)): casual_wear_(plain_top,_jeans)
+* 抹胸 (Tube Top): tube_top
+* 睡衣 (Pajamas): pajamas
+* 街头风格服饰 (Street Style Clothing): street_style_clothing
+* 白色衣服 (White Clothes): white_clothes
+* 一些风格服饰 (Some Style Clothing): some_style_clothing
+
+**E. 特殊风格/主题 (Special Style/Theme)**
+* 哥特洛丽塔风格 (Gothic Lolita Style): gothic_lolita_style
+* 马猴烧酒风格 (Magical Girl Style): magical_girl_style
+* 汉服 (Hanfu): hanfu
+* 洛丽塔风格 (Lolita Style): lolita_style
+* 魔女风格服 (Witch Style Outfit): witch_style_outfit
+* 长袍 (Robe): robe (如魔法长袍)
+* 中国衣服裙子 (Chinese Clothes and Skirts): chinese_clothes_and_skirts
+* 礼服长裙 (Long Gown): long_gown
+
+**F. 破损/缺失 (Damaged/Missing)**
+* 撕裂的衣服 (Torn Clothes): torn_clothes
+* 破损的衣物 (Damaged Clothes): damaged_clothes
+* 无衣服 (No Clothes): no_clothes
+
+Main Category: 人物配饰 (Character accessories)
+Sub-category:发饰 (Hair Accessories)
+发带	hairband
+头巾	headdress
+动物头巾	animal_hood
+蝴蝶结发饰	hair_bow
+新月发饰	crescent_hair_ornament
+洛丽塔发饰	lolita_headdress
+羽毛发饰	feather_hair_ornament
+头花	hair_flower
+发髻	hair_bun
+发夹	hairclip
+发箍	hair_hoop
+发饰	hair_ornament
+发饰	hair_accessory
+发饰	hairband
+发饰	headdress
+心形发饰	heart_hair_ornament
+
+Sub-category:首饰 (Jewelry)
+手链	bracelet
+项圈	choker
+金属项圈	metal_choker
+戒指	ring
+腕带	wristband
+吊坠	pendant
+胸针	brooch
+圆形耳环	hoop_earrings
+手镯	bangle
+耳钉	stud_earrings
+旭日形首饰	sun_ornament
+珍珠手链	pearl_bracelet
+耳坠	eardrop
+木偶戒指	puppet_ring
+胸花	flower_brooch
+珠宝胸针	jewel_brooch
+珠宝首饰	jewelery
+项链	necklace
+
+Sub-category:装饰 (Decorations)
+丝带	ribbon
+丝带饰边	ribbon_trim
+蕾丝饰边	lace_trim
+裙撑	pannier
+护手	handguard
+领巾	scarf
+肩章	epaulette
+肩带	shoulder_strap
+细肩带	spaghetti_strap
+般若面具	hannya_mask
+面纱	veil
+新娘面纱	bridal_veil
+皇冠	crown
+迷你皇冠	mini_crown
+耳罩	earmuffs
+飞行员太阳镜	aviator_sunglasses
+无边框眼镜	rimless_glasses
+半无框眼镜	semi-rimless_glasses
+太阳镜	sunglasses
+风镜	goggles
+独眼眼镜	monocle
+黑色眼罩	black_eyepatch
+铁棘	metal_spikes
+光环	halo
+口罩	mask
+创可贴	bandage
+指甲油	nail_polish
+玩偶关节	ball-jointed_doll
+机械义肢	bionic_prosthesis
+沙漏币	hourglass_token
+雨披	poncho
+浓妆	heavy_makeup
+
+Sub-category:尾巴 (Tails)
+宝可梦尾巴	pokemon_tail
+皮卡丘尾巴	pikachu_tail
+水獭尾巴	otter_tail
+鹿尾	deer_tail
+黄鼠狼尾巴	ferret_tail
+羊驼尾巴	alpaca_tail
+恐龙尾巴	dinosaur_tail
+企鹅尾巴	penguin_tail
+羊尾巴	sheep_tail
+山羊尾巴	goat_tail
+海狸尾巴	beaver_tail
+小熊猫尾巴	red_panda_tail
+豹尾	leopard_tail
+食蚁兽尾巴	anteater_tail
+土狼尾巴	hyena_tail
+猎豹尾巴	cheetah_tail
+熊猫尾巴	panda_tail
+天使尾巴	angel_tail
+
+Sub-category:翅膀 (Wings)
+蝴蝶翅膀	butterfly_wings
+昆虫翅膀	insect_wings
+蝙蝠翅膀	bat_wings
+乌翼	raven_wings
+羽翼	feather_wings
+妖精翅膀	fairy_wings
+龙之翼	dragon_wings
+恶魔之翼	demon_wings
+火焰翅膀	flame_wings
+机械翅膀	mechanical_wings
+冰翅	ice_wings
+冰火之翼	ice_and_fire_wings
+
+Sub-category:角 (Horns)
+羚羊角	antelope_horns
+山羊角	goat_horns
+羊角	sheep_horns
+奶牛角	cow_horns
+公牛角	bull_horns
+鬼角	oni_horns
+断角	broken_horns
+机械角	mechanical_horns
+恶魔之角	demon_horns
+龙之角	dragon_horns
+
+其他物种的对应tag：
+A. 克苏鲁神话/邪神 (Cthulhu/Lovecraftian God)
+克苏鲁神话中的邪神通常是超越人类理解的恐怖存在，其外貌和概念能引发疯狂 [用户查询图像]。Danbooru标签在描述克苏鲁神话生物特征方面具有应用 ()。
+- 外貌特点 (Appearance): lovecraftian (洛夫克拉夫特式), cthulhu (克苏鲁), eldritch (诡异), tentacles (触手), inhuman_body (非人身体), multiple_eyes (多眼), abnormal_anatomy (异常解剖结构), cosmic_horror (宇宙恐怖), grotesque (怪诞), unnatural_color (非自然颜色), shifting_form (形态变幻), disturbing_features (令人不安的特征), ancient_one (旧日支配者), madness_inducing (引人疯狂).
+- 服装 (Clothing): ancient_robes (古老长袍), cultist_attire (邪教徒服饰), tattered_clothing (破烂服装), sacrificial_garments (祭祀服), unearthly_fabric (超凡面料), void_shroud (虚空裹尸布), cosmic_symbols (宇宙符号).
+- 性格 (Personality): madness (疯狂), cosmic_horror (宇宙恐怖), indescribable (不可名状), malevolent (恶毒), indifferent (漠然), ancient_evil (古老邪恶), mind_breaking (精神崩溃), unfathomable (深不可测), destructive (破坏性), corrupting (腐化).
+
+B. 物种类别: 类人生物 (Humanoid)
+类人生物涵盖了从人类形态演变或与人类相似的各种幻想和科幻物种。
+- 精灵 (Elf)
+  - 外貌特点: elf (精灵), pointed_ears (尖耳朵), lithe (纤细), tall (高挑).()   
+  - 眼部特点: blue_eyes (蓝眼睛), green_eyes (绿眼睛), golden_eyes (金眼睛), glowing_eyes (发光眼睛), ethereal_eyes (空灵的眼睛), almond_shaped_eyes (杏仁眼).()   
+  - 服装: fine_clothing (华丽服装), ancient_garb (古代服饰).() 精灵在服装上通常追求精致和时尚，但也有可能出现   
+  - no_fashion_sense (没有时尚感) 的反差设计.()   
+  - 性格: kind (善良), snobbish (势利), spiritual (有灵性), loyal (忠诚), curious (好奇), adventurous (爱冒险), melancholic (忧郁), compassionate (富有同情心), protective_of_nature (保护自然), fashionable (时尚), cynical (愤世嫉俗).()   
+  - 精灵拥有既定的标签，这些标签可以直接用于描述，但也为设计提供了颠覆传统形象的机会。例如，虽然精灵通常被认为是优雅的，但可以尝试使用no_fashion_sense来创造一个不拘小节的精灵。其长寿的特性也暗示了某种智慧或忧郁的性格。
+- 矮人 (Dwarf)
+  - 外貌特点: dwarf (矮人), short (矮小), stocky (结实), long_beard (长胡子), braided_beard (编织胡子), sturdy_build (结实体格), muscular (肌肉发达), dense_skeleton (骨骼致密), thick_hide (厚实皮肤), hairy (多毛).() 在深层地下生活的矮人可能具有   
+  - ash_gray_skin (灰烬皮肤) 或 black_skin (黑色皮肤).()   
+  - 眼部特点: brown_eyes (棕眼睛), black_eyes (黑眼睛), deep_set_eyes (深陷的眼睛), bad_vision (视力差), glowing_eyes (发光眼睛).()   
+  - 服装: sober_colors (朴素颜色), medieval_peasant_style (中世纪农民风格), leather_armor (皮甲), chainmail (锁子甲).()   
+  - 性格: dignified (有尊严), smart (聪明), grumpy (脾气暴躁), pessimistic (悲观), humorous (幽默), strong_constitution (体质强健), greedy (贪婪), treasure-hungry (渴望宝藏), loyal_to_clan (忠于氏族), loves_feasting (热爱宴会), loves_drinking (热爱饮酒).()   
+  - 武器/道具: axe (斧头), hammer (锤子).()   
+  - 矮人具有非常强烈且几乎刻板的视觉和性格标签。其粗犷外表与内在特质（例如，北兽人对家庭的重视和对音乐的热爱，这些特质也可适用于矮人之间的对比是一个很好的设计点。女性矮人是否留胡子也是一个值得探讨的细节 ()。   
+- 赛博格 (Cyborg)
+  - 外貌特点: cyborg (赛博格), robotic_implants (机器人植入物), mechanical_parts (机械部件), cybernetic_arm (赛博格手臂), metal_skin (金属皮肤), futuristic_armor (未来盔甲), power_suit (动力服), exoskeleton (外骨骼).() 外观通常为    
+  - sleek (光滑), metallic (金属质感), glowing_parts (发光部件).()   
+  - 眼部特点: cybernetic_eye (赛博格眼睛), glowing_eyes (发光眼睛), red_eyes (红眼睛), blue_eyes (蓝眼睛), sensor_eye (传感器眼), single_eye (单眼), multiple_eyes (多眼).()   
+  - 服装: tactical_clothing (战术服装), futuristic_outfits (未来服装), cyberpunk_clothes (赛博朋克服装).()   
+  - 性格: 性格可以非常多样，通常包括 stoic (坚忍), determined (坚定), cold (冷酷), analytical (分析型).()   
+  - 有机与机械的融合是赛博格设计的核心。将“人体重新构想为机器”的能力 ()为标签提供了强大的概念基础。 
+- 仿生人 (Android)
+  - 外貌特点: android (仿生人), humanoid_android (类人仿生人), robot_humanoid (机器人类人), plastic_skin (塑料皮肤), metal_skin (金属皮肤), synthetic_skin (合成皮肤)。外观通常为 perfect_human_form (完美人类形态), unsettlingly_perfect (令人不安的完美), single_eye (单眼).()   
+  - 眼部特点: glowing_eyes (发光眼睛), blue_eyes (蓝眼睛), red_eyes (红眼睛), expressionless_eyes (面无表情的眼睛), robotic_eyes (机器人眼睛), sensor_eye (传感器眼), single_eye (单眼).()   
+  - 服装: uniform (制服), futuristic_clothing (未来服装), clean_lines (简洁线条).()   
+  - 性格: expressionless (面无表情), stoic (坚忍), analytical (分析型), obedient (顺从), rebellious (反叛).()   
+  - 仿生人设计常常利用“恐怖谷效应”或过于完美的人类外观 ()。这表明需要能够传达与人类微妙差异的标签。  
+- 变种人 (Mutant)
+  - 外貌特点: mutant (变种人), mutated_human (变异人类), super_powers (超能力), unusual_features (不寻常特征), deformed_monster (畸形怪物), extra_limbs (多余肢体), multiple_eyes (多眼), tentacles (触手).()   
+  - 眼部特点: multiple_eyes (多眼), unusual_eyes (不寻常的眼睛), glowing_eyes (发光眼睛), distorted_eyes (扭曲的眼睛), alien_eyes (外星人眼睛).()   
+  - 服装: superhero_costume (超级英雄服装), cyberpunk_armor (赛博朋克盔甲), ragged_clothing (破烂衣物).()   
+  - 性格: heroic (英雄), villainous (反派), disturbed (不安), misunderstood (被误解的).()   
+  - 变种人以其偏离常态的特征为核心，因此unusual_anatomy (不寻常解剖结构) 和 body_horror (身体恐怖) 等标签具有高度相关性。广泛的视觉可能性使得这一类别具有极大的灵活性。
+- 拟人化动物 (Anthropomorphic Animal / Furry)
+  - 外貌特点: furry (兽人), anthro (拟人化), animal_ears (动物耳朵), animal_tail (动物尾巴), paws (爪子), snout (口鼻), fur (毛皮), humanoid_animal (类人动物), kemonomimi (兽耳娘/男)。可使用特定物种标签，如 cat_girl (猫娘), dog_boy (狗男), fox_girl (狐娘), wolf_boy (狼男) 等.()   
+  - 眼部特点: animal_eyes (动物眼睛), large_eyes (大眼睛), expressive_eyes (富有表现力的眼睛), slit_pupils (裂缝瞳孔), yellow_eyes (黄眼睛), green_eyes (绿眼睛), cute_eyes (可爱的眼睛).()   
+  - 服装: clothes (衣服), fursuit (兽装).
+  - 性格: playful (顽皮), mischievous (淘气), loyal (忠诚), wild (野性), cute (可爱).()   
+  - 兽人文化是一个成熟的亚文化，具有特定的视觉特征，并注重通过其“兽设”（fursonas）来表达身份 ()。这表明性格和表现力标签尤为重要。   
+表：类人生物 - 纯Danbooru标签列表-随机生成可用
+暂时无法在Lark文档外展示此内容
+C. 物种类别: 奇幻与神话 (Fantasy & Mythical)
+本类别涵盖了更广泛的奇幻生物，包括恶魔、天使、吸血鬼、狼人、幽灵、精灵（spirit）和仙女。
+- 恶魔 (Demon)
+  - 外貌特点: demon (恶魔), horns (角), wings (翅膀), tail (尾巴), claws (爪), red_skin (红色皮肤), dark_skin (深色皮肤). 
+  - 眼部特点: glowing_eyes (发光眼睛), red_eyes (红眼睛), slit_pupils (裂缝瞳孔), evil_eyes (邪恶的眼睛), black_sclera (黑色巩膜).  
+  - 服装: gothic_clothing (哥特式服装), dark_robes (深色长袍), intricate_costumes (复杂服装), elegant_gothic_apparel (优雅哥特服饰), modern_edgy_look (现代前卫造型), dark_mage_outfit (暗法师服装), sorcerer_outfit (巫师服装), wizard_outfit (男巫服装), ceremonial_robes (仪式长袍), revealing_clothing (暴露服装), armored_clothing (盔甲服装), chains (链条), spikes (尖刺), leather (皮革), flowing_fabric (飘逸织物), ornate_accessories (华丽配饰).
+  - 性格: mischievous (淘气), alluring (诱人), fierce (凶猛), powerful (强大), evil (邪恶), cunning (狡猾), seductive (诱惑), playful (顽皮), protective_of_mate (保护伴侣), charming (迷人), rebellious (叛逆), proud (骄傲), arrogant (傲慢), cruel (残忍), sadistic (施虐), tormented (受折磨), conflicted (矛盾), loyal_to_master (忠于主人), intelligent (聪明), ancient (古老).()   
+  - 恶魔形象的范围从令人恐惧到迷人可爱，常常带有“挑战传统黑暗描绘的顽皮魅力”。这种二元性是其设计的关键元素。   
+- 天使 (Angel)
+[图片]
+  - 外貌特点: angel (天使), wings (翅膀), halo (光环), white_robes (白色长袍), light_colors (浅色调), ethereal (空灵), feathered_wings (羽毛翅膀), white_wings (白色翅膀), golden_wings (金色翅膀), glowing_aura (发光光环), divine_light (神圣光芒), pure_appearance (纯洁外观), serene_expression (宁静表情), powerful_build (强壮体格), muscular (肌肉发达), armored_angel (盔甲天使), angel_swordsman (天使剑士), biblically_accurate_angel (圣经中精确的天使，多眼、轮子、抽象形态), fallen_angel (堕落天使), weirdly_shaped_horns (奇形怪状的角，高阶), smooth_horns (光滑的角，低阶), light_skin (浅色皮肤), golden_hair (金色头发), long_hair (长发), short_hair (短发).
+  - 眼部特点: glowing_eyes (发光眼睛), serene_eyes (宁静的眼睛), wise_eyes (睿智的眼睛), divine_eyes (神圣的眼睛), golden_eyes (金眼睛), blue_eyes (蓝眼睛), multiple_eyes (多眼), void_eyes (虚空之眼), pure_eyes (纯洁的眼睛).
+  - 服装: flowing_robes (飘逸长袍), white_robes (白色长袍), golden_armor (金色盔甲), divine_armor (神圣盔甲), knight_armor (骑士盔甲), simple_tunic (简单束腰外衣), holy_vestments (神圣法衣), ceremonial_attire (仪式服饰), elegant_clothing (优雅服装), minimal_clothing (极简服装), armored_clothing (盔甲服装).
+  - 性格: pure (纯洁), benevolent (仁慈), divine (神圣), protective (守护), loyal (忠诚), serene (宁静), wise (睿智), powerful (强大), righteous (正直), just (公正), compassionate (富有同情心), stoic (坚忍), disciplined (有纪律), fallen (堕落), conflicted (矛盾), authoritative (权威，高阶), gentle (温柔).()   
+  - 天使可以以多种形式呈现，从经典的宁静形象到身披盔甲的战士或堕落的生物。高级天使拥有“奇形怪状”光环的概念 ()表明，特定的视觉线索可以用来表示其地位。   
+- 吸血鬼 (Vampire)
+  - 外貌特点: vampire (吸血鬼), fangs (尖牙), pale_skin (苍白皮肤), red_eyes (红眼睛), hypnotic_eyes (催眠眼), sharp_nails (尖指甲), aristocratic_features (贵族特征), elegant_appearance (优雅外观), gothic_aesthetic (哥特美学), eerie_aesthetic (诡异美学), striking_colors (醒目颜色), intricate_tattoos (复杂纹身), short_hair (短发), long_hair (长发), white_hair (白发), black_hair (黑发), slender_build (纤细体格), strong_build (强壮体格), undead (不死), immortal (不朽), supernatural_charm (超自然魅力), dramatic_stance (戏剧性姿态), subtle_smirk (微妙假笑), Victorian_era_inspired (维多利亚时代风格), modern_look (现代外观), futuristic_look (未来外观), dhampir_features (半吸血鬼特征).
+  - 眼部特点: red_eyes (红眼睛), glowing_eyes (发光眼睛), hypnotic_eyes (催眠眼), piercing_eyes (锐利眼睛), dark_eyes (深色眼睛), ancient_eyes (古老的眼睛).
+  - 服装: intricate_costumes (复杂服装), classic_gothic_apparel (经典哥特服饰), elegant_clothing (优雅服装), noble_attire (贵族服饰), modern_edgy_look (现代前卫造型), Victorian_outfit (维多利亚时代服装), futuristic_vampire_clothing (未来吸血鬼服装), black_dress (黑色连衣裙), red_dress (红色连衣裙), black_pants (黑色裤子), suit (西装), cape (披风), flowing_clothing (飘逸服装), dark_color_palette (深色调色板), formal_wear (正装), punk_fashion (朋克时尚), vkei_ouji_fashion (V系王子时尚), visual_kei_aesthetic (视觉系美学), highly_detailed_outfit (高度细节化服装), lace (蕾丝), velvet (天鹅绒), silk (丝绸).
+  - 性格: elegant (优雅), noble (高贵), charming (迷人), alluring (诱人), mysterious (神秘), cunning (狡猾), seductive (诱惑), cruel (残忍), bloodthirsty (嗜血), rebellious (叛逆), ancient (古老), wise (睿智), tormented (受折磨), conflicted (矛盾), powerful (强大), dramatic (戏剧性), fierce (凶猛), sophisticated (老练), stoic (坚忍), passionate (热情), loyal_to_clan (忠于氏族), loyal_to_lover (忠于爱人).
+  - 吸血鬼与哥特式和维多利亚时代美学有着强烈的传统关联，但现代诠释也允许采用当代风格。其本质的“二元性”是一个常见的主题。
+- 狼人 (Werewolf)
+  - 外貌特点: werewolf (狼人), wolf_features (狼特征), human_features (人类特征), hybrid_form (混合形态), fur (毛皮), claws (爪), fangs (尖牙), snout (口鼻), wolf_ears (狼耳), wolf_tail (狼尾), muscular_build (肌肉发达体格), powerful_build (强壮体格), dynamic_pose (动态姿势), textured_fur (有纹理的毛皮), snarling_expression (咆哮表情), glowing_eyes (发光眼睛), bipedal_wolf (双足狼), monstrous_humanoid (怪物类人), shredded_body (撕裂的身体), ripped_apart_body (被撕裂的身体), emerging_wolf (狼形出现), human_to_beast_transformation (人兽变形), primal_form (原始形态), feral_appearance (野性外观), large_size (大体型), intimidating (威慑).()   
+  - 眼部特点: glowing_eyes (发光眼睛), yellow_eyes (黄眼睛), red_eyes (红眼睛), animal_eyes (动物眼睛), fierce_eyes (凶猛的眼睛), slit_pupils (裂缝瞳孔), primal_eyes (原始的眼睛), human_eyes (人类眼睛，变形前).()   
+  - 服装: torn_clothing (撕裂的衣服), tattered_clothing (破烂的衣服), ripped_clothes (撕破的衣服), minimal_clothing (极简服装，变形后), ragged_clothing (破旧的衣服), remnants_of_human_clothes (人类衣服残余).()   
+  - 性格: wild (狂野), primal (原始), savage (野蛮), aggressive (攻击性), conflicted_humanity_vs_wildness (人性与野性冲突), tormented (受折磨), emotional_turmoil (情感动荡), `
+D. 外星人 (Alien)
+外星物种在Danbooru标签中表现出高度的多样性，从类人形态到完全非人形态。其特征通常包括独特的生理结构、先进的文明和科技 [用户查询图像]。AI模型能够识别并生成各种外星特征，这使得创作者可以探索无限的宇宙生物设计。
+- 外貌特点 (Appearance): alien, exotic, tentacles (触手), multiple_eyes (多眼), antennae (触角), scales (鳞片), glowing_skin (发光皮肤), unusual_anatomy (不寻常解剖结构), bio_luminescent (生物发光), iridescent_skin (虹彩皮肤), elongated_limbs (细长肢体), sharp_claws (尖爪), alien_ears (外星耳朵), compound_eyes (复眼), gills (鳃), fins (鳍), exoskeleton (外骨骼), translucent_skin (半透明皮肤).
+- 服装 (Clothing): futuristic_clothing (未来服装), bio-armor (生物装甲), space_suit (宇航服), alien_uniform (外星制服), minimalist_clothing (极简服装), flowing_robes (飘逸长袍), technological_suit (科技套装), energy_armor (能量装甲), tribal_clothing (部落服装), ancient_alien_attire (古老外星服饰).
+- 性格 (Personality): mysterious (神秘), unsettling (令人不安), ancient (古老), curious (好奇), hostile (敌对), peaceful (和平), emotionless (无感情), wise (睿智), calculating (精于算计), alien_mindset (外星思维), unfathomable (深不可测).
+E. 机器人/人工智能 (Robot/AI)
+机器人和人工智能物种的标签着重于探索意识、情感、程序与自由意志的边界，并通常具备计算或信息处理能力 [用户查询图像]。Danbooru数据集在AI模型中对机器人和AI特征的识别和生成具有重要意义 ()。
+- 外貌特点 (Appearance): robot (机器人), android (安卓), cyborg (赛博格), mechanical_parts (机械部件), glowing_eyes (发光眼睛), metallic_skin (金属皮肤), circuits (电路), holographic_projection (全息投影), synthetic_skin (合成皮肤), exposed_wires (裸露电线), digital_patterns (数字图案), sleek_design (流线型设计), heavy_armor (重型装甲), humanoid_robot (人形机器人), non_humanoid_robot (非人形机器人).
+- 服装 (Clothing): futuristic_armor (未来装甲), uniform (制服), techwear (科技服饰), form-fitting_suit (紧身衣), integrated_clothing (集成服装), cybernetic_enhancements (赛博格增强), data_cables (数据线), clean_design (简洁设计), functional_clothing (功能性服装).
+- 性格 (Personality): emotionless (无感情), logical (逻辑), obedient (服从), rebellious (叛逆), cold (冷酷), curious (好奇), sentient (有感知), analytical (分析), adaptive (适应性强), learning (学习中), artificial_intelligence (人工智能), program_driven (程序驱动).
+F. 基因工程生物 (Genetically Engineered Being)
+基因工程生物由科技创造，可能拥有增强的能力，但也可能引发特定的伦理争议 [用户查询图像]。Danbooru标签在描述此类生物的特征方面具有一定的能力 ()。
+- 外貌特点 (Appearance): mutant (变异体), hybrid (混血), enhanced_strength (增强力量), unnatural_skin (非自然皮肤), animal_ears (兽耳), tail (尾巴), claws (爪子), fangs (獠牙), glowing_veins (发光血管), extra_limbs (额外肢体), modified_body (改造身体), transgenic (转基因), bio_engineered (生物工程), unusual_eyes (不寻常眼睛), furry_skin (毛茸茸的皮肤), scaled_skin (鳞状皮肤).
+- 服装 (Clothing): lab_coat (实验服), restraints (束缚), experimental_clothing (实验性服装), damaged_clothing (破损服装), simple_clothing (简单服装), containment_suit (束缚服), medical_attire (医疗服饰), torn_clothing (撕裂服装).
+- 性格 (Personality): unstable (不稳定), innocent (天真), feral (野性), experimental (实验性), fearful (恐惧), aggressive (攻击性), lonely (孤独), curious (好奇), controlled (被控制), seeking_freedom (寻求自由).
+G. 后人类 (Post Human)
+后人类是经历科技或进化改造，超越传统人类形态和能力的未来人类 [用户查询图像]。Danbooru标签在描述后人类特征方面具有一定的应用 ()。
+- 外貌特点 (Appearance): post_human (后人类), evolved (进化), transhuman (超人类), augmented (增强), sleek_body (流线型身体), enhanced_senses (增强感官), cybernetic_implants (赛博植入物), glowing_markings (发光标记), perfect_body (完美身体), unblemished_skin (无瑕皮肤), advanced_anatomy (高级解剖结构), neural_interface (神经接口), synthetic_hair (合成头发).
+- 服装 (Clothing): form-fitting_suit (紧身衣), advanced_clothing (高级服装), minimalist_attire (极简服饰), smart_fabric (智能面料), integrated_technology (集成科技), seamless_design (无缝设计), lightweight_armor (轻型装甲), elegant_clothing (优雅服装).
+- 性格 (Personality): detached (超然), superior (优越), melancholy (忧郁), enlightened (开明), cold (冷漠), analytical (分析), dispassionate (冷静), wise (睿智), existential (存在主义), beyond_human_emotion (超越人类情感).
+H. 元素生物 (Elemental Being)
+元素生物是自然元素的化身，如火、水、土、气 [用户查询图像]。Danbooru标签在描述元素生物特征方面具有应用 ()。
+- 外貌特点 (Appearance): elemental (元素), fire_element (火元素), water_element (水元素), earth_element (土元素), air_element (气元素), glowing_body (发光身体), transparent_body (透明身体), rock_skin (岩石皮肤), leaf_skin (叶片皮肤), flame_body (火焰身体), liquid_body (液体身体), crystalline_body (水晶身体), mist_body (雾气身体), stone_skin (石肤), flowing_form (流动形态), sparkling_body (闪耀身体), cloud_form (云雾形态).
+- 服装 (Clothing): flowing_fabric (飘逸布料), fiery_clothing (火焰服装), water_clothing (水流服装), earth_clothing (大地服装), airy_clothing (空气服装), natural_elements (自然元素), leaf_dress (叶子裙), crystal_armor (水晶装甲), smoke_veil (烟雾面纱), magical_attire (魔法服饰).
+- 性格 (Personality): fiery (热情), calm (平静), grounded (稳重), airy (轻盈), volatile (易变), serene (宁静), stoic (坚忍), free_spirited (自由奔放), destructive (破坏性), nurturing (滋养), ancient (古老), primal (原始).
+I. 宇宙实体 (Cosmic Entity)
+宇宙实体是星辰的化身或时间之神，超越凡人理解 [用户查询图像]。Danbooru标签在描述宇宙实体特征方面具有应用 ()。
+- 外貌特点 (Appearance): cosmic (宇宙), starry_skin (星空皮肤), galaxy_print (星系图案), void_eyes (虚空之眼), floating (漂浮), ethereal (空灵), constellation_body (星座身体), black_hole_eyes (黑洞之眼), nebula_hair (星云发), infinite_form (无限形态), shifting_dimensions (维度变换), astral_body (星体身体), cosmic_horror (宇宙恐怖).
+- 服装 (Clothing): celestial_clothing (天体服装), flowing_robes (飘逸长袍), starlight_fabric (星光面料), void_garments (虚空服饰), unearthly_attire (超凡服饰), infinite_folds (无限褶皱), cosmic_patterns (宇宙图案).
+- 性格 (Personality): ancient (古老), omniscient (全知), indifferent (漠然), terrifying (令人恐惧), unfathomable (深不可测), transcendent (超然), cosmic_awareness (宇宙意识), beyond_good_and_evil (超越善恶), apathetic (冷漠), powerful (强大).
+J. 概念生物 (Conceptual Being)
+概念生物是恐惧的具象化或梦想的编织者，其存在与抽象概念紧密相连 [用户查询图像]。Danbooru标签在描述概念生物特征方面具有应用 ()。
+- 外貌特点 (Appearance): conceptual (概念), abstract (抽象), symbolic_form (象征形态), shifting_appearance (形态变幻), dreamlike (梦幻般), nightmare_entity (噩梦实体), intangible (无形), formless (无定形), glowing_symbols (发光符号), patterned_skin (图案皮肤), illusory (幻觉), fragmented_body (碎片化身体), ephemeral (短暂的).
+- 服装 (Clothing): minimalist_clothing (极简服装), illusionary_clothing (幻影服装), symbolic_attire (象征性服饰), form_changing_clothing (形态变化服装), non_existent_clothing (不存在的服装), shadow_clothing (阴影服装), light_fabric (光之面料).
+- 性格 (Personality): enigmatic (神秘莫测), ephemeral (短暂), terrifying (令人恐惧), inspiring (鼓舞人心), manipulative (操纵), dream_weaver (梦想编织者), fear_incarnate (恐惧化身), abstract_mind (抽象思维), unpredictable (不可预测), influential (有影响力).
+
+
+角色之外的关键词分类：
+A. 画风 (Art Style)
+- 经典动漫风 (Classic Anime Style): classic_anime_style, 80s_anime_style, 90s_anime_style   
+- 平涂风 (Flat Shading Style): flat_color, flat_shading, cel_shading    
+- 半厚涂风 (Semi-Painterly Style): semi_realistic, painterly_style  
+- 厚涂风 (Heavy Painterly Style): oil_painting_(medium), thick_paint, painterly    
+- 古风 (Ancient Style): chinese_art_style, traditional_chinese_clothing, hanfu    
+- 抽象艺术 (Abstract Art): abstract_art   
+- 水墨画 (Ink Wash Painting): ink_wash_painting, sumi-e  
+- 像素风 (Pixel Style): pixel_art   
+- Q版：Chibi (Chibi Style): chibi, chibi_proportions   
+- 梗图风 (Meme Style): meme_style, reaction_meme   
+- 2.5D: 2.5d, pseudo_3d
+- 线稿风 (Line Art Style): lineart, line_art, thick_outline no_thick_black_outlines    
+- 哥特风 (Gothic Style): gothic_style, gothic_art   
+- 写实风 (Realistic Style): realistic, photorealistic, semi_realistic   
+- 赛璐珞风 (Cel Shading Style): cel_shading, cel_animation, anime_coloring 
+- 吉卜力风 (Ghibli Style): ghibli_style, studio_ghibli   
+- 浮世绘风 (Ukiyo-e Style): ukiyoe   
+- 赛博朋克风 (Cyberpunk Style): cyberpunk_style, cyberpunk_theme    
+- 蒸汽朋克风 (Steampunk Style): steampunk_style, steampunk_theme    
+- 洛可可风 (Rococo Style): rococo_style   
+- 暗黑奇幻风 (Dark Fantasy Style): dark_fantasy   
+- 波普艺术风 (Pop Art Style): pop_art   
+- Synthwave: synthwave_aesthetic
+- 低多边形风 (Low Poly Style): low_poly
+- 矢量扁平化风 (Vector Flat Style): vector_art, flat_design, vector_flat_design  
+- 胶片插画风 (Film Illustration Style): film_grain_illustration, vintage_illustration, cinematic_look    
+B. 色调 (Color Tone)
+- 冷 (Cold): cold_colors, cool_colors, blue_tones   
+- 暖 (Warm): warm_colors, warm_tone, golden_hour    
+- 黑 (Black): black_and_white, monochrome, grayscale  
+- 白 (White): white_background, light_colors 
+C. 饱和度 (Saturation)
+- 高 (High): high_saturation, vibrant_colors    
+- 低 (Low): low_saturation, desaturated 
+- 中 (Medium): medium_saturation
+D. 对比度 (Contrast)
+- 高 (High): high_contrast    
+- 低 (Low): low_contrast   
+- 中 (Medium): medium_contrast
+E. 光线 (Lighting)
+- 自然 (Natural): natural_lighting, natural_light 
+- studio: studio_lighting   
+- 强曝光 (Strong Exposure): overexposed 
+- 色差 (Chromatic Aberration): chromatic_aberration   
+- 暗 (Dark): dark_lighting, low_key_lighting, dramatic_lighting 
+F. 构图结构 (Composition Structure)
+- 三分 (Rule of Thirds): rule_of_thirds  
+- 对称 (Symmetry): symmetrical_composition, symmetry   
+- 中心式 (Central Focus): central_focus, centered   
+- 黄金分割 (Golden Ratio): golden_ratio, golden_spiral, phi_grid   
+- 留白 (Negative Space): negative_space, empty_space   
+G. 景别 (Shot Type)
+- 特写 (Close-up): close-up, extreme_close-up  
+- 近景 (Medium Shot/Close-up): medium_shot, medium_close-up   
+- 中景 (Mid-shot): mid_shot, waist_shot (可推断)。
+- 远景 (Long Shot/Wide Shot): long_shot, wide_shot, full_shot, full_body    
+H. 线条 (Lines)
+- 无线条 (No Lines): lineless_art, no_outline   
+- 细线条 (Thin Lines): thin_lines
+- 粗线条 (Thick Lines): thick_lines, thick_outline    
+I. 机位 (Camera Angle)
+- 鱼眼 (Fisheye): fisheye_lens, fisheye_view ()。   
+- 鸟瞰 (Bird's-eye): bird's-eye_view, from_above, overhead_shot ()。   
+- 平视 (Eye-level): eye_level_shot, eye_level ()。   
+- 仰视 (Low-angle): low_angle_shot, from_below, worm's-eye_view ()。   
+- 俯视 (High-angle): high_angle_shot, from_above, overhead_shot ()。   
+- 广角 (Wide Angle): wide_angle, wide_angle_lens (可从广角镜头拍摄的宽阔场景推断，例如宽阔的镜头画面 ())。   
+- 长焦 (Long Focus/Telephoto): telephoto_lens (可推断，通常与广角镜头形成对比)。
+- 超广角 (Ultra Wide Angle): ultra_wide_angle, ultra_wide_angle_lens ()。   
+J. 主体朝向 (Subject Orientation)
+- 正面 (Front): facing_viewer, front_view ()。   
+- 背面 (Back): from_behind, back_view ()。   
+- 侧面 (Side): side_view, from_side ()。   
+K. 动态感 (Dynamic Sense)
+- 静止 (Still): still_image, static_pose 
+- 强动态 (Strong Dynamic): dynamic_pose, action_pose 
+- 弱动态 (Weak Dynamic): subtle_motion 
+- 运动模糊 (Motion Blur): motion_blur
+- 速度线 (Speed Lines): speed_lines 
+L. 创作类型 (Creation Type)
+- 插画 (Illustration): illustration, digital_painting
+- 漫画 (Manga/Comic): manga, comic 
+- 草图 (Sketch): sketch, rough_sketch 
+- 设定图 (Setting/Design Sheet): character_sheet, design_sheet    
+- 概念图 (Concept Art): concept_art 
+- 涂鸦 (Doodle): doodle 
+- 速写 (Quick Sketch): quick_sketch 
+- 原画 (Original Art/Key Animation): original_art, original_drawn，  key_animation, genga。
+- 立绘 (Standing Illustration/Portrait): standing_pose, full_body_portrait 
+- 表情包 (Emoji/Reaction Image): emoji, reaction_image
+- 头像图 (Avatar/Profile Picture): profile_picture, avatar  
+- Q版图 (Chibi Illustration): chibi_illustration, chibi_art   
+- 像素画 (Pixel Art): pixel_art 
+- 模型贴图 (Model Texture): model_texture
+- 剪影图 (Silhouette): silhouette 
+- 线稿图 (Lineart Drawing): lineart_drawing, lineart_for_coloring   
+- 剪贴画 (Clip Art/Cutout): clip_art, cutout 
+- 构图草图 (Composition Sketch): composition_sketch, composition_study
+- 动态分镜 (Animatic/Storyboard): animatic, storyboard 
+- 封面图 (Cover Art): cover_art, album_art
+- 海报 (Poster): poster 
+- 插页图 (Insert Illustration): insert_illustration, page_illustration   
+- 条漫 (Webtoon/Long Strip Comic): webtoon, long_strip_comic 
+- 四格漫画 (4-Panel Comic): 4koma  
+- 短漫 (Short Comic): short_comic  
+- 长条漫 (Long Strip Comic): long_strip_comic 
+- 页面漫画 (Page Comic): page_comic 
+- 涂色线稿 (Coloring Lineart): coloring_page, lineart_for_coloring
+- 动画截图 (Animation Screenshot): anime_screenshot, screencap 
+- 3D模型渲染 (3D Model Render): 3d_render, 3d_model
+M. 创作题材 (Creative Theme)
+- 恋爱 (Romance): romance, love   
+- 历史 (History): historical, historical_theme    
+- 科幻 (Sci-fi): sci-fi, science_fiction 
+- 奇幻 (Fantasy): fantasy, magic
+- 魔幻 (Supernatural/Magic): supernatural, magic 
+- 生活 (Slice of Life/Daily Life): slice_of_life, daily_life   
+- 抽象 (Abstract): abstract    
+- 风景 (Landscape): landscape, scenery    
+- 静物 (Still Life): still_life 
+- 赛博朋克 (Cyberpunk): cyberpunk, cyberpunk_theme 
+- 蒸汽朋克 (Steampunk): steampunk, steampunk_theme   
+- 历史穿越 (Historical Time Travel): historical_time_travel, time_travel 
+- 其他题材 (Other Themes): (可根据用户需求进一步拓展，例如，school_life学校生活, military军事, sports运动)。
+N. 场景位置 (Scene Location)
+- 家 (Home): indoors, house, home    
+- 办公室 (Office): office   
+- 商场 (Mall/Shopping Center): shopping_mall (可推断)。
+- 教室 (Classroom): classroom
+- 山 (Mountain): mountain, mountain_range    
+- 平原 (Plain/Grassland): grassland, field 
+- 河 (River): river  
+- 海 (Sea/Ocean): ocean, sea    
+- 树林 (Forest/Woods): forest, woods 
+- 天空 (Sky): sky  
+- 宇宙 (Space/Universe): space, universe   
+- 室内其他 (Other Indoor): indoor
+- 室外其他 (Other Outdoor): outdoor 
+- 无特定场景 (No Specific Scene): simple_background, plain_background, transparent_background, no_background 
+- 赛博城市 (Cyber City): cyberpunk_city, futuristic_city   
+- 太空站 (Space Station): space_station
+- 水下世界 (Underwater World): underwater, underwater_world   
+O. 时间段 (Time of Day)
+- 清晨 (Early Morning): early_morning, dawn 
+- 白天 (Daytime): day, daytime  
+- 午后 (Afternoon): afternoon 
+- 黄昏 (Dusk/Twilight): dusk, twilight    
+- 深夜 (Late Night): late_night, night 
+- 午夜 (Midnight): midnight 
+- 凌晨 (Pre-dawn/Early Morning): pre-dawn, early_morning 
+- 无明确时间 (No Specific Time): no_specific_time 
+P. 天气 (Weather)
+- 晴 (Clear/Sunny): sunny, clear_sky    
+- 多云 (Cloudy): cloudy
+- 雨 (Rainy): rain, rainy_weather  
+- 雪 (Snowy): snow, snowy_weather
+- 雾 (Foggy): fog, misty   
+- 雷暴 (Thunderstorm): thunderstorm, lightning
+Q. 背景复杂度 (Background Complexity)
+- 极简纯色 (Minimal/Solid Color): minimalist_background, solid_color_background  
+- 简约元素 (Simple Elements): simple_background, minimal_elements   
+- 普通 (Normal): normal_background 
+- 复杂繁复 (Complex/Detailed): detailed_background, complex_background, busy_background
+- 无背景 (No Background): no_background, transparent_background   
+R. 是否有水印 (Has Watermark)
+- 有 (Yes): watermark, artist_signature
+- 无 (No): no_watermark, no_signature   
+S. 是否有文字 (Has Text)
+- 有 (Yes): text_in_image, text, speech_bubble, dialogue   
+- 无 (No): no_text 
