@@ -35,9 +35,9 @@
             border-color: #9ca3af;
         }
         .tag-item.selected {
-            border: 2px solid #3b82f6;
-            background-color: #dbeafe;
-            color: #1d4ed8;
+            border: 2px solid #ec4899;
+            background-color: #fdf2f8;
+            color: #be185d;
         }
         .category-section {
             border-bottom: 2px solid #FF6B95;
@@ -124,11 +124,11 @@
         </div>
     </div>
 
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-gray-900 border-t border-gray-700 shadow-2xl flex flex-col md:flex-row items-center justify-between z-50">
-        <div id="selected-tags-display" class="flex-grow bg-gray-800 text-gray-200 p-3 rounded-xl mb-4 md:mb-0 md:mr-4 overflow-x-auto">
-            <span class="text-gray-500">点击标签按钮以添加到此处...</span>
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-pink-50 border-t border-pink-200 shadow-2xl flex flex-col md:flex-row items-center justify-between z-50">
+        <div id="selected-tags-display" class="flex-grow bg-white text-gray-700 p-3 rounded-xl mb-4 md:mb-0 md:mr-4 overflow-x-auto border border-pink-200">
+            <span class="text-gray-400">点击标签按钮以添加到此处...</span>
         </div>
-        <button id="copy-selected-btn" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200">
+        <button id="copy-selected-btn" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-pink-600 transition-colors duration-200">
             复制全部
         </button>
     </div>
@@ -4189,7 +4189,7 @@
                 
                 const subTitle = document.createElement('h4');
                 subTitle.className = 'sub-section-title';
-                subTitle.style.color = '#059669';
+                subTitle.style.color = '#FF6B95';
                 subTitle.style.fontWeight = '600';
                 subTitle.style.marginBottom = '10px';
                 subTitle.style.fontSize = '1.1em';
@@ -4237,13 +4237,13 @@
                         // 如果已存在，则移除
                         removeTagFromDisplay(danbooruTags[0]);
                         button.classList.remove('selected');
-                        showToast(`已移除标签: ${danbooruTags[0]}`);
+                        // showToast(`已移除标签: ${danbooruTags[0]}`);
                     } else {
                         // 如果不存在，则添加
                         copyToClipboard(danbooruTags[0]);
                         addTagToDisplay(danbooruTags[0]);
                         button.classList.add('selected');
-                        showToast(`已复制标签: ${danbooruTags[0]}`);
+                        // showToast(`已复制标签: ${danbooruTags[0]}`);
                     }
                 } else {
                     // 多个标签，显示选择对话框
@@ -4311,13 +4311,13 @@
                         // 如果已存在，则移除
                         removeTagFromDisplay(tag);
                         button.classList.remove('selected');
-                        showToast(`已移除标签: ${tag}`);
+                        // showToast(`已移除标签: ${tag}`);
                     } else {
                         // 如果不存在，则添加
                         copyToClipboard(tag);
                         addTagToDisplay(tag);
                         button.classList.add('selected');
-                        showToast(`已复制标签: ${tag}`);
+                        // showToast(`已复制标签: ${tag}`);
                     }
                     document.body.removeChild(modal);
                 });
@@ -4359,7 +4359,7 @@
                 display.innerHTML = '<span class="text-gray-500">点击标签按钮以添加到此处...</span>';
             } else {
                 const tagsHtml = selectedTags.map(tag => 
-                    `<span class="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm mr-2 mb-2 cursor-pointer hover:bg-blue-700 transition-colors" onclick="removeTagFromDisplay('${tag}')">${tag}</span>`
+                    `<span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full text-sm mr-2 mb-2 cursor-pointer hover:bg-pink-600 transition-colors" onclick="removeTagFromDisplay('${tag}')">${tag}</span>`
                 ).join('');
                 display.innerHTML = tagsHtml;
             }
