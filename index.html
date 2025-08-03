@@ -125,16 +125,46 @@
     </div>
 
     <div class="fixed bottom-0 left-0 right-0 p-4 bg-pink-50 border-t border-pink-200 shadow-2xl flex flex-col md:flex-row items-center justify-between z-50">
-        <div id="selected-tags-display" class="flex-grow bg-white text-gray-700 p-3 rounded-xl mb-4 md:mb-0 md:mr-4 overflow-x-auto border border-pink-200">
-            <span class="text-gray-400">点击标签按钮以添加到此处...</span>
+        <div class="flex-grow flex items-center space-x-2 mb-4 md:mb-0 md:mr-4">
+            <div id="selected-tags-display" class="flex-grow bg-white text-gray-700 p-3 rounded-xl overflow-x-auto border border-pink-200">
+                <span class="text-gray-400">点击标签按钮以添加到此处...</span>
+            </div>
+            <button id="clear-tags-btn" class="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition-colors duration-200" title="清空列表">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                </svg>
+            </button>
+            <button id="random-generate-btn" class="bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600 transition-colors duration-200" title="随机生成">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+            </button>
         </div>
         <button id="copy-selected-btn" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-pink-600 transition-colors duration-200">
-            复制全部
+            复制并跳转
         </button>
     </div>
 
     <div id="toast-message" class="toast">
         已复制到剪贴板！
+    </div>
+    
+    <!-- 使用提示 -->
+    <div class="fixed top-4 right-4 bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded shadow-lg max-w-xs">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm">
+                    <strong>使用提示：</strong><br>
+                    点击"复制并跳转"后，标签已复制到剪贴板。<br>
+                    在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。
+                </p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -4101,6 +4131,8 @@
             document.getElementById('style-tab').addEventListener('click', () => switchTab('style'));
             document.getElementById('species-tab').addEventListener('click', () => switchTab('species'));
             document.getElementById('copy-selected-btn').addEventListener('click', copySelectedTags);
+            document.getElementById('clear-tags-btn').addEventListener('click', clearAllTags);
+            document.getElementById('random-generate-btn').addEventListener('click', generateRandomTags);
         }
 
         function switchTab(tabName) {
@@ -4406,8 +4438,15 @@
 
             const tagValues = selectedTags.join(', ');
             
+            // 复制到剪贴板
             navigator.clipboard.writeText(tagValues).then(() => {
-                showToast('已复制到剪贴板！');
+                showToast('已复制标签，正在跳转到 KusaPics...');
+                
+                // 延迟一下让用户看到提示，然后跳转
+                setTimeout(() => {
+                    // 跳转到 KusaPics 网站
+                    window.open('https://kusa.pics/', '_blank');
+                }, 1000);
             }).catch(() => {
                 showToast('复制失败，请手动复制');
             });
@@ -4421,6 +4460,188 @@
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 3000);
+        }
+
+        function clearAllTags() {
+            selectedTags = [];
+            updateSelectedTagsDisplay();
+            updateButtonVisualStates();
+            showToast('已清空所有标签');
+        }
+
+        function generateRandomTags() {
+            console.log('开始随机生成标签...');
+            showToast('正在生成随机标签...');
+            // 清空现有标签
+            selectedTags = [];
+            
+            // 基础角色信息（必须包含）
+            const baseCharacterTags = [
+                '1boy', '1girl', 'teenager', 'adult', 'shota', 'loli'
+            ];
+            
+            // 视角相关
+            const angleTags = [
+                'dynamic_angle', 'looking_at_viewer', 'looking_away', 'looking_up', 'looking_down',
+                'close-up', 'medium_shot', 'long_shot', 'full_body'
+            ];
+            
+            // 肤色相关
+            const skinTags = [
+                'pale_skin', 'white_skin', 'brown_skin', 'dark_skin', 'tanned_skin',
+                'colored_skin', 'pink_skin', 'blue_skin', 'green_skin', 'purple_skin'
+            ];
+            
+            // 眉毛相关
+            const eyebrowTags = [
+                'short_eyebrows', 'thick_eyebrows', 'thin_eyebrows', 'arched_eyebrows',
+                'straight_eyebrows', 'curved_eyebrows'
+            ];
+            
+            // 表情相关
+            const expressionTags = [
+                'angel_smile', 'smile', 'laugh', 'wry_smile', 'seductive_smile',
+                'serious', 'angry', 'sad', 'crying', 'embarrassed'
+            ];
+            
+            // 发色相关
+            const hairColorTags = [
+                'green_hair', 'blue_hair', 'pink_hair', 'purple_hair', 'red_hair',
+                'brown_hair', 'black_hair', 'blonde_hair', 'white_hair', 'silver_hair'
+            ];
+            
+            // 发型相关
+            const hairStyleTags = [
+                'medium_hair', 'long_hair', 'short_hair', 'pixie_cut', 'bob_cut',
+                'twin_tails', 'ponytail', 'braid', 'messy_hair', 'straight_hair'
+            ];
+            
+            // 姿势相关
+            const poseTags = [
+                'doggy_style', 'hands_behind_back', 'sniffing', 'cupping_chin',
+                'stretching', 'hug', 'princess_carry', 'lying_down', 'sitting',
+                'standing', 'kneeling', 'bending_over'
+            ];
+            
+            // 服装相关
+            const clothingTags = [
+                'strapless_leotard', 'lolita_style', 'school_uniform', 'maid_outfit',
+                'bikini', 'dress', 'sweater', 'shirt', 'pants', 'skirt',
+                'kimono', 'yukata', 'sailor_uniform', 'nurse_uniform'
+            ];
+            
+            // 饰品相关
+            const accessoryTags = [
+                'hair_flower', 'mask', 'bandage', 'glasses', 'sunglasses',
+                'earrings', 'necklace', 'bracelet', 'ring', 'ribbon'
+            ];
+            
+            // 特殊特征（尾巴、翅膀等）
+            const specialTags = [
+                'sheep_tail', 'fairy_wings', 'angel_tail', 'demon_wings',
+                'cat_tail', 'fox_tail', 'dragon_wings', 'butterfly_wings'
+            ];
+            
+            // 场景相关
+            const sceneTags = [
+                'still_image', 'late_night', 'day', 'night', 'sunset',
+                'indoor', 'outdoor', 'bedroom', 'school', 'beach',
+                'forest', 'city', 'garden', 'kitchen'
+            ];
+            
+            // 构建完整的标签组合
+            selectedTags = [];
+            
+            // 1. 基础角色信息（随机选择1个）
+            selectedTags.push(baseCharacterTags[Math.floor(Math.random() * baseCharacterTags.length)]);
+            
+            // 2. 视角（随机选择1个）
+            selectedTags.push(angleTags[Math.floor(Math.random() * angleTags.length)]);
+            
+            // 3. 肤色（随机选择1个）
+            selectedTags.push(skinTags[Math.floor(Math.random() * skinTags.length)]);
+            
+            // 4. 眉毛（随机选择1个）
+            selectedTags.push(eyebrowTags[Math.floor(Math.random() * eyebrowTags.length)]);
+            
+            // 5. 表情（随机选择1个）
+            selectedTags.push(expressionTags[Math.floor(Math.random() * expressionTags.length)]);
+            
+            // 6. 发色（随机选择1个）
+            selectedTags.push(hairColorTags[Math.floor(Math.random() * hairColorTags.length)]);
+            
+            // 7. 发型（随机选择1个）
+            selectedTags.push(hairStyleTags[Math.floor(Math.random() * hairStyleTags.length)]);
+            
+            // 8. 姿势（随机选择1-2个）
+            const poseCount = Math.random() > 0.5 ? 1 : 2;
+            for (let i = 0; i < poseCount; i++) {
+                const pose = poseTags[Math.floor(Math.random() * poseTags.length)];
+                if (!selectedTags.includes(pose)) {
+                    selectedTags.push(pose);
+                }
+            }
+            
+            // 9. 服装（随机选择1个）
+            selectedTags.push(clothingTags[Math.floor(Math.random() * clothingTags.length)]);
+            
+            // 10. 饰品（随机选择1-2个）
+            const accessoryCount = Math.random() > 0.5 ? 1 : 2;
+            for (let i = 0; i < accessoryCount; i++) {
+                const accessory = accessoryTags[Math.floor(Math.random() * accessoryTags.length)];
+                if (!selectedTags.includes(accessory)) {
+                    selectedTags.push(accessory);
+                }
+            }
+            
+            // 11. 特殊特征（30%概率添加）
+            if (Math.random() < 0.3) {
+                selectedTags.push(specialTags[Math.floor(Math.random() * specialTags.length)]);
+            }
+            
+            // 12. 场景（随机选择1个）
+            selectedTags.push(sceneTags[Math.floor(Math.random() * sceneTags.length)]);
+            
+            // 13. 额外随机标签（从所有可用标签中随机选择2-4个）
+            const allAvailableTags = [];
+            Object.values(promptLibrary).forEach(category => {
+                if (typeof category === 'object' && !Array.isArray(category)) {
+                    Object.values(category).forEach(subCategory => {
+                        if (Array.isArray(subCategory)) {
+                            subCategory.forEach(tagRow => {
+                                tagRow.forEach(tag => {
+                                    if (chineseToDanbooruMap[tag]) {
+                                        allAvailableTags.push(...chineseToDanbooruMap[tag]);
+                                    }
+                                });
+                            });
+                        }
+                    });
+                } else if (Array.isArray(category)) {
+                    category.forEach(tagRow => {
+                        tagRow.forEach(tag => {
+                            if (chineseToDanbooruMap[tag]) {
+                                allAvailableTags.push(...chineseToDanbooruMap[tag]);
+                            }
+                        });
+                    });
+                }
+            });
+            
+            const extraCount = Math.floor(Math.random() * 3) + 2; // 2-4个额外标签
+            const shuffled = allAvailableTags.sort(() => 0.5 - Math.random());
+            for (let i = 0; i < extraCount; i++) {
+                const extraTag = shuffled[i];
+                if (!selectedTags.includes(extraTag)) {
+                    selectedTags.push(extraTag);
+                }
+            }
+            
+            // 更新显示
+            console.log('生成的标签:', selectedTags);
+            updateSelectedTagsDisplay();
+            updateButtonVisualStates();
+            showToast(`已随机生成 ${selectedTags.length} 个标签`);
         }
     </script>
 </body>
