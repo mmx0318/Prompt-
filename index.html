@@ -4475,134 +4475,139 @@
             // 清空现有标签
             selectedTags = [];
             
-            // 基础角色信息（必须包含）
-            const baseCharacterTags = [
-                '1boy', '1girl', 'teenager', 'adult', 'shota', 'loli'
-            ];
+            // 目标标签数量：12-25个
+            const targetCount = Math.floor(Math.random() * 14) + 12; // 12-25个
             
-            // 视角相关
-            const angleTags = [
-                'dynamic_angle', 'looking_at_viewer', 'looking_away', 'looking_up', 'looking_down',
-                'close-up', 'medium_shot', 'long_shot', 'full_body'
-            ];
+            // 扩展的标签类别
+            const tagCategories = {
+                // 基础角色信息
+                baseCharacter: [
+                    '1boy', '1girl', 'teenager', 'adult', 'shota', 'loli', 'child', 'elderly'
+                ],
+                
+                // 视角和构图
+                angle: [
+                    'dynamic_angle', 'looking_at_viewer', 'looking_away', 'looking_up', 'looking_down',
+                    'close-up', 'medium_shot', 'long_shot', 'full_body', 'portrait', 'bust',
+                    'from_behind', 'from_side', 'from_above', 'from_below'
+                ],
+                
+                // 肤色
+                skin: [
+                    'pale_skin', 'white_skin', 'brown_skin', 'dark_skin', 'tanned_skin',
+                    'colored_skin', 'pink_skin', 'blue_skin', 'green_skin', 'purple_skin',
+                    'red_skin', 'yellow_skin', 'grey_skin', 'olive_skin', 'bronze_skin'
+                ],
+                
+                // 面部特征
+                facial: [
+                    'short_eyebrows', 'thick_eyebrows', 'thin_eyebrows', 'arched_eyebrows',
+                    'straight_eyebrows', 'curved_eyebrows', 'long_eyelashes', 'thick_eyelashes',
+                    'small_eyes', 'large_eyes', 'round_eyes', 'almond_eyes', 'upturned_eyes'
+                ],
+                
+                // 表情
+                expression: [
+                    'angel_smile', 'smile', 'laugh', 'wry_smile', 'seductive_smile',
+                    'serious', 'angry', 'sad', 'crying', 'embarrassed', 'surprised',
+                    'confused', 'determined', 'shy', 'pout', 'wink', 'closed_eyes'
+                ],
+                
+                // 发色
+                hairColor: [
+                    'green_hair', 'blue_hair', 'pink_hair', 'purple_hair', 'red_hair',
+                    'brown_hair', 'black_hair', 'blonde_hair', 'white_hair', 'silver_hair',
+                    'orange_hair', 'yellow_hair', 'grey_hair', 'gradient_hair', 'multicolored_hair'
+                ],
+                
+                // 发型
+                hairStyle: [
+                    'medium_hair', 'long_hair', 'short_hair', 'pixie_cut', 'bob_cut',
+                    'twin_tails', 'ponytail', 'braid', 'messy_hair', 'straight_hair',
+                    'curly_hair', 'wavy_hair', 'spiky_hair', 'bed_hair', 'ahoge',
+                    'side_ponytail', 'twintails', 'drill_hair', 'hime_cut'
+                ],
+                
+                // 姿势
+                pose: [
+                    'doggy_style', 'hands_behind_back', 'sniffing', 'cupping_chin',
+                    'stretching', 'hug', 'princess_carry', 'lying_down', 'sitting',
+                    'standing', 'kneeling', 'bending_over', 'arms_crossed', 'pointing',
+                    'waving', 'salute', 'praying', 'meditation', 'dancing', 'running'
+                ],
+                
+                // 服装
+                clothing: [
+                    'strapless_leotard', 'lolita_style', 'school_uniform', 'maid_outfit',
+                    'bikini', 'dress', 'sweater', 'shirt', 'pants', 'skirt',
+                    'kimono', 'yukata', 'sailor_uniform', 'nurse_uniform', 'suit',
+                    'casual_wear', 'sportswear', 'swimsuit', 'pajamas', 'costume'
+                ],
+                
+                // 饰品
+                accessories: [
+                    'hair_flower', 'mask', 'bandage', 'glasses', 'sunglasses',
+                    'earrings', 'necklace', 'bracelet', 'ring', 'ribbon',
+                    'hairband', 'hairclip', 'crown', 'tiara', 'scarf',
+                    'gloves', 'socks', 'stockings', 'shoes', 'boots'
+                ],
+                
+                // 特殊特征
+                special: [
+                    'sheep_tail', 'fairy_wings', 'angel_tail', 'demon_wings',
+                    'cat_tail', 'fox_tail', 'dragon_wings', 'butterfly_wings',
+                    'horns', 'halo', 'fangs', 'cat_ears', 'fox_ears',
+                    'angel_wings', 'demon_horns', 'tentacles', 'scales'
+                ],
+                
+                // 场景
+                scene: [
+                    'still_image', 'late_night', 'day', 'night', 'sunset',
+                    'indoor', 'outdoor', 'bedroom', 'school', 'beach',
+                    'forest', 'city', 'garden', 'kitchen', 'library',
+                    'cafe', 'park', 'mountain', 'ocean', 'sky'
+                ],
+                
+                // 光线和氛围
+                lighting: [
+                    'natural_light', 'studio_light', 'backlight', 'side_light',
+                    'soft_light', 'harsh_light', 'warm_light', 'cool_light',
+                    'dramatic_lighting', 'moody', 'bright', 'dark'
+                ],
+                
+                // 艺术风格
+                style: [
+                    'anime_style', 'realistic', 'cartoon', 'chibi', 'detailed',
+                    'simple', 'colorful', 'monochrome', 'vintage', 'modern'
+                ]
+            };
             
-            // 肤色相关
-            const skinTags = [
-                'pale_skin', 'white_skin', 'brown_skin', 'dark_skin', 'tanned_skin',
-                'colored_skin', 'pink_skin', 'blue_skin', 'green_skin', 'purple_skin'
-            ];
+            // 必选类别（每个类别至少选择1个）
+            const requiredCategories = ['baseCharacter', 'angle', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle', 'pose', 'clothing', 'scene'];
             
-            // 眉毛相关
-            const eyebrowTags = [
-                'short_eyebrows', 'thick_eyebrows', 'thin_eyebrows', 'arched_eyebrows',
-                'straight_eyebrows', 'curved_eyebrows'
-            ];
+            // 先添加必选标签
+            requiredCategories.forEach(category => {
+                const tags = tagCategories[category];
+                const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                if (!selectedTags.includes(randomTag)) {
+                    selectedTags.push(randomTag);
+                }
+            });
             
-            // 表情相关
-            const expressionTags = [
-                'angel_smile', 'smile', 'laugh', 'wry_smile', 'seductive_smile',
-                'serious', 'angry', 'sad', 'crying', 'embarrassed'
-            ];
+            // 随机选择其他类别
+            const optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat));
+            const numOptionalCategories = Math.floor(Math.random() * 6) + 3; // 3-8个可选类别
             
-            // 发色相关
-            const hairColorTags = [
-                'green_hair', 'blue_hair', 'pink_hair', 'purple_hair', 'red_hair',
-                'brown_hair', 'black_hair', 'blonde_hair', 'white_hair', 'silver_hair'
-            ];
-            
-            // 发型相关
-            const hairStyleTags = [
-                'medium_hair', 'long_hair', 'short_hair', 'pixie_cut', 'bob_cut',
-                'twin_tails', 'ponytail', 'braid', 'messy_hair', 'straight_hair'
-            ];
-            
-            // 姿势相关
-            const poseTags = [
-                'doggy_style', 'hands_behind_back', 'sniffing', 'cupping_chin',
-                'stretching', 'hug', 'princess_carry', 'lying_down', 'sitting',
-                'standing', 'kneeling', 'bending_over'
-            ];
-            
-            // 服装相关
-            const clothingTags = [
-                'strapless_leotard', 'lolita_style', 'school_uniform', 'maid_outfit',
-                'bikini', 'dress', 'sweater', 'shirt', 'pants', 'skirt',
-                'kimono', 'yukata', 'sailor_uniform', 'nurse_uniform'
-            ];
-            
-            // 饰品相关
-            const accessoryTags = [
-                'hair_flower', 'mask', 'bandage', 'glasses', 'sunglasses',
-                'earrings', 'necklace', 'bracelet', 'ring', 'ribbon'
-            ];
-            
-            // 特殊特征（尾巴、翅膀等）
-            const specialTags = [
-                'sheep_tail', 'fairy_wings', 'angel_tail', 'demon_wings',
-                'cat_tail', 'fox_tail', 'dragon_wings', 'butterfly_wings'
-            ];
-            
-            // 场景相关
-            const sceneTags = [
-                'still_image', 'late_night', 'day', 'night', 'sunset',
-                'indoor', 'outdoor', 'bedroom', 'school', 'beach',
-                'forest', 'city', 'garden', 'kitchen'
-            ];
-            
-            // 构建完整的标签组合
-            selectedTags = [];
-            
-            // 1. 基础角色信息（随机选择1个）
-            selectedTags.push(baseCharacterTags[Math.floor(Math.random() * baseCharacterTags.length)]);
-            
-            // 2. 视角（随机选择1个）
-            selectedTags.push(angleTags[Math.floor(Math.random() * angleTags.length)]);
-            
-            // 3. 肤色（随机选择1个）
-            selectedTags.push(skinTags[Math.floor(Math.random() * skinTags.length)]);
-            
-            // 4. 眉毛（随机选择1个）
-            selectedTags.push(eyebrowTags[Math.floor(Math.random() * eyebrowTags.length)]);
-            
-            // 5. 表情（随机选择1个）
-            selectedTags.push(expressionTags[Math.floor(Math.random() * expressionTags.length)]);
-            
-            // 6. 发色（随机选择1个）
-            selectedTags.push(hairColorTags[Math.floor(Math.random() * hairColorTags.length)]);
-            
-            // 7. 发型（随机选择1个）
-            selectedTags.push(hairStyleTags[Math.floor(Math.random() * hairStyleTags.length)]);
-            
-            // 8. 姿势（随机选择1-2个）
-            const poseCount = Math.random() > 0.5 ? 1 : 2;
-            for (let i = 0; i < poseCount; i++) {
-                const pose = poseTags[Math.floor(Math.random() * poseTags.length)];
-                if (!selectedTags.includes(pose)) {
-                    selectedTags.push(pose);
+            for (let i = 0; i < numOptionalCategories; i++) {
+                const category = optionalCategories[Math.floor(Math.random() * optionalCategories.length)];
+                const tags = tagCategories[category];
+                const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                if (!selectedTags.includes(randomTag)) {
+                    selectedTags.push(randomTag);
                 }
             }
             
-            // 9. 服装（随机选择1个）
-            selectedTags.push(clothingTags[Math.floor(Math.random() * clothingTags.length)]);
-            
-            // 10. 饰品（随机选择1-2个）
-            const accessoryCount = Math.random() > 0.5 ? 1 : 2;
-            for (let i = 0; i < accessoryCount; i++) {
-                const accessory = accessoryTags[Math.floor(Math.random() * accessoryTags.length)];
-                if (!selectedTags.includes(accessory)) {
-                    selectedTags.push(accessory);
-                }
-            }
-            
-            // 11. 特殊特征（30%概率添加）
-            if (Math.random() < 0.3) {
-                selectedTags.push(specialTags[Math.floor(Math.random() * specialTags.length)]);
-            }
-            
-            // 12. 场景（随机选择1个）
-            selectedTags.push(sceneTags[Math.floor(Math.random() * sceneTags.length)]);
-            
-            // 13. 额外随机标签（从所有可用标签中随机选择2-4个）
+            // 从所有可用标签中随机补充到目标数量
             const allAvailableTags = [];
             Object.values(promptLibrary).forEach(category => {
                 if (typeof category === 'object' && !Array.isArray(category)) {
@@ -4628,12 +4633,15 @@
                 }
             });
             
-            const extraCount = Math.floor(Math.random() * 3) + 2; // 2-4个额外标签
-            const shuffled = allAvailableTags.sort(() => 0.5 - Math.random());
-            for (let i = 0; i < extraCount; i++) {
-                const extraTag = shuffled[i];
-                if (!selectedTags.includes(extraTag)) {
-                    selectedTags.push(extraTag);
+            // 随机补充标签到目标数量
+            const remainingCount = targetCount - selectedTags.length;
+            if (remainingCount > 0) {
+                const shuffled = allAvailableTags.sort(() => 0.5 - Math.random());
+                for (let i = 0; i < Math.min(remainingCount, shuffled.length); i++) {
+                    const extraTag = shuffled[i];
+                    if (!selectedTags.includes(extraTag)) {
+                        selectedTags.push(extraTag);
+                    }
                 }
             }
             
@@ -4645,4 +4653,5 @@
         }
     </script>
 </body>
+</html> 
 </html> 
