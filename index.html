@@ -242,16 +242,16 @@
                 Kusapics提示词库
             </h1>
             <div class="flex space-x-2">
-                <button id="lang-zh" class="lang-btn active px-3 py-2 rounded-lg text-sm font-medium bg-pink-500 text-white border border-pink-500">
+                <button id="lang-zh-desktop" class="lang-btn active px-3 py-2 rounded-lg text-sm font-medium bg-pink-500 text-white border border-pink-500">
                     中文
                 </button>
-                <button id="lang-en" class="lang-btn px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                <button id="lang-en-desktop" class="lang-btn px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
                     English
                 </button>
-                <button id="lang-ja" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                <button id="lang-ja-desktop" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
                     日本語
                 </button>
-                <button id="lang-ru" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                <button id="lang-ru-desktop" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
                     Русский
                 </button>
             </div>
@@ -3622,19 +3622,34 @@
                 btn.classList.add('bg-gray-200', 'text-gray-700', 'border-gray-300');
             });
             
-            const activeBtn = document.getElementById(`lang-${currentLanguage}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-gray-200', 'text-gray-700', 'border-gray-300');
-                activeBtn.classList.add('active', 'bg-pink-500', 'text-white', 'border-pink-500');
+            // 更新移动端按钮
+            const activeMobileBtn = document.getElementById(`lang-${currentLanguage}`);
+            if (activeMobileBtn) {
+                activeMobileBtn.classList.remove('bg-gray-200', 'text-gray-700', 'border-gray-300');
+                activeMobileBtn.classList.add('active', 'bg-pink-500', 'text-white', 'border-pink-500');
+            }
+            
+            // 更新网页端按钮
+            const activeDesktopBtn = document.getElementById(`lang-${currentLanguage}-desktop`);
+            if (activeDesktopBtn) {
+                activeDesktopBtn.classList.remove('bg-gray-200', 'text-gray-700', 'border-gray-300');
+                activeDesktopBtn.classList.add('active', 'bg-pink-500', 'text-white', 'border-pink-500');
             }
         }
 
         // 初始化语言切换事件
         function initLanguageSwitcher() {
+            // 移动端语言按钮
             document.getElementById('lang-zh').addEventListener('click', () => switchLanguage('zh'));
             document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
             document.getElementById('lang-ja').addEventListener('click', () => switchLanguage('ja'));
             document.getElementById('lang-ru').addEventListener('click', () => switchLanguage('ru'));
+            
+            // 网页端语言按钮
+            document.getElementById('lang-zh-desktop').addEventListener('click', () => switchLanguage('zh'));
+            document.getElementById('lang-en-desktop').addEventListener('click', () => switchLanguage('en'));
+            document.getElementById('lang-ja-desktop').addEventListener('click', () => switchLanguage('ja'));
+            document.getElementById('lang-ru-desktop').addEventListener('click', () => switchLanguage('ru'));
         }
 
         // 显示帮助弹窗
