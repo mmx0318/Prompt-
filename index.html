@@ -73,103 +73,3590 @@
             opacity: 1;
             visibility: visible;
         }
+        
+        /* 移动端侧边栏按钮样式 */
+        .md\\:hidden .tab-button {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
+            line-height: 1.2;
+            text-overflow: ellipsis;
+            white-space: normal;
+            hyphens: auto;
+        }
+        
+        /* 侧边栏按钮根据语言自适应字体大小 */
+        .md\\:hidden .tab-button[data-lang="ru"] {
+            font-size: 0.625rem;
+        }
+        
+        .md\\:hidden .tab-button[data-lang="en"] {
+            font-size: 0.75rem;
+        }
+        
+        .md\\:hidden .tab-button[data-lang="ja"] {
+            font-size: 0.75rem;
+        }
+        
+        .md\\:hidden .tab-button[data-lang="zh"] {
+            font-size: 0.75rem;
+        }
+        
+        /* 确保侧边栏不被顶部遮挡 */
+        .md\\:hidden .fixed.left-0.top-16 {
+            padding-top: 8px;
+        }
+        
+        /* 移动端头部固定高度和溢出处理 */
+        .md\\:hidden .fixed.top-0 {
+            height: 64px;
+            overflow: hidden;
+        }
+        
+        .md\\:hidden .fixed.top-0 .flex {
+            height: 100%;
+            min-width: 0;
+        }
+        
+        .md\\:hidden .fixed.top-0 h1 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 60%;
+        }
+        
+        /* 根据语言自适应字体大小 */
+        .md\\:hidden .fixed.top-0 h1[data-lang="ru"] {
+            font-size: 1rem;
+        }
+        
+        .md\\:hidden .fixed.top-0 h1[data-lang="en"] {
+            font-size: 1.125rem;
+        }
+        
+        .md\\:hidden .fixed.top-0 h1[data-lang="ja"] {
+            font-size: 1.125rem;
+        }
+        
+        .md\\:hidden .fixed.top-0 h1[data-lang="zh"] {
+            font-size: 1.25rem;
+        }
+        
+        .md\\:hidden .fixed.top-0 .flex > div:last-child {
+            flex-shrink: 0;
+            min-width: 0;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
-    <div class="max-w-7xl mx-auto pb-32">
-        <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-800">
-            Kusapics提示词库
-        </h1>
+    <!-- 移动端：固定头部 -->
+    <div class="md:hidden fixed top-0 left-0 right-0 bg-white z-40 border-b border-gray-200">
+        <!-- 标题和多语言组件 -->
+        <div class="flex justify-between items-center p-4">
+            <h1 id="main-title" class="text-2xl font-bold text-gray-800 flex-shrink-0">
+                Kusapics提示词库
+            </h1>
+            <div class="flex space-x-1 flex-shrink-0">
+                <button id="lang-zh" class="lang-btn active px-2 py-1 rounded text-xs font-medium bg-pink-500 text-white border border-pink-500">
+                    中文
+                </button>
+                <button id="lang-en" class="lang-btn px-2 py-1 rounded text-xs font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    EN
+                </button>
+                <button id="lang-ja" class="lang-btn hidden px-2 py-1 rounded text-xs font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    日
+                </button>
+                <button id="lang-ru" class="lang-btn hidden px-2 py-1 rounded text-xs font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    RU
+                </button>
+            </div>
+        </div>
+    </div>
 
-        <div class="mb-8 p-2 bg-gray-100 rounded-lg">
-            <div class="flex space-x-1 md:space-x-4 overflow-x-auto pb-2">
-                <button id="appearance-tab" class="tab-button active font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+    <!-- 移动端：固定侧边栏 -->
+    <div class="md:hidden fixed left-0 top-16 bottom-32 w-24 bg-gray-100 border-r border-gray-200 z-30">
+        <div class="p-2 flex flex-col h-full">
+            <div class="flex flex-col space-y-2 flex-1">
+                <button id="appearance-tab-mobile" class="tab-button active font-medium py-3 px-2 rounded-lg text-xs">
                     人物外观
                 </button>
-                <button id="pose-tab" class="tab-button font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+                <button id="pose-tab-mobile" class="tab-button font-medium py-3 px-2 rounded-lg text-xs">
                     人物姿势
                 </button>
-                <button id="clothing-tab" class="tab-button font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+                <button id="clothing-tab-mobile" class="tab-button font-medium py-3 px-2 rounded-lg text-xs">
                     人物服装
                 </button>
-                <button id="accessories-tab" class="tab-button font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+                <button id="accessories-tab-mobile" class="tab-button font-medium py-3 px-2 rounded-lg text-xs">
                     饰品装扮
                 </button>
-                <button id="style-tab" class="tab-button font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+                <button id="style-tab-mobile" class="tab-button font-medium py-3 px-2 rounded-lg text-xs">
                     场景画风
                 </button>
-                <button id="species-tab" class="tab-button font-medium py-2 md:py-3 px-3 md:px-8 rounded-lg whitespace-nowrap text-xs md:text-base flex-shrink-0">
+                <button id="species-tab-mobile" class="tab-button font-medium py-3 px-2 rounded-lg text-xs">
+                    其他物种
+                </button>
+            </div>
+            <!-- 移动端帮助图标 -->
+            <div class="mt-auto pt-2">
+                <button id="help-icon-mobile" class="w-full bg-blue-400 text-white p-2 rounded-lg hover:bg-blue-500 transition-all duration-200 shadow-md hover:shadow-lg" title="使用说明">
+                    <svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端：可滚动内容区域 -->
+    <div class="md:hidden fixed left-24 top-16 bottom-32 right-0 overflow-y-auto bg-white">
+        <div class="p-4">
+            <div id="content-container">
+                <div id="appearance-content">
+                    <!-- 人物外观内容 -->
+                </div>
+                <div id="pose-content" class="hidden">
+                    <!-- 人物姿势内容 -->
+                </div>
+                <div id="clothing-content" class="hidden">
+                    <!-- 人物服装内容 -->
+                </div>
+                <div id="accessories-content" class="hidden">
+                    <!-- 饰品装扮内容 -->
+                </div>
+                <div id="style-content" class="hidden">
+                    <!-- 场景画风内容 -->
+                </div>
+                <div id="species-content" class="hidden">
+                    <!-- 其他物种内容 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 桌面端：原有布局 -->
+    <div class="hidden md:block max-w-7xl mx-auto pb-32">
+        <div class="flex justify-between items-center mb-10">
+            <h1 id="main-title" class="text-4xl md:text-5xl font-bold text-gray-800">
+                Kusapics提示词库
+            </h1>
+            <div class="flex space-x-2">
+                <button id="lang-zh" class="lang-btn active px-3 py-2 rounded-lg text-sm font-medium bg-pink-500 text-white border border-pink-500">
+                    中文
+                </button>
+                <button id="lang-en" class="lang-btn px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    English
+                </button>
+                <button id="lang-ja" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    日本語
+                </button>
+                <button id="lang-ru" class="lang-btn hidden px-3 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700 border border-gray-300 hover:bg-gray-300">
+                    Русский
+                </button>
+            </div>
+        </div>
+
+        <!-- 桌面端：水平标签栏 -->
+        <div class="hidden md:block mb-8 p-2 bg-gray-100 rounded-lg">
+            <div class="flex space-x-4 overflow-x-auto pb-2">
+                <button id="appearance-tab" class="tab-button active font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
+                    人物外观
+                </button>
+                <button id="pose-tab" class="tab-button font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
+                    人物姿势
+                </button>
+                <button id="clothing-tab" class="tab-button font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
+                    人物服装
+                </button>
+                <button id="accessories-tab" class="tab-button font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
+                    饰品装扮
+                </button>
+                <button id="style-tab" class="tab-button font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
+                    场景画风
+                </button>
+                <button id="species-tab" class="tab-button font-medium py-3 px-8 rounded-lg whitespace-nowrap text-base flex-shrink-0">
                     其他物种
                 </button>
             </div>
         </div>
 
-        <div id="content-container">
-            <div id="appearance-content">
-                <!-- 人物外观内容 -->
-            </div>
-            <div id="pose-content" class="hidden">
-                <!-- 人物姿势内容 -->
-            </div>
-            <div id="clothing-content" class="hidden">
-                <!-- 人物服装内容 -->
-            </div>
-            <div id="accessories-content" class="hidden">
-                <!-- 饰品装扮内容 -->
-            </div>
-            <div id="style-content" class="hidden">
-                <!-- 场景画风内容 -->
-            </div>
-            <div id="species-content" class="hidden">
-                <!-- 其他物种内容 -->
+        <!-- 桌面端：内容区域 -->
+        <div class="hidden md:block">
+            <div id="content-container-desktop">
+                <div id="appearance-content-desktop">
+                    <!-- 人物外观内容 -->
+                </div>
+                <div id="pose-content-desktop" class="hidden">
+                    <!-- 人物姿势内容 -->
+                </div>
+                <div id="clothing-content-desktop" class="hidden">
+                    <!-- 人物服装内容 -->
+                </div>
+                <div id="accessories-content-desktop" class="hidden">
+                    <!-- 饰品装扮内容 -->
+                </div>
+                <div id="style-content-desktop" class="hidden">
+                    <!-- 场景画风内容 -->
+                </div>
+                <div id="species-content-desktop" class="hidden">
+                    <!-- 其他物种内容 -->
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-pink-50 border-t border-pink-200 shadow-2xl flex flex-col md:flex-row items-center justify-between z-50">
+    <!-- 随机生成提示 -->
+    <div id="random-result-toast" class="fixed bottom-32 left-1/2 transform -translate-x-1/2 bg-pink-400 text-white px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50">
+        <span id="random-result-prefix">随机生成</span> <span id="random-result-count">0</span> <span id="random-result-unit">个tag</span>
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-blue-50 border-t border-blue-200 shadow-2xl flex flex-col md:flex-row items-center justify-between z-50">
         <div class="flex-grow flex items-center space-x-2 mb-4 md:mb-0 md:mr-4">
-            <div id="selected-tags-display" class="flex-grow bg-white text-gray-700 p-3 rounded-xl overflow-x-auto border border-pink-200 max-h-20 md:max-h-none overflow-y-auto">
-                <span class="text-gray-400">点击标签按钮以添加到此处...</span>
+            <div id="selected-tags-display" class="flex-grow bg-white/90 backdrop-blur-sm text-gray-700 p-3 rounded-xl overflow-x-auto border border-blue-200 max-h-20 md:max-h-none overflow-y-auto shadow-inner">
+                <span class="text-blue-400">点击标签按钮以添加到此处...</span>
         </div>
-            <button id="clear-tags-btn" class="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition-colors duration-200" title="清空列表">
+            <button id="clear-tags-btn" class="bg-pink-400 text-white p-2 rounded-lg hover:bg-pink-500 transition-all duration-200 shadow-md hover:shadow-lg" title="清空列表">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
             </button>
-            <button id="random-generate-btn" class="bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600 transition-colors duration-200" title="随机生成">
+            <button id="random-generate-btn" class="bg-blue-400 text-white p-2 rounded-lg hover:bg-blue-500 transition-all duration-200 shadow-md hover:shadow-lg" title="随机生成">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
             </button>
         </div>
-        <button id="copy-selected-btn" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-pink-600 transition-colors duration-200">
-            复制并跳转
-        </button>
+        <div class="flex items-center space-x-2">
+            <button id="copy-selected-btn" class="bg-pink-400 text-white font-bold py-3 px-12 rounded-full shadow-lg hover:bg-pink-500 transition-all duration-200 hover:shadow-xl flex-1">
+                复制并跳转
+            </button>
+        </div>
     </div>
 
     <div id="toast-message" class="toast">
         已复制到剪贴板！
     </div>
     
-    <!-- 使用提示 -->
-    <div class="fixed top-4 right-4 bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded shadow-lg max-w-xs hidden md:block">
-        <div class="flex">
-            <div class="flex-shrink-0">
-                <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+
+    
+    <!-- 使用说明图标按钮（桌面端） -->
+    <button id="help-icon" class="hidden md:block fixed bottom-20 right-4 bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 z-50" title="使用说明">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+    </button>
+
+    <!-- 使用说明弹窗 -->
+    <div id="help-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl max-w-md mx-4 p-6 relative">
+            <button id="close-help" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-            </div>
-            <div class="ml-3">
-                <p class="text-sm">
-                    <strong>使用提示：</strong><br>
-                    点击"复制并跳转"后，标签已复制到剪贴板。<br>
-                    在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。
-                </p>
+            </button>
+            <div class="flex items-start mb-4">
+                <div class="flex-shrink-0">
+                    <svg class="h-6 w-6 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2" id="help-title">使用说明</h3>
+                    <div class="text-sm text-gray-700 space-y-2" id="help-content">
+                        <p><strong>基本操作：</strong></p>
+                        <ul class="list-disc list-inside space-y-1 ml-2">
+                            <li>点击标签按钮选择对应的Danbooru标签</li>
+                            <li>选中的标签会自动添加到下方文本框</li>
+                            <li>再次点击已选中的标签可以移除</li>
+                            <li>点击"复制并跳转"将标签复制到剪贴板并跳转到KusaPics</li>
+                        </ul>
+                        <p class="mt-3"><strong>快捷功能：</strong></p>
+                        <ul class="list-disc list-inside space-y-1 ml-2">
+                            <li>点击垃圾桶图标清空所有标签</li>
+                            <li>点击随机图标自动生成12-25个标签</li>
+                            <li>支持多语言切换（右上角语言按钮）</li>
+                        </ul>
+                        <p class="mt-3"><strong>使用提示：</strong></p>
+                        <p>点击"复制并跳转"后，标签已复制到剪贴板。在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
+        // 多语言文本映射
+        const translations = {
+            zh: {
+                mainTitle: 'Kusapics提示词库',
+                mainTitleMobile: 'Kusapics提示词库',
+                appearanceTab: '人物外观',
+                poseTab: '人物姿势',
+                clothingTab: '人物服装',
+                accessoriesTab: '饰品装扮',
+                styleTab: '场景画风',
+                speciesTab: '其他物种',
+                placeholderText: '点击标签按钮以添加到此处...',
+                copyAndJump: '复制并跳转',
+                clearAll: '清空列表',
+                randomGenerate: '随机生成',
+                usageTip: '使用提示：',
+                usageTipText: '点击"复制并跳转"后，标签已复制到剪贴板。在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。',
+                copiedMessage: '已复制到剪贴板！',
+                randomGeneratedMessage: '已随机生成 {count} 个标签',
+                copiedAndJumpMessage: '已复制标签，正在跳转到 KusaPics...',
+                clearAllMessage: '已清空所有标签',
+                selectTagsFirst: '请先选择一些标签',
+                copyFailed: '复制失败，请手动复制',
+                generatingRandomTags: '正在生成随机标签...',
+                helpTitle: '使用说明',
+                randomGeneratedPrefix: '已随机生成',
+                randomGeneratedUnit: '个标签',
+                randomResultPrefix: '随机生成',
+                randomResultUnit: '个tag',
+                helpContent: '<p><strong>基本操作：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>点击标签按钮选择对应的Danbooru标签</li><li>选中的标签会自动添加到下方文本框</li><li>再次点击已选中的标签可以移除</li><li>点击"复制并跳转"将标签复制到剪贴板并跳转到KusaPics</li></ul><p class="mt-3"><strong>快捷功能：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>点击垃圾桶图标清空所有标签</li><li>点击随机图标自动生成12-25个标签</li><li>支持多语言切换（右上角语言按钮）</li></ul><p class="mt-3"><strong>使用提示：</strong></p><p>点击"复制并跳转"后，标签已复制到剪贴板。在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。</p>'
+            },
+            en: {
+                mainTitle: 'Kusapics Prompt Library',
+                mainTitleMobile: 'Kusapics Prompt Library',
+                appearanceTab: 'Character Appearance',
+                poseTab: 'Character Pose',
+                clothingTab: 'Character Clothing',
+                accessoriesTab: 'Accessories',
+                styleTab: 'Scene & Style',
+                speciesTab: 'Other Species',
+                placeholderText: 'Click tag buttons to add here...',
+                copyAndJump: 'Copy & Jump',
+                clearAll: 'Clear All',
+                randomGenerate: 'Random Generate',
+                usageTip: 'Usage Tip:',
+                usageTipText: 'After clicking "Copy & Jump", tags have been copied to clipboard. Press Ctrl+V to paste in the new KusaPics page.',
+                copiedMessage: 'Copied to clipboard!',
+                randomGeneratedMessage: 'Randomly generated {count} tags',
+                copiedAndJumpMessage: 'Tags copied, jumping to KusaPics...',
+                clearAllMessage: 'All tags cleared',
+                selectTagsFirst: 'Please select some tags first',
+                copyFailed: 'Copy failed, please copy manually',
+                generatingRandomTags: 'Generating random tags...',
+                helpTitle: 'Usage Guide',
+                randomGeneratedPrefix: 'Randomly generated',
+                randomGeneratedUnit: 'tags',
+                randomResultPrefix: 'Randomly generated',
+                randomResultUnit: 'tags',
+                helpContent: '<p><strong>Basic Operations:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Click tag buttons to select corresponding Danbooru tags</li><li>Selected tags will be automatically added to the text box below</li><li>Click selected tags again to remove them</li><li>Click "Copy & Jump" to copy tags to clipboard and jump to KusaPics</li></ul><p class="mt-3"><strong>Quick Features:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Click trash icon to clear all tags</li><li>Click random icon to auto-generate 12-25 tags</li><li>Support multi-language switching (language buttons in top right)</li></ul><p class="mt-3"><strong>Usage Tip:</strong></p><p>After clicking "Copy & Jump", tags have been copied to clipboard. Press Ctrl+V to paste in the new KusaPics page.</p>'
+            },
+            ja: {
+                mainTitle: 'Kusapics プロンプトライブラリ',
+                mainTitleMobile: 'Kusapics プロンプト',
+                appearanceTab: 'キャラクター外見',
+                poseTab: 'キャラクターポーズ',
+                clothingTab: 'キャラクター服装',
+                accessoriesTab: 'アクセサリー',
+                styleTab: 'シーン・スタイル',
+                speciesTab: 'その他の種族',
+                placeholderText: 'タグボタンをクリックしてここに追加...',
+                copyAndJump: 'コピー＆ジャンプ',
+                clearAll: 'すべてクリア',
+                randomGenerate: 'ランダム生成',
+                usageTip: '使用ヒント:',
+                usageTipText: '「コピー＆ジャンプ」をクリック後、タグがクリップボードにコピーされました。新しいKusaPicsページでCtrl+Vを押して貼り付けてください。',
+                copiedMessage: 'クリップボードにコピーしました！',
+                randomGeneratedMessage: '{count}個のタグをランダム生成しました',
+                copiedAndJumpMessage: 'タグをコピーしました、KusaPicsにジャンプ中...',
+                clearAllMessage: 'すべてのタグをクリアしました',
+                selectTagsFirst: 'まずタグを選択してください',
+                copyFailed: 'コピーに失敗しました、手動でコピーしてください',
+                generatingRandomTags: 'ランダムタグを生成中...',
+                helpTitle: '使用ガイド',
+                randomResultPrefix: 'ランダム生成',
+                randomResultUnit: '個のタグ',
+                helpContent: '<p><strong>基本操作：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>タグボタンをクリックして対応するDanbooruタグを選択</li><li>選択されたタグは自動的に下のテキストボックスに追加されます</li><li>選択されたタグを再度クリックして削除</li><li>「コピー＆ジャンプ」をクリックしてタグをクリップボードにコピーし、KusaPicsにジャンプ</li></ul><p class="mt-3"><strong>クイック機能：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>ゴミ箱アイコンをクリックしてすべてのタグをクリア</li><li>ランダムアイコンをクリックして12-25個のタグを自動生成</li><li>多言語切り替えをサポート（右上の言語ボタン）</li></ul><p class="mt-3"><strong>使用ヒント：</strong></p><p>「コピー＆ジャンプ」をクリック後、タグがクリップボードにコピーされました。新しいKusaPicsページでCtrl+Vを押して貼り付けてください。</p>'
+            },
+            ru: {
+                mainTitle: 'Библиотека промптов Kusapics',
+                mainTitleMobile: 'Kusapics промпты',
+                appearanceTab: 'Внешность персонажа',
+                poseTab: 'Поза персонажа',
+                clothingTab: 'Одежда персонажа',
+                accessoriesTab: 'Аксессуары',
+                styleTab: 'Сцена и стиль',
+                speciesTab: 'Другие виды',
+                placeholderText: 'Нажмите кнопки тегов, чтобы добавить сюда...',
+                copyAndJump: 'Копировать и перейти',
+                clearAll: 'Очистить все',
+                randomGenerate: 'Случайная генерация',
+                usageTip: 'Совет по использованию:',
+                usageTipText: 'После нажатия "Копировать и перейти" теги скопированы в буфер обмена. Нажмите Ctrl+V для вставки на новой странице KusaPics.',
+                copiedMessage: 'Скопировано в буфер обмена!',
+                randomGeneratedMessage: 'Случайно сгенерировано {count} тегов',
+                copiedAndJumpMessage: 'Теги скопированы, переход на KusaPics...',
+                clearAllMessage: 'Все теги очищены',
+                selectTagsFirst: 'Сначала выберите несколько тегов',
+                copyFailed: 'Копирование не удалось, скопируйте вручную',
+                generatingRandomTags: 'Генерация случайных тегов...',
+                helpTitle: 'Руководство пользователя',
+                randomResultPrefix: 'Случайно сгенерировано',
+                randomResultUnit: 'тегов',
+                helpContent: '<p><strong>Основные операции:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Нажмите кнопки тегов для выбора соответствующих тегов Danbooru</li><li>Выбранные теги автоматически добавляются в текстовое поле ниже</li><li>Нажмите выбранные теги снова, чтобы удалить их</li><li>Нажмите "Копировать и перейти" для копирования тегов в буфер обмена и перехода на KusaPics</li></ul><p class="mt-3"><strong>Быстрые функции:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Нажмите значок корзины для очистки всех тегов</li><li>Нажмите значок случайного выбора для автоматической генерации 12-25 тегов</li><li>Поддержка переключения языков (кнопки языков в правом верхнем углу)</li></ul><p class="mt-3"><strong>Совет по использованию:</strong></p><p>После нажатия "Копировать и перейти" теги скопированы в буфер обмена. Нажмите Ctrl+V для вставки на новой странице KusaPics.</p>'
+            }
+        };
+
+        // 提示词库多语言翻译
+        const promptTranslations = {
+            zh: {
+                // 中文翻译映射（保持原样）
+                '人物外观': '人物外观',
+                '视角视线': '视角视线',
+                '人物及年龄': '人物及年龄',
+                '肤色及体型': '肤色及体型',
+                '人物五官': '人物五官',
+                '人物表情': '人物表情',
+                '人物发色': '人物发色',
+                '人物发型': '人物发型',
+                '人物姿势': '人物姿势',
+                '人物服装': '人物服装',
+                '饰品装扮': '饰品装扮',
+                '场景画风': '场景画风',
+                '其他物种': '其他物种',
+                '动态角度': '动态角度',
+                '从左侧视角': '从左侧视角',
+                '从右侧视角': '从右侧视角',
+                '从上方': '从上方',
+                '从下面': '从下面',
+                '从下往上看': '从下往上看',
+                '从上往下看': '从上往下看',
+                '面对画面或观众': '面对画面或观众',
+                '两个角色对视': '两个角色对视',
+                '看着别的方': '看着别的方',
+                '回头看': '回头看',
+                '向上看': '向上看',
+                '1个女孩': '1个女孩',
+                '1个男孩': '1个男孩',
+                '1个其他人': '1个其他人',
+                '多个女孩': '多个女孩',
+                '青少年（13-19）': '青少年（13-19）',
+                '青少年早期（11-15）': '青少年早期（11-15）',
+                '大人': '大人',
+                '老人': '老人',
+                '子供': '子供',
+                '幼稚園': '幼稚園',
+                '幼儿': '幼儿',
+                '萝莉': '萝莉',
+                '正太': '正太',
+                '白': '白',
+                '苍白': '苍白',
+                '褐色': '褐色',
+                '有光泽': '有光泽',
+                '有色皮肤': '有色皮肤',
+                '日晒': '日晒',
+                '日晒痕迹': '日晒痕迹',
+                '纹身': '纹身',
+                '油性': '油性',
+                '运动员': '运动员',
+                '模特': '模特',
+                '苗条': '苗条',
+                '诱惑': '诱惑',
+                '丰满': '丰满',
+                '肥胖': '肥胖',
+                '高大': '高大',
+                '纤弱': '纤弱',
+                'Q版': 'Q版',
+                '妊娠': '妊娠',
+                '肌肉': '肌肉',
+                '细腰': '细腰',
+                '大屁股': '大屁股',
+                '平胸': '平胸',
+                '小胸': '小胸',
+                '普通胸': '普通胸',
+                '大胸': '大胸',
+                '超大胸': '超大胸',
+                '腋窝': '腋窝',
+                '鎖骨': '鎖骨',
+                '肚脐': '肚脐',
+                '屁股': '屁股',
+                '大腿': '大腿',
+                '浓眉': '浓眉',
+                '眉毛翘起': '眉毛翘起',
+                '短眉毛': '短眉毛',
+                'V字眉': 'V字眉',
+                '黒色眼睛': '黒色眼睛',
+                '白色眼睛': '白色眼睛',
+                '红色眼睛': '红色眼睛',
+                '蓝色眼睛': '蓝色眼睛',
+                '绿色眼睛': '绿色眼睛',
+                '紫色眼睛': '紫色眼睛',
+                '银色眼睛': '银色眼睛',
+                '金色眼睛': '金色眼睛',
+                '灰色眼睛': '灰色眼睛',
+                '水色眼睛': '水色眼睛',
+                '茶色眼睛': '茶色眼睛',
+                '粉色眼睛': '粉色眼睛',
+                '橙色眼睛': '橙色眼睛',
+                '异色眼睛': '异色眼睛',
+                '空洞眼睛': '空洞眼睛',
+                '睁大眼睛': '睁大眼睛',
+                '闭上一只眼': '闭上一只眼',
+                '半闭眼睛': '半闭眼睛',
+                '渐变眼': '渐变眼',
+                '水汪汪大眼': '水汪汪大眼',
+                '翻白眼': '翻白眼',
+                '斗鸡眼': '斗鸡眼',
+                '猫眼': '猫眼',
+                '布满血丝的眼睛': '布满血丝的眼睛',
+                '发光眼睛': '发光眼睛',
+                '吊眼角': '吊眼角',
+                '垂眼角': '垂眼角',
+                '恶魔眼': '恶魔眼',
+                '收缩的瞳孔': '收缩的瞳孔',
+                '魔瞳': '魔瞳',
+                '蛇瞳': '蛇瞳',
+                '闪闪发光瞳': '闪闪发光瞳',
+                '花形瞳': '花形瞳',
+                '爱心瞳': '爱心瞳',
+                '异色瞳': '异色瞳',
+                '美瞳': '美瞳',
+                '长睫毛': '长睫毛',
+                '彩色睫毛': '彩色睫毛',
+                '眼下痣': '眼下痣',
+                '笑': '笑',
+                '微笑': '微笑',
+                '惨笑': '惨笑',
+                '邪恶笑': '邪恶笑',
+                '天使笑': '天使笑',
+                '强笑': '强笑',
+                '诱人笑': '诱人笑',
+                '咧嘴笑': '咧嘴笑',
+                '邪恶咧嘴笑': '邪恶咧嘴笑',
+                '傻笑': '傻笑',
+                '怒': '怒',
+                '悲伤': '悲伤',
+                '哭': '哭',
+                '泪': '泪',
+                '恐怖': '恐怖',
+                '不好的': '不好的',
+                '恼怒': '恼怒',
+                '黑暗人格': '黑暗人格',
+                '多亚脸': '多亚脸',
+                '脸红': '脸红',
+                '脸通红': '脸通红',
+                '无聊': '无聊',
+                '罪恶感': '罪恶感',
+                '无感情': '无感情',
+                '决心': '决心',
+                '接吻': '接吻',
+                '失望': '失望',
+                '轻蔑': '轻蔑',
+                '嫉妒': '嫉妒',
+                '厌恶': '厌恶',
+                '困惑': '困惑',
+                '烦恼挑眉': '烦恼挑眉',
+                'V型眉': 'V型眉',
+                '羞耻': '羞耻',
+                '顽皮': '顽皮',
+                '困乏': '困乏',
+                '表情符号/风格化': '表情符号/风格化',
+                '黒髪': '黒髪',
+                '金髪': '金髪',
+                '棕髪': '棕髪',
+                '红髪': '红髪',
+                '粉髪': '粉髪',
+                '蓝髪': '蓝髪',
+                '水色髪': '水色髪',
+                '緑髪': '緑髪',
+                '紫髪': '紫髪',
+                '橙髪': '橙髪',
+                '銀髪': '銀髪',
+                '灰髪': '灰髪',
+                '白髪': '白髪',
+                '五颜六色': '五颜六色',
+                '条纹色': '条纹色',
+                '渐变色': '渐变色',
+                '内侧彩发': '内侧彩发',
+                '分色(着重发梢)': '分色(着重发梢)',
+                '长度与发量 (Length and Volume)': '长度与发量 (Length and Volume)',
+                '发型 (Hairstyles)': '发型 (Hairstyles)',
+                '高耸发型 (Hairstyles - Tall hair)': '高耸发型 (Hairstyles - Tall hair)',
+                '发质 (Hair Texture)': '发质 (Hair Texture)',
+                '头部前方 (Front of the head)': '头部前方 (Front of the head)',
+                '头顶 (Top of the head)': '头顶 (Top of the head)',
+                '头部后方 (Back of the head)': '头部后方 (Back of the head)',
+                '身体上的头发 (Head hair over the body)': '身体上的头发 (Head hair over the body)',
+                '杂项 (Misc)': '杂项 (Misc)',
+                '超短发': '超短发',
+                '短发': '短发',
+                '中长发': '中长发',
+                '长发': '长发',
+                '超长发': '超长发',
+                '极长发': '极长发',
+                '蓬松发': '蓬松发',
+                '秃头': '秃头',
+                '女性秃头': '女性秃头',
+                '秃顶': '秃顶',
+                '寸头': '寸头',
+                '平头': '平头',
+                '精灵短发': '精灵短发',
+                '波波头': '波波头',
+                '内翻波波头': '内翻波波头',
+                '锅盖头': '锅盖头',
+                '朋克头': '朋克头',
+                '平顶头': '平顶头',
+                '丁髷': '丁髷',
+                '分发': '分发',
+                '外翻发': '外翻发',
+                '狼剪': '狼剪',
+                '姬发式': '姬发式',
+                '鲻鱼头': '鲻鱼头',
+                '班图结': '班图结',
+                '蝴蝶结发型': '蝴蝶结发型',
+                '双丫髻': '双丫髻',
+                '四叶草发型': '四叶草发型',
+                '兔耳发型': '兔耳发型',
+                '辫子': '辫子',
+                '编织刘海': '编织刘海',
+                '前辫': '前辫',
+                '侧辫': '侧辫',
+                '皇冠辫': '皇冠辫',
+                '单辫': '单辫',
+                '多股辫': '多股辫',
+                '双辫': '双辫',
+                '低双辫': '低双辫',
+                '三股辫': '三股辫',
+                '四股辫': '四股辫',
+                '非洲辫': '非洲辫',
+                '垄沟辫': '垄沟辫',
+                '脏辫': '脏辫',
+                '花朵发型': '花朵发型',
+                '发髻': '发髻',
+                '编织发髻': '编织发髻',
+                '单发髻': '单发髻',
+                '双发髻': '双发髻',
+                '锥形发髻': '锥形发髻',
+                '甜甜圈发髻': '甜甜圈发髻',
+                '爱心发髻': '爱心发髻',
+                '三发髻': '三发髻',
+                '发环': '发环',
+                '飞仙髻': '飞仙髻',
+                '胜山髷': '胜山髷',
+                '单发环': '单发环',
+                '半扎发': '半扎发',
+                '半扎辫': '半扎辫',
+                '半扎半披辫': '半扎半披辫',
+                '单侧扎发': '单侧扎发',
+                '双侧扎发': '双侧扎发',
+                '低位长辫': '低位长辫',
+                '低位长扎发': '低位长扎发',
+                '角发': '角发',
+                '多重扎发': '多重扎发',
+                '日本传统发型': '日本传统发型',
+                '马尾辫': '马尾辫',
+                '折叠马尾': '折叠马尾',
+                '前马尾': '前马尾',
+                '高马尾': '高马尾',
+                '短马尾': '短马尾',
+                '侧马尾': '侧马尾',
+                '分叉马尾': '分叉马尾',
+                '星形发型': '星形发型',
+                '发髻': '发髻',
+                '双马尾': '双马尾',
+                '低双马尾': '低双马尾',
+                '短双马尾': '短双马尾',
+                '不对称双马尾': '不对称双马尾',
+                '三尾': '三尾',
+                '四尾': '四尾',
+                '五尾': '五尾',
+                '扭曲发型': '扭曲发型',
+                '非洲爆炸头': '非洲爆炸头',
+                '巨型爆炸头': '巨型爆炸头',
+                '蜂巢发型': '蜂巢发型',
+                '冠状发型': '冠状发型',
+                '两把头': '两把头',
+                '飞机头': '飞机头',
+                '蓬巴杜刘海': '蓬巴杜刘海',
+                '冲天辫子混合茂盛发型': '冲天辫子混合茂盛发型',
+                '卷发': '卷发',
+                '螺旋卷发': '螺旋卷发',
+                '双螺旋卷发': '双螺旋卷发',
+                '三螺旋卷发': '三螺旋卷发',
+                '发片': '发片',
+                '凌乱发': '凌乱发',
+                '尖发': '尖发',
+                '小卷发': '小卷发',
+                '刺猬头': '刺猬头',
+                '直发': '直发',
+                '波浪发': '波浪发',
+                '蓬松发': '蓬松发',
+                '刘海': '刘海',
+                '拱形刘海': '拱形刘海',
+                '不对称刘海': '不对称刘海',
+                '刘海后梳': '刘海后梳',
+                '齐刘海': '齐刘海',
+                '编织刘海': '编织刘海',
+                '交叉刘海': '交叉刘海',
+                '参差刘海': '参差刘海',
+                '稀疏刘海': '稀疏刘海',
+                '斜刘海': '斜刘海',
+                '獠牙刘海': '獠牙刘海',
+                '短刘海': '短刘海',
+                '长刘海': '长刘海',
+                '眼间发': '眼间发',
+                '遮单眼发': '遮单眼发',
+                '遮眼发': '遮眼发',
+                '分开刘海': '分开刘海',
+                '窗帘式刘海': '窗帘式刘海',
+                '侧扫刘海': '侧扫刘海',
+                '彩色刘海': '彩色刘海',
+                '发束': '发束',
+                '单束发': '单束发',
+                '侧发': '侧发',
+                '不对称侧发': '不对称侧发',
+                '螺旋卷侧发': '螺旋卷侧发',
+                '低扎侧发': '低扎侧发',
+                '侧发后扎': '侧发后扎',
+                '单侧发': '单侧发',
+                '美人尖': '美人尖',
+                '呆毛': '呆毛',
+                '心形呆毛': '心形呆毛',
+                '巨大呆毛': '巨大呆毛',
+                '天线发': '天线发',
+                '心形天线发': '心形天线发',
+                '偏分盖顶': '偏分盖顶',
+                '头发后梳': '头发后梳',
+                '大背头': '大背头',
+                '莫霍克发型': '莫霍克发型',
+                '乌克兰哥萨克发型': '乌克兰哥萨克发型',
+                '独立颈后发': '独立颈后发',
+                '头发比基尼': '头发比基尼',
+                '头发遮挡': '头发遮挡',
+                '头发在自己嘴里': '头发在自己嘴里',
+                '头发遮胸': '头发遮胸',
+                '头发遮单胸': '头发遮单胸',
+                '头发遮挡私处': '头发遮挡私处',
+                '头发过肩': '头发过肩',
+                '头发围巾': '头发围巾',
+                '另类发型': '另类发型',
+                '披发': '披发',
+                '盘发': '盘发',
+                '不对称发型': '不对称发型',
+                '侧削发型': '侧削发型',
+                '齐发尾': '齐发尾',
+                '人物姿势': '人物姿势',
+                '人物服装': '人物服装',
+                '饰品装扮': '饰品装扮',
+                '场景画风': '场景画风',
+                '其他物种': '其他物种',
+                // 人物姿势相关
+                '人物手势': '人物手势',
+                '人物视线': '人物视线',
+                '整体动作': '整体动作',
+                '上半身动作': '上半身动作',
+                '站立': '站立',
+                '弯腰': '弯腰',
+                '弓背': '弓背',
+                '拉伸': '拉伸',
+                '躺着': '躺着',
+                '趴着': '趴着',
+                '侧躺': '侧躺',
+                '坐着': '坐着',
+                'w_sitting': 'w_sitting',
+                '跨坐': '跨坐',
+                '四肢着地': '四肢着地',
+                'jack-o': 'jack-o',
+                '双腿过头': '双腿过头',
+                '胎儿姿势': '胎儿姿势',
+                '自拍': '自拍',
+                '通过腿看': '通过腿看',
+                '二郎腿': '二郎腿',
+                '跪姿': '跪姿',
+                '萝莉坐': '萝莉坐',
+                '裸露的肩膀': '裸露的肩膀',
+                '坐在地上': '坐在地上',
+                '提裙': '提裙',
+                '一字马': '一字马',
+                '手臂在背后': '手臂在背后',
+                '狗趴式': '狗趴式',
+                '鸭子坐（女子座）': '鸭子坐（女子座）',
+                '泡温泉': '泡温泉',
+                '张开腿': '张开腿',
+                '趴着翘臀': '趴着翘臀',
+                '開腳': '開腳',
+                '漏腋': '漏腋',
+                '坐在地上(XWX)': '坐在地上(XWX)',
+                '战斗姿态': '战斗姿态',
+                '坐在椅子上': '坐在椅子上',
+                '瑜伽': '瑜伽',
+                '绝对空域（大腿三角）': '绝对空域（大腿三角）',
+                '骑马': '骑马',
+                '掀裙子': '掀裙子',
+                '行走': '行走',
+                '正骑乘': '正骑乘',
+                '祈祷': '祈祷',
+                '蹲着': '蹲着',
+                '坐在床上': '坐在床上',
+                '翘PP': '翘PP',
+                '抱膝': '抱膝',
+                '公主抱': '公主抱',
+                '侧躺着': '侧躺着',
+                '抚摸': '抚摸',
+                '撩起衣服': '撩起衣服',
+                '盘腿坐': '盘腿坐',
+                '动态姿势': '动态姿势',
+                '敬礼': '敬礼',
+                '侧身坐': '侧身坐',
+                '鸭子坐': '鸭子坐',
+                '盘腿': '盘腿',
+                '跪着': '跪着',
+                '躬躯': '躬躯',
+                '膝枕': '膝枕',
+                '学猫叫': '学猫叫',
+                '单膝跪地': '单膝跪地',
+                '蜷起身子侧躺': '蜷起身子侧躺',
+                '仰卧': '仰卧',
+                '俯卧': '俯卧',
+                '屈膝抱腿坐': '屈膝抱腿坐',
+                '立式跨骑': '立式跨骑',
+                '站着': '站着',
+                '绑在十字架上': '绑在十字架上',
+                '双腿缠绕': '双腿缠绕',
+                '戴耳机': '戴耳机',
+                '鬼姿势': '鬼姿势',
+                '回头': '回头',
+                '歪头': '歪头',
+                '前倾': '前倾',
+                '嘘手势': '嘘手势',
+                '翘大拇指': '翘大拇指',
+                '手放脑后': '手放脑后',
+                '手放身后': '手放身后',
+                '手插口袋': '手插口袋',
+                '双手插口袋': '双手插口袋',
+                '十指相扣': '十指相扣',
+                'V字手势': 'V字手势',
+                '手在地板上': '手在地板上',
+                '手在额头上': '手在额头上',
+                '手在肚子上': '手在肚子上',
+                '手在肩膀上': '手在肩膀上',
+                '手搭别人的腿': '手搭别人的腿',
+                '手搭别人的腰': '手搭别人的腰',
+                '双手合十': '双手合十',
+                '翼展双臂': '翼展双臂',
+                '手放嘴边': '手放嘴边',
+                '手枪手势': '手枪手势',
+                '猫爪手势': '猫爪手势',
+                '远眺': '远眺',
+                '照镜子': '照镜子',
+                '看手机': '看手机',
+                '看向别处': '看向别处',
+                '透过刘海看': '透过刘海看',
+                '透过眼镜看': '透过眼镜看',
+                '面向观者': '面向观者',
+                '靠近观者': '靠近观者',
+                '舞台角度': '舞台角度',
+                '凝视': '凝视',
+                '向上看': '向上看',
+                '向下看': '向下看',
+                '看向旁边': '看向旁边',
+                '移开目光': '移开目光',
+                '嗅闻': '嗅闻',
+                '公主抱': '公主抱',
+                '拥抱': '拥抱',
+                '背对背': '背对背',
+                '耶': '耶',
+                '调整过膝袜': '调整过膝袜',
+                '抓住': '抓住',
+                '走': '走',
+                '跑': '跑',
+                '跳': '跳',
+                '飞': '飞',
+                '靠墙': '靠墙',
+                '躺': '躺',
+                '从背后抱': '从背后抱',
+                '遛狗': '遛狗',
+                '泡温泉': '泡温泉',
+                '骑马': '骑马',
+                '自拍': '自拍',
+                '一字马': '一字马',
+                '敬礼': '敬礼',
+                '祈祷': '祈祷',
+                '冥想': '冥想',
+                '伸懒腰': '伸懒腰',
+                '托腮': '托腮',
+                '牵手': '牵手',
+                '单手叉腰': '单手叉腰',
+                '双手叉腰': '双手叉腰',
+                '招手': '招手',
+                '撮头发': '撮头发',
+                '拉头发': '拉头发',
+                '抓别人的头发': '抓别人的头发',
+                '竖中指': '竖中指',
+                '弯腰': '弯腰',
+                '亲吻脸颊': '亲吻脸颊',
+                '亲吻额头': '亲吻额头',
+                '踮起脚尖吻': '踮起脚尖吻',
+                '头顶水果': '头顶水果',
+                '咬手套': '咬手套',
+                '脸贴脸': '脸贴脸',
+                '手牵手': '手牵手',
+                '双手交叉': '双手交叉',
+                '双手张开伸直': '双手张开伸直',
+                '挥动手臂': '挥动手臂',
+                '伸出手臂': '伸出手臂',
+                '用手臂支撑': '用手臂支撑',
+                '搂着手臂': '搂着手臂',
+                '拿着': '拿着',
+                '拿着餐刀': '拿着餐刀',
+                '拿着枪': '拿着枪',
+                '拿着杯子': '拿着杯子',
+                '拿着食物': '拿着食物',
+                '拿着书': '拿着书',
+                '拿着魔杖': '拿着魔杖',
+                '打着伞': '打着伞',
+                '捧着花': '捧着花',
+                '拿着麦克风': '拿着麦克风',
+                '抱着物品': '抱着物品',
+                '抱着心': '抱着心'
+            },
+            en: {
+                '人物外观': 'Character Appearance',
+                '视角视线': 'View & Gaze',
+                '人物及年龄': 'Character & Age',
+                '肤色及体型': 'Skin & Body Type',
+                '人物五官': 'Facial Features',
+                '人物表情': 'Facial Expressions',
+                '人物发色': 'Hair Color',
+                '人物发型': 'Hair Style',
+                '人物姿势': 'Character Pose',
+                '人物服装': 'Character Clothing',
+                '饰品装扮': 'Accessories',
+                '场景画风': 'Scene & Style',
+                '其他物种': 'Other Species',
+                '动态角度': 'Dynamic Angle',
+                '从左侧视角': 'From Left Side',
+                '从右侧视角': 'From Right Side',
+                '从上方': 'From Above',
+                '从下面': 'From Below',
+                '从下往上看': 'Looking Up from Below',
+                '从上往下看': 'Looking Down from Above',
+                '面对画面或观众': 'Facing Camera/Viewer',
+                '两个角色对视': 'Two Characters Looking at Each Other',
+                '看着别的方': 'Looking Away',
+                '回头看': 'Looking Back',
+                '向上看': 'Looking Up',
+                '1个女孩': '1 Girl',
+                '1个男孩': '1 Boy',
+                '1个其他人': '1 Other',
+                '多个女孩': 'Multiple Girls',
+                '青少年（13-19）': 'Teenager (13-19)',
+                '青少年早期（11-15）': 'Early Teen (11-15)',
+                '大人': 'Adult',
+                '老人': 'Elderly',
+                '子供': 'Child',
+                '幼稚園': 'Kindergarten',
+                '幼儿': 'Toddler',
+                '萝莉': 'Loli',
+                '正太': 'Shota',
+                '白': 'White',
+                '苍白': 'Pale',
+                '褐色': 'Brown',
+                '有光泽': 'Glossy',
+                '有色皮肤': 'Colored Skin',
+                '日晒': 'Tanned',
+                '日晒痕迹': 'Tan Lines',
+                '纹身': 'Tattoo',
+                '油性': 'Oily',
+                '运动员': 'Athletic',
+                '模特': 'Model',
+                '苗条': 'Slim',
+                '诱惑': 'Seductive',
+                '丰满': 'Plump',
+                '肥胖': 'Obese',
+                '高大': 'Tall',
+                '纤弱': 'Slender',
+                'Q版': 'Chibi',
+                '妊娠': 'Pregnant',
+                '肌肉': 'Muscular',
+                '细腰': 'Thin Waist',
+                '大屁股': 'Big Butt',
+                '平胸': 'Flat Chest',
+                '小胸': 'Small Chest',
+                '普通胸': 'Normal Chest',
+                '大胸': 'Big Chest',
+                '超大胸': 'Huge Chest',
+                '腋窝': 'Armpit',
+                '鎖骨': 'Collarbone',
+                '肚脐': 'Belly Button',
+                '屁股': 'Butt',
+                '大腿': 'Thigh',
+                '浓眉': 'Thick Eyebrows',
+                '眉毛翘起': 'Raised Eyebrows',
+                '短眉毛': 'Short Eyebrows',
+                'V字眉': 'V-shaped Eyebrows',
+                '黒色眼睛': 'Black Eyes',
+                '白色眼睛': 'White Eyes',
+                '红色眼睛': 'Red Eyes',
+                '蓝色眼睛': 'Blue Eyes',
+                '绿色眼睛': 'Green Eyes',
+                '紫色眼睛': 'Purple Eyes',
+                '银色眼睛': 'Silver Eyes',
+                '金色眼睛': 'Golden Eyes',
+                '灰色眼睛': 'Gray Eyes',
+                '水色眼睛': 'Aqua Eyes',
+                '茶色眼睛': 'Brown Eyes',
+                '粉色眼睛': 'Pink Eyes',
+                '橙色眼睛': 'Orange Eyes',
+                '异色眼睛': 'Heterochromia',
+                '空洞眼睛': 'Empty Eyes',
+                '睁大眼睛': 'Wide Eyes',
+                '闭上一只眼': 'One Eye Closed',
+                '半闭眼睛': 'Half-closed Eyes',
+                '渐变眼': 'Gradient Eyes',
+                '水汪汪大眼': 'Tearful Big Eyes',
+                '翻白眼': 'Rolling Eyes',
+                '斗鸡眼': 'Cross-eyed',
+                '猫眼': 'Cat Eyes',
+                '布满血丝的眼睛': 'Bloodshot Eyes',
+                '发光眼睛': 'Glowing Eyes',
+                '吊眼角': 'Upturned Eyes',
+                '垂眼角': 'Downturned Eyes',
+                '恶魔眼': 'Demon Eyes',
+                '收缩的瞳孔': 'Constricted Pupils',
+                '魔瞳': 'Magic Eyes',
+                '蛇瞳': 'Snake Eyes',
+                '闪闪发光瞳': 'Sparkling Eyes',
+                '花形瞳': 'Flower-shaped Eyes',
+                '爱心瞳': 'Heart-shaped Eyes',
+                '异色瞳': 'Heterochromia',
+                '美瞳': 'Colored Contacts',
+                '长睫毛': 'Long Eyelashes',
+                '彩色睫毛': 'Colored Eyelashes',
+                '眼下痣': 'Under-eye Mole',
+                '笑': 'Smile',
+                '微笑': 'Gentle Smile',
+                '惨笑': 'Bitter Smile',
+                '邪恶笑': 'Evil Smile',
+                '天使笑': 'Angel Smile',
+                '强笑': 'Forced Smile',
+                '诱人笑': 'Seductive Smile',
+                '咧嘴笑': 'Grin',
+                '邪恶咧嘴笑': 'Evil Grin',
+                '傻笑': 'Silly Smile',
+                '怒': 'Angry',
+                '悲伤': 'Sad',
+                '哭': 'Crying',
+                '泪': 'Tears',
+                '恐怖': 'Terrified',
+                '不好的': 'Bad',
+                '恼怒': 'Irritated',
+                '黑暗人格': 'Dark Personality',
+                '多亚脸': 'Doya Face',
+                '脸红': 'Blushing',
+                '脸通红': 'Deep Blush',
+                '无聊': 'Bored',
+                '罪恶感': 'Guilty',
+                '无感情': 'Expressionless',
+                '决心': 'Determined',
+                '接吻': 'Kissing',
+                '失望': 'Disappointed',
+                '轻蔑': 'Contempt',
+                '嫉妒': 'Jealous',
+                '厌恶': 'Disgusted',
+                '困惑': 'Confused',
+                '烦恼挑眉': 'Troubled Raised Eyebrow',
+                'V型眉': 'V-shaped Eyebrows',
+                '羞耻': 'Ashamed',
+                '顽皮': 'Mischievous',
+                '困乏': 'Sleepy',
+                '表情符号/风格化': 'Emoji/Stylized',
+                '黒髪': 'Black Hair',
+                '金髪': 'Blonde Hair',
+                '棕髪': 'Brown Hair',
+                '红髪': 'Red Hair',
+                '粉髪': 'Pink Hair',
+                '蓝髪': 'Blue Hair',
+                '水色髪': 'Aqua Hair',
+                '緑髪': 'Green Hair',
+                '紫髪': 'Purple Hair',
+                '橙髪': 'Orange Hair',
+                '銀髪': 'Silver Hair',
+                '灰髪': 'Gray Hair',
+                '白髪': 'White Hair',
+                '五颜六色': 'Multicolored',
+                '条纹色': 'Striped',
+                '渐变色': 'Gradient',
+                '内侧彩发': 'Inner Colored Hair',
+                '分色(着重发梢)': 'Split Color (Emphasis on Tips)',
+                '长度与发量 (Length and Volume)': 'Length and Volume',
+                '发型 (Hairstyles)': 'Hairstyles',
+                '高耸发型 (Hairstyles - Tall hair)': 'Tall Hairstyles',
+                '发质 (Hair Texture)': 'Hair Texture',
+                '头部前方 (Front of the head)': 'Front of Head',
+                '头顶 (Top of the head)': 'Top of Head',
+                '头部后方 (Back of the head)': 'Back of Head',
+                '身体上的头发 (Head hair over the body)': 'Hair Over Body',
+                '杂项 (Misc)': 'Misc',
+                '超短发': 'Very Short Hair',
+                '短发': 'Short Hair',
+                '中长发': 'Medium Hair',
+                '长发': 'Long Hair',
+                '超长发': 'Very Long Hair',
+                '极长发': 'Absurdly Long Hair',
+                '蓬松发': 'Big Hair',
+                '秃头': 'Bald',
+                '女性秃头': 'Bald Female',
+                '秃顶': 'Balding',
+                '寸头': 'Buzz Cut',
+                '平头': 'Crew Cut',
+                '精灵短发': 'Pixie Cut',
+                '波波头': 'Bob Cut',
+                '内翻波波头': 'Inverted Bob',
+                '锅盖头': 'Bowl Cut',
+                '朋克头': 'Undercut',
+                '平顶头': 'Flattop',
+                '丁髷': 'Chonmage',
+                '分发': 'Parted Hair',
+                '外翻发': 'Flipped Hair',
+                '狼剪': 'Wolf Cut',
+                '姬发式': 'Hime Cut',
+                '鲻鱼头': 'Mullet',
+                '班图结': 'Bantu Knots',
+                '蝴蝶结发型': 'Bow-shaped Hair',
+                '双丫髻': 'Shuangyaji',
+                '四叶草发型': 'Four Leaf Clover Hairstyle',
+                '兔耳发型': 'Rabbit Hairstyle',
+                '辫子': 'Braid',
+                '编织刘海': 'Braided Bangs',
+                '前辫': 'Front Braid',
+                '侧辫': 'Side Braid',
+                '皇冠辫': 'Crown Braid',
+                '单辫': 'Single Braid',
+                '多股辫': 'Multiple Braids',
+                '双辫': 'Twin Braids',
+                '低双辫': 'Low Twin Braids',
+                '三股辫': 'Tri Braids',
+                '四股辫': 'Quad Braids',
+                '非洲辫': 'African Braids',
+                '垄沟辫': 'Cornrows',
+                '脏辫': 'Dreadlocks',
+                '花朵发型': 'Flower-shaped Hair',
+                '发髻': 'Hair Bun',
+                '编织发髻': 'Braided Bun',
+                '单发髻': 'Single Hair Bun',
+                '双发髻': 'Double Bun',
+                '锥形发髻': 'Cone Hair Bun',
+                '甜甜圈发髻': 'Donut Hair Bun',
+                '爱心发髻': 'Heart Hair Bun',
+                '三发髻': 'Triple Bun',
+                '发环': 'Hair Rings',
+                '飞仙髻': 'Feixianji',
+                '胜山髷': 'Katsuyamamage',
+                '单发环': 'Single Hair Ring',
+                '半扎发': 'Half Updo',
+                '半扎辫': 'Half Up Braid',
+                '半扎半披辫': 'Half Up Half Down Braid',
+                '单侧扎发': 'One Side Up',
+                '双侧扎发': 'Two Side Up',
+                '低位长辫': 'Low-braided Long Hair',
+                '低位长扎发': 'Low-tied Long Hair',
+                '角发': 'Mizura',
+                '多重扎发': 'Multi-tied Hair',
+                '日本传统发型': 'Nihongami',
+                '马尾辫': 'Ponytail',
+                '折叠马尾': 'Folded Ponytail',
+                '前马尾': 'Front Ponytail',
+                '高马尾': 'High Ponytail',
+                '短马尾': 'Short Ponytail',
+                '侧马尾': 'Side Ponytail',
+                '分叉马尾': 'Split Ponytail',
+                '星形发型': 'Star-shaped Hair',
+                '发髻': 'Topknot',
+                '双马尾': 'Twintails',
+                '低双马尾': 'Low Twintails',
+                '短双马尾': 'Short Twintails',
+                '不对称双马尾': 'Uneven Twintails',
+                '三尾': 'Tri Tails',
+                '四尾': 'Quad Tails',
+                '五尾': 'Quin Tails',
+                '扭曲发型': 'Twisted Hair',
+                '非洲爆炸头': 'Afro',
+                '巨型爆炸头': 'Huge Afro',
+                '蜂巢发型': 'Beehive Hairdo',
+                '冠状发型': 'Crested Hair',
+                '两把头': 'Liangbatou',
+                '飞机头': 'Pompadour',
+                '蓬巴杜刘海': 'Quiff',
+                '冲天辫子混合茂盛发型': 'Shouten Pegasus Mix Mori',
+                '卷发': 'Curly Hair',
+                '螺旋卷发': 'Drill Hair',
+                '双螺旋卷发': 'Twin Drills',
+                '三螺旋卷发': 'Tri Drills',
+                '发片': 'Hair Flaps',
+                '凌乱发': 'Messy Hair',
+                '尖发': 'Pointy Hair',
+                '小卷发': 'Ringlets',
+                '刺猬头': 'Spiked Hair',
+                '直发': 'Straight Hair',
+                '波浪发': 'Wavy Hair',
+                '蓬松发': 'Fluffy Hair',
+                '刘海': 'Bangs',
+                '拱形刘海': 'Arched Bangs',
+                '不对称刘海': 'Asymmetrical Bangs',
+                '刘海后梳': 'Bangs Pinned Back',
+                '齐刘海': 'Blunt Bangs',
+                '编织刘海': 'Braided Bangs',
+                '交叉刘海': 'Crossed Bangs',
+                '参差刘海': 'Choppy Bangs',
+                '稀疏刘海': 'Wispy Bangs',
+                '斜刘海': 'Diagonal Bangs',
+                '獠牙刘海': 'Fanged Bangs',
+                '短刘海': 'Short Bangs',
+                '长刘海': 'Long Bangs',
+                '眼间发': 'Hair Between Eyes',
+                '遮单眼发': 'Hair Over One Eye',
+                '遮眼发': 'Hair Over Eyes',
+                '分开刘海': 'Parted Bangs',
+                '窗帘式刘海': 'Curtained Hair',
+                '侧扫刘海': 'Swept Bangs',
+                '彩色刘海': 'Colored Bangs',
+                '发束': 'Hair Intakes',
+                '单束发': 'Single Hair Intake',
+                '侧发': 'Sidelocks',
+                '不对称侧发': 'Asymmetrical Sidelocks',
+                '螺旋卷侧发': 'Drill Sidelocks',
+                '低扎侧发': 'Low-tied Sidelocks',
+                '侧发后扎': 'Sidelocks Tied Back',
+                '单侧发': 'Single Sidelock',
+                '美人尖': 'Widow\'s Peak',
+                '呆毛': 'Ahoge',
+                '心形呆毛': 'Heart Ahoge',
+                '巨大呆毛': 'Huge Ahoge',
+                '天线发': 'Antenna Hair',
+                '心形天线发': 'Heart Antenna Hair',
+                '偏分盖顶': 'Comb Over',
+                '头发后梳': 'Hair Pulled Back',
+                '大背头': 'Hair Slicked Back',
+                '莫霍克发型': 'Mohawk',
+                '乌克兰哥萨克发型': 'Oseledets',
+                '独立颈后发': 'Lone Nape Hair',
+                '头发比基尼': 'Hair Bikini',
+                '头发遮挡': 'Hair Censor',
+                '头发在自己嘴里': 'Hair in Own Mouth',
+                '头发遮胸': 'Hair Over Breasts',
+                '头发遮单胸': 'Hair Over One Breast',
+                '头发遮挡私处': 'Hair Over Crotch',
+                '头发过肩': 'Hair Over Shoulder',
+                '头发围巾': 'Hair Scarf',
+                '另类发型': 'Alternate Hairstyle',
+                '披发': 'Hair Down',
+                '盘发': 'Hair Up',
+                '不对称发型': 'Asymmetrical Hair',
+                '侧削发型': 'Sidecut',
+                '齐发尾': 'Blunt Ends',
+                '人物姿势': 'Character Pose',
+                '人物服装': 'Character Clothing',
+                '饰品装扮': 'Accessories',
+                '场景画风': 'Scene & Style',
+                '其他物种': 'Other Species',
+                // 人物姿势相关
+                '人物手势': 'Hand Gestures',
+                '人物视线': 'Gaze Direction',
+                '整体动作': 'Full Body Actions',
+                '上半身动作': 'Upper Body Actions',
+                '站立': 'Standing',
+                '弯腰': 'Bending Over',
+                '弓背': 'Hunched Back',
+                '拉伸': 'Stretching',
+                '躺着': 'Lying Down',
+                '趴着': 'Lying Face Down',
+                '侧躺': 'Lying on Side',
+                '坐着': 'Sitting',
+                'w_sitting': 'W-sitting',
+                '跨坐': 'Straddling',
+                '四肢着地': 'On All Fours',
+                'jack-o': 'Jack-o',
+                '双腿过头': 'Legs Over Head',
+                '胎儿姿势': 'Fetal Position',
+                '自拍': 'Selfie',
+                '通过腿看': 'Looking Through Legs',
+                '二郎腿': 'Cross-legged',
+                '跪姿': 'Kneeling',
+                '萝莉坐': 'Loli Sitting',
+                '裸露的肩膀': 'Bare Shoulders',
+                '坐在地上': 'Sitting on Ground',
+                '提裙': 'Holding Skirt',
+                '一字马': 'Splits',
+                '手臂在背后': 'Arms Behind Back',
+                '狗趴式': 'Doggy Style',
+                '鸭子坐（女子座）': 'Duck Sitting (Female)',
+                '泡温泉': 'Hot Spring Bath',
+                '张开腿': 'Legs Spread',
+                '趴着翘臀': 'Lying Face Down with Raised Butt',
+                '開腳': 'Open Legs',
+                '漏腋': 'Visible Armpits',
+                '坐在地上(XWX)': 'Sitting on Ground (XWX)',
+                '战斗姿态': 'Battle Pose',
+                '坐在椅子上': 'Sitting on Chair',
+                '瑜伽': 'Yoga',
+                '绝对空域（大腿三角）': 'Absolute Territory (Thigh Triangle)',
+                '骑马': 'Horse Riding',
+                '掀裙子': 'Lifting Skirt',
+                '行走': 'Walking',
+                '正骑乘': 'Proper Riding',
+                '祈祷': 'Praying',
+                '蹲着': 'Squatting',
+                '坐在床上': 'Sitting on Bed',
+                '翘PP': 'Raised Butt',
+                '抱膝': 'Hugging Knees',
+                '公主抱': 'Princess Carry',
+                '侧躺着': 'Lying on Side',
+                '抚摸': 'Caressing',
+                '撩起衣服': 'Lifting Clothes',
+                '盘腿坐': 'Cross-legged Sitting',
+                '动态姿势': 'Dynamic Pose',
+                '敬礼': 'Salute',
+                '侧身坐': 'Side Sitting',
+                '鸭子坐': 'Duck Sitting',
+                '盘腿': 'Cross-legged',
+                '跪着': 'Kneeling',
+                '躬躯': 'Bowing',
+                '膝枕': 'Lap Pillow',
+                '学猫叫': 'Meowing',
+                '单膝跪地': 'One Knee Down',
+                '蜷起身子侧躺': 'Curled Up on Side',
+                '仰卧': 'Supine',
+                '俯卧': 'Prone',
+                '屈膝抱腿坐': 'Sitting with Knees Hugged',
+                '立式跨骑': 'Standing Straddle',
+                '站着': 'Standing',
+                '绑在十字架上': 'Bound to Cross',
+                '双腿缠绕': 'Legs Entwined',
+                '戴耳机': 'Wearing Headphones',
+                '鬼姿势': 'Ghost Pose',
+                '回头': 'Looking Back',
+                '歪头': 'Tilting Head',
+                '前倾': 'Leaning Forward',
+                '嘘手势': 'Shushing Gesture',
+                '翘大拇指': 'Thumbs Up',
+                '手放脑后': 'Hands Behind Head',
+                '手放身后': 'Hands Behind Back',
+                '手插口袋': 'Hands in Pockets',
+                '双手插口袋': 'Both Hands in Pockets',
+                '十指相扣': 'Interlaced Fingers',
+                'V字手势': 'V Sign',
+                '手在地板上': 'Hands on Floor',
+                '手在额头上': 'Hand on Forehead',
+                '手在肚子上': 'Hand on Stomach',
+                '手在肩膀上': 'Hand on Shoulder',
+                '手搭别人的腿': 'Hand on Someone\'s Leg',
+                '手搭别人的腰': 'Hand on Someone\'s Waist',
+                '双手合十': 'Praying Hands',
+                '翼展双臂': 'Spread Arms',
+                '手放嘴边': 'Hand Near Mouth',
+                '手枪手势': 'Finger Gun',
+                '猫爪手势': 'Cat Paw Gesture',
+                '远眺': 'Looking Far Away',
+                '照镜子': 'Looking in Mirror',
+                '看手机': 'Looking at Phone',
+                '看向别处': 'Looking Away',
+                '透过刘海看': 'Looking Through Bangs',
+                '透过眼镜看': 'Looking Through Glasses',
+                '面向观者': 'Facing Viewer',
+                '靠近观者': 'Close to Viewer',
+                '舞台角度': 'Stage Angle',
+                '凝视': 'Staring',
+                '向上看': 'Looking Up',
+                '向下看': 'Looking Down',
+                '看向旁边': 'Looking to Side',
+                '移开目光': 'Looking Away',
+                '嗅闻': 'Sniffing',
+                '公主抱': 'Princess Carry',
+                '拥抱': 'Hugging',
+                '背对背': 'Back to Back',
+                '耶': 'Victory Sign',
+                '调整过膝袜': 'Adjusting Thigh-high Socks',
+                '抓住': 'Grabbing',
+                '走': 'Walking',
+                '跑': 'Running',
+                '跳': 'Jumping',
+                '飞': 'Flying',
+                '靠墙': 'Leaning on Wall',
+                '躺': 'Lying Down',
+                '从背后抱': 'Hugging from Behind',
+                '遛狗': 'Walking Dog',
+                '泡温泉': 'Hot Spring Bath',
+                '骑马': 'Horse Riding',
+                '自拍': 'Selfie',
+                '一字马': 'Splits',
+                '敬礼': 'Salute',
+                '祈祷': 'Praying',
+                '冥想': 'Meditation',
+                '伸懒腰': 'Stretching',
+                '托腮': 'Chin Resting on Hand',
+                '牵手': 'Holding Hands',
+                '单手叉腰': 'One Hand on Hip',
+                '双手叉腰': 'Both Hands on Hips',
+                '招手': 'Waving',
+                '撮头发': 'Playing with Hair',
+                '拉头发': 'Pulling Hair',
+                '抓别人的头发': 'Grabbing Someone\'s Hair',
+                '竖中指': 'Middle Finger',
+                '弯腰': 'Bending Over',
+                '亲吻脸颊': 'Kissing Cheek',
+                '亲吻额头': 'Kissing Forehead',
+                '踮起脚尖吻': 'Standing on Tiptoes to Kiss',
+                '头顶水果': 'Fruit on Head',
+                '咬手套': 'Biting Glove',
+                '脸贴脸': 'Face to Face',
+                '手牵手': 'Holding Hands',
+                '双手交叉': 'Crossed Arms',
+                '双手张开伸直': 'Arms Spread Out',
+                '挥动手臂': 'Waving Arms',
+                '伸出手臂': 'Reaching Out',
+                '用手臂支撑': 'Supporting with Arms',
+                '搂着手臂': 'Holding Arms',
+                '拿着': 'Holding',
+                '拿着餐刀': 'Holding Knife',
+                '拿着枪': 'Holding Gun',
+                '拿着杯子': 'Holding Cup',
+                '拿着食物': 'Holding Food',
+                '拿着书': 'Holding Book',
+                '拿着魔杖': 'Holding Wand',
+                '打着伞': 'Holding Umbrella',
+                '捧着花': 'Holding Flowers',
+                '拿着麦克风': 'Holding Microphone',
+                '抱着物品': 'Holding Item',
+                '抱着心': 'Holding Heart',
+                // 人物服装相关
+                '清纯可爱': 'Pure & Cute',
+                '妖娆色气': 'Seductive & Sexy',
+                '职业制服': 'Professional Uniforms',
+                '日常休闲': 'Casual Daily',
+                '特殊风格': 'Special Styles',
+                '破损缺失': 'Damaged & Missing',
+                '比基尼': 'Bikini',
+                '学校泳衣': 'School Swimsuit',
+                '校服': 'School Uniform',
+                '布鲁玛': 'Bloomer',
+                '连身裙': 'Dress',
+                '毛衣连身裙': 'Sweater Dress',
+                '小可爱露腹短上衣': 'Cute Crop Top',
+                '夏日长裙': 'Summer Dress',
+                '甜美可爱的洛丽塔': 'Sweet Lolita',
+                '浴衣': 'Yukata',
+                '圣诞装': 'Christmas Outfit',
+                '水手裙': 'Sailor Skirt',
+                '短款和服': 'Short Kimono',
+                '南瓜裙': 'Pumpkin Skirt',
+                '万圣节服装': 'Halloween Costume',
+                '系绳比基尼': 'String Bikini',
+                '解开比基尼': 'Untied Bikini',
+                '前系带比基尼上着': 'Front-tie Bikini Top',
+                '侧系带比基尼下着': 'Side-tie Bikini Bottom',
+                '微小比基尼': 'Micro Bikini',
+                '泳装': 'Swimsuit',
+                '连体泳衣': 'One-piece Swimsuit',
+                '竞赛泳衣': 'Competition Swimsuit',
+                '紧身衣': 'Bodysuit',
+                '无肩带紧身衣': 'Strapless Bodysuit',
+                '高叉紧身衣': 'High-cut Bodysuit',
+                '丁字紧身衣': 'Thong Bodysuit',
+                '衣服下紧身衣': 'Bodysuit Under Clothes',
+                '紧身衣服': 'Tight Clothes',
+                '紧身衬衫': 'Tight Shirt',
+                '薄纱连衣裙': 'Sheer Dress',
+                '雪纺连衣裙': 'Chiffon Dress',
+                '紧身衣裤': 'Tight Pants',
+                '露背连身裙': 'Backless Dress',
+                '绕颈连身裙': 'Halter Dress',
+                '露背装': 'Backless Outfit',
+                '开胸毛衣': 'Open-chest Sweater',
+                '肩膀切口': 'Shoulder Cut',
+                '臀部切口': 'Hip Cut',
+                '心型切口': 'Heart-shaped Cut',
+                '后背切口': 'Back Cut',
+                '下胸切口': 'Under-bust Cut',
+                '束腹': 'Corset',
+                '乳胶紧身衣': 'Latex Bodysuit',
+                '迷你比基尼': 'Mini Bikini',
+                '颈带': 'Choker',
+                '无胸罩': 'No Bra',
+                '黑丝连体衣': 'Black Bodysuit',
+                '奶牛比基尼': 'Cow Bikini',
+                '露背毛衣': 'Backless Sweater',
+                '晒痕': 'Tan Lines',
+                '透明衣服': 'Transparent Clothes',
+                '晚礼服': 'Evening Dress',
+                '礼服': 'Formal Dress',
+                '网纹衣': 'Fishnet Clothes',
+                '无裆内裤': 'No-crotch Underwear',
+                '湿润的衣服': 'Wet Clothes',
+                '无内衣': 'No Underwear',
+                '紧身连体衣': 'Tight Bodysuit',
+                '皮衣': 'Leather Clothes',
+                '蛛网纹路': 'Spider Web Pattern',
+                '史莱姆装': 'Slime Outfit',
+                '撕裂的衣服': 'Torn Clothes',
+                '无衣服': 'No Clothes',
+                '乳胶衣': 'Latex Clothes',
+                '中式死库水（辉木）': 'Chinese Swimsuit (Huimu)',
+                '透明晚礼服 by czz': 'Transparent Evening Dress by czz',
+                '浸湿（如果有内衣会透的更明显）': 'Wet (Underwear Shows Through)',
+                '透过衣服能看到胸罩': 'Bra Visible Through Clothes',
+                '蕾丝边胸罩': 'Lace-trimmed Bra',
+                '肚皮舞者': 'Belly Dancer',
+                '连体白丝': 'White Bodysuit',
+                '透明水手服': 'Transparent Sailor Uniform',
+                '高叉泳衣': 'High-cut Swimsuit',
+                '紧身连衣裤': 'Tight Jumpsuit',
+                'V领针织毛衣（无袖背心）': 'V-neck Knit Sweater (Sleeveless Vest)',
+                '运动服': 'Sports Uniform',
+                '排球服': 'Volleyball Uniform',
+                '旗袍': 'Qipao',
+                '水手服': 'Sailor Uniform',
+                '高领衬衫': 'High-collar Shirt',
+                '赛车服': 'Racing Suit',
+                '护士服': 'Nurse Uniform',
+                '白大褂': 'White Coat',
+                '便利店工作服': 'Convenience Store Uniform',
+                '西装': 'Suit',
+                '女仆装': 'Maid Outfit',
+                '西服(black黑)': 'Suit (Black)',
+                '啦啦隊': 'Cheerleader',
+                '兜帽斗篷': 'Hooded Cloak',
+                '修女服': 'Nun Outfit',
+                '军装': 'Military Uniform',
+                '婚纱': 'Wedding Dress',
+                '披风': 'Cape',
+                '白色风衣': 'White Coat',
+                '风衣': 'Trench Coat',
+                '运动制服': 'Sports Uniform',
+                '战斗服': 'Battle Suit',
+                '实验袍': 'Lab Coat',
+                '学校制服': 'School Uniform',
+                '巫女服': 'Miko Outfit',
+                '大衣': 'Overcoat',
+                '长袍': 'Robe',
+                '战壕风衣': 'Trench Coat',
+                '派克大衣': 'Parka',
+                '防弹衣': 'Bulletproof Vest',
+                '雨衣': 'Raincoat',
+                '修女': 'Nun',
+                '铠甲': 'Armor',
+                '外套': 'Jacket',
+                '连帽衫(带帽卫衣)': 'Hoodie',
+                '圆领卫衣': 'Crew Neck Sweatshirt',
+                '神父/修生黑袍': 'Priest/Student Black Robe',
+                '动力甲': 'Power Armor',
+                '长袖运动服（直译为立领长风衣）': 'Long-sleeve Sports Uniform',
+                '工装': 'Work Clothes',
+                '病号服': 'Hospital Gown',
+                '希腊服饰': 'Greek Clothing',
+                '背心': 'Tank Top',
+                '睡袍': 'Sleeping Robe',
+                '毛衣': 'Sweater',
+                '高领毛衣': 'Turtleneck Sweater',
+                '罗纹毛衣': 'Ribbed Sweater',
+                '露肩毛衣': 'Off-shoulder Sweater',
+                '休闲服(素上衣、牛仔裤)': 'Casual Clothes (Plain Top, Jeans)',
+                '抹胸': 'Tube Top',
+                '睡衣': 'Pajamas',
+                '街头风格服饰': 'Street Style Clothes',
+                '白色衣服': 'White Clothes',
+                '哥特洛丽塔风格': 'Gothic Lolita Style',
+                '马猴烧酒风格': 'Mahou Shoujo Style',
+                '汉服': 'Hanfu',
+                '洛丽塔风格': 'Lolita Style',
+                '魔女风格服': 'Witch Style Clothes',
+                '长袍': 'Robe',
+                '中国衣服裙子': 'Chinese Dress Skirt',
+                '礼服长裙': 'Formal Long Dress',
+                '撕裂的衣服': 'Torn Clothes',
+                '破损的衣物': 'Damaged Clothes',
+                '无衣服': 'No Clothes',
+                // 饰品装扮相关
+                '发饰 (Hair Accessories)': 'Hair Accessories',
+                '首饰 (Jewelry)': 'Jewelry',
+                '装饰 (Decorations)': 'Decorations',
+                '尾巴 (Tails)': 'Tails',
+                '翅膀 (Wings)': 'Wings',
+                '角 (Horns)': 'Horns',
+                '发带': 'Hair Band',
+                '头巾': 'Headscarf',
+                '动物头巾': 'Animal Headscarf',
+                '蝴蝶结发饰': 'Bow Hair Accessory',
+                '新月发饰': 'Crescent Hair Accessory',
+                '洛丽塔发饰': 'Lolita Hair Accessory',
+                '羽毛发饰': 'Feather Hair Accessory',
+                '头花': 'Hair Flower',
+                '发髻': 'Hair Bun',
+                '发夹': 'Hair Clip',
+                '发箍': 'Hair Band',
+                '发饰': 'Hair Accessory',
+                '心形发饰': 'Heart-shaped Hair Accessory',
+                '手链': 'Bracelet',
+                '项圈': 'Collar',
+                '金属项圈': 'Metal Collar',
+                '戒指': 'Ring',
+                '腕带': 'Wristband',
+                '吊坠': 'Pendant',
+                '胸针': 'Brooch',
+                '圆形耳环': 'Round Earrings',
+                '手镯': 'Bangle',
+                '耳钉': 'Ear Studs',
+                '旭日形首饰': 'Rising Sun Jewelry',
+                '珍珠手链': 'Pearl Bracelet',
+                '耳坠': 'Earrings',
+                '木偶戒指': 'Puppet Ring',
+                '胸花': 'Corsage',
+                '珠宝胸针': 'Jewelry Brooch',
+                '珠宝首饰': 'Jewelry',
+                '项链': 'Necklace',
+                '丝带': 'Ribbon',
+                '丝带饰边': 'Ribbon Trim',
+                '蕾丝饰边': 'Lace Trim',
+                '裙撑': 'Petticoat',
+                '护手': 'Gauntlets',
+                '领巾': 'Scarf',
+                '肩章': 'Epaulettes',
+                '肩带': 'Shoulder Strap',
+                '细肩带': 'Thin Shoulder Strap',
+                '般若面具': 'Hannya Mask',
+                '面纱': 'Veil',
+                '新娘面纱': 'Bridal Veil',
+                '皇冠': 'Crown',
+                '迷你皇冠': 'Mini Crown',
+                '耳罩': 'Ear Muffs',
+                '飞行员太阳镜': 'Aviator Sunglasses',
+                '无边框眼镜': 'Rimless Glasses',
+                '半无框眼镜': 'Half-rimless Glasses',
+                '太阳镜': 'Sunglasses',
+                '风镜': 'Goggles',
+                '独眼眼镜': 'Monocle',
+                '黑色眼罩': 'Black Eye Patch',
+                '铁棘': 'Iron Thorns',
+                '光环': 'Halo',
+                '口罩': 'Mask',
+                '创可贴': 'Band-aid',
+                '指甲油': 'Nail Polish',
+                '玩偶关节': 'Doll Joints',
+                '机械义肢': 'Mechanical Prosthesis',
+                '沙漏币': 'Hourglass Coin',
+                '雨披': 'Rain Poncho',
+                '浓妆': 'Heavy Makeup',
+                '宝可梦尾巴': 'Pokemon Tail',
+                '皮卡丘尾巴': 'Pikachu Tail',
+                '水獭尾巴': 'Otter Tail',
+                '鹿尾': 'Deer Tail',
+                '黄鼠狼尾巴': 'Weasel Tail',
+                '羊驼尾巴': 'Alpaca Tail',
+                '恐龙尾巴': 'Dinosaur Tail',
+                '企鹅尾巴': 'Penguin Tail',
+                '羊尾巴': 'Sheep Tail',
+                '山羊尾巴': 'Goat Tail',
+                '海狸尾巴': 'Beaver Tail',
+                '小熊猫尾巴': 'Red Panda Tail',
+                '豹尾': 'Leopard Tail',
+                '食蚁兽尾巴': 'Anteater Tail',
+                '土狼尾巴': 'Coyote Tail',
+                '猎豹尾巴': 'Cheetah Tail',
+                '熊猫尾巴': 'Panda Tail',
+                '天使尾巴': 'Angel Tail',
+                '蝴蝶翅膀': 'Butterfly Wings',
+                '昆虫翅膀': 'Insect Wings',
+                '蝙蝠翅膀': 'Bat Wings',
+                '乌翼': 'Crow Wings',
+                '羽翼': 'Feathered Wings',
+                '妖精翅膀': 'Fairy Wings',
+                '龙之翼': 'Dragon Wings',
+                '恶魔之翼': 'Demon Wings',
+                '火焰翅膀': 'Fire Wings',
+                '机械翅膀': 'Mechanical Wings',
+                '冰翅': 'Ice Wings',
+                '冰火之翼': 'Ice-Fire Wings',
+                '羚羊角': 'Antelope Horns',
+                '山羊角': 'Goat Horns',
+                '羊角': 'Sheep Horns',
+                '奶牛角': 'Cow Horns',
+                '公牛角': 'Bull Horns',
+                '鬼角': 'Oni Horns',
+                '断角': 'Broken Horns',
+                '机械角': 'Mechanical Horns',
+                '恶魔之角': 'Demon Horns',
+                '龙之角': 'Dragon Horns',
+                // 场景画风相关
+                '画风风格': 'Art Style',
+                '色调': 'Color Tone',
+                '光线': 'Lighting',
+                '构图结构': 'Composition',
+                '景别': 'Shot Type',
+                '线条': 'Lines',
+                '机位': 'Camera Angle',
+                '主体朝向': 'Subject Direction',
+                '动态感': 'Dynamic Sense',
+                '创作类型': 'Creation Type',
+                '创作题材': 'Creation Theme',
+                '场景位置': 'Scene Location',
+                '时间段': 'Time Period',
+                '天气': 'Weather',
+                '背景复杂度': 'Background Complexity',
+                '水印文字': 'Watermark & Text',
+                '经典动漫风': 'Classic Anime Style',
+                '平涂风': 'Flat Color Style',
+                '半厚涂风': 'Semi-thick Paint Style',
+                '厚涂风': 'Thick Paint Style',
+                '古风': 'Ancient Style',
+                '抽象艺术': 'Abstract Art',
+                '水墨画': 'Ink Painting',
+                '像素风': 'Pixel Art',
+                'Q版：Chibi': 'Chibi Style',
+                '梗图风': 'Meme Style',
+                '2.5D': '2.5D',
+                '线稿风': 'Line Art Style',
+                '哥特风': 'Gothic Style',
+                '写实风': 'Realistic Style',
+                '赛璐珞风': 'Cel Animation Style',
+                '吉卜力风': 'Ghibli Style',
+                '浮世绘风': 'Ukiyo-e Style',
+                '赛博朋克风': 'Cyberpunk Style',
+                '蒸汽朋克风': 'Steampunk Style',
+                '洛可可风': 'Rococo Style',
+                '暗黑奇幻风': 'Dark Fantasy Style',
+                '波普艺术风': 'Pop Art Style',
+                'Synthwave': 'Synthwave',
+                '低多边形风': 'Low Poly Style',
+                '矢量扁平化风': 'Vector Flat Style',
+                '胶片插画风': 'Film Illustration Style',
+                '冷色调': 'Cool Tone',
+                '暖色调': 'Warm Tone',
+                '黑白': 'Black and White',
+                '白色': 'White',
+                '高饱和度': 'High Saturation',
+                '低饱和度': 'Low Saturation',
+                '中饱和度': 'Medium Saturation',
+                '高对比度': 'High Contrast',
+                '低对比度': 'Low Contrast',
+                '中对比度': 'Medium Contrast',
+                '自然光': 'Natural Light',
+                'studio光': 'Studio Light',
+                '强曝光': 'Strong Exposure',
+                '色差': 'Chromatic Aberration',
+                '暗光': 'Dark Light',
+                '侧光': 'Side Light',
+                '逆光': 'Backlight',
+                '顶光': 'Top Light',
+                '底光': 'Bottom Light',
+                '点光源': 'Point Light',
+                '三分法': 'Rule of Thirds',
+                '对称构图': 'Symmetrical Composition',
+                '中心式': 'Centered',
+                '黄金分割': 'Golden Ratio',
+                '留白': 'White Space',
+                '对角线构图': 'Diagonal Composition',
+                'S形构图': 'S-shaped Composition',
+                '三角形构图': 'Triangular Composition',
+                '圆形构图': 'Circular Composition',
+                '框架构图': 'Frame Composition',
+                '特写': 'Close-up',
+                '近景': 'Medium Close-up',
+                '中景': 'Medium Shot',
+                '远景': 'Long Shot',
+                '全景': 'Full Shot',
+                '超远景': 'Extreme Long Shot',
+                '大特写': 'Extreme Close-up',
+                '中特写': 'Medium Close-up',
+                '小特写': 'Small Close-up',
+                '全身': 'Full Body',
+                '无线条': 'No Lines',
+                '细线条': 'Thin Lines',
+                '粗线条': 'Thick Lines',
+                '渐变线条': 'Gradient Lines',
+                '虚线': 'Dashed Lines',
+                '点线': 'Dotted Lines',
+                '波浪线': 'Wavy Lines',
+                '锯齿线': 'Zigzag Lines',
+                '螺旋线': 'Spiral Lines',
+                '放射线': 'Radiating Lines',
+                '鱼眼': 'Fisheye',
+                '鸟瞰': 'Bird\'s Eye View',
+                '平视': 'Eye Level',
+                '仰视': 'Low Angle',
+                '俯视': 'High Angle',
+                '广角': 'Wide Angle',
+                '长焦': 'Telephoto',
+                '超广角': 'Ultra Wide Angle',
+                '微距': 'Macro',
+                '全景': 'Panorama',
+                '正面': 'Front View',
+                '背面': 'Back View',
+                '侧面': 'Side View',
+                '四分之三正面': 'Three-quarter Front',
+                '四分之三背面': 'Three-quarter Back',
+                '四分之三侧面': 'Three-quarter Side',
+                '正面侧面': 'Front Side',
+                '背面侧面': 'Back Side',
+                '正面背面': 'Front Back',
+                '侧面正面': 'Side Front',
+                '静止': 'Static',
+                '强动态': 'Strong Dynamic',
+                '弱动态': 'Weak Dynamic',
+                '运动模糊': 'Motion Blur',
+                '速度线': 'Speed Lines',
+                '动态模糊': 'Dynamic Blur',
+                '轨迹线': 'Trail Lines',
+                '残影': 'Afterimage',
+                '瞬间': 'Moment',
+                '永恒': 'Eternal',
+                '插画': 'Illustration',
+                '漫画': 'Comic',
+                '草图': 'Sketch',
+                '设定图': 'Character Design',
+                '概念图': 'Concept Art',
+                '涂鸦': 'Doodle',
+                '速写': 'Quick Sketch',
+                '原画': 'Original Art',
+                '立绘': 'Standing Illustration',
+                '表情包': 'Emoji',
+                '头像图': 'Avatar',
+                'Q版图': 'Chibi Art',
+                '像素画': 'Pixel Art',
+                '模型贴图': 'Model Texture',
+                '剪影图': 'Silhouette',
+                '线稿图': 'Line Art',
+                '剪贴画': 'Collage',
+                '构图草图': 'Composition Sketch',
+                '动态分镜': 'Dynamic Storyboard',
+                '封面图': 'Cover Art',
+                '海报': 'Poster',
+                '插页图': 'Insert Art',
+                '条漫': 'Webtoon',
+                '四格漫画': 'Four-panel Comic',
+                '短漫': 'Short Comic',
+                '长条漫': 'Long Webtoon',
+                '页面漫画': 'Page Comic',
+                '涂色线稿': 'Colored Line Art',
+                '动画截图': 'Animation Screenshot',
+                '3D模型渲染': '3D Model Rendering',
+                '恋爱': 'Romance',
+                '历史': 'History',
+                '科幻': 'Science Fiction',
+                '奇幻': 'Fantasy',
+                '魔幻': 'Magic',
+                '生活': 'Life',
+                '抽象': 'Abstract',
+                '风景': 'Landscape',
+                '静物': 'Still Life',
+                '赛博朋克': 'Cyberpunk',
+                '蒸汽朋克': 'Steampunk',
+                '历史穿越': 'Historical Time Travel',
+                '学校生活': 'School Life',
+                '军事': 'Military',
+                '运动': 'Sports',
+                '冒险': 'Adventure',
+                '悬疑': 'Mystery',
+                '恐怖': 'Horror',
+                '喜剧': 'Comedy',
+                '悲剧': 'Tragedy',
+                '家': 'Home',
+                '办公室': 'Office',
+                '商场': 'Mall',
+                '教室': 'Classroom',
+                '山': 'Mountain',
+                '平原': 'Plain',
+                '河': 'River',
+                '海': 'Sea',
+                '树林': 'Forest',
+                '天空': 'Sky',
+                '宇宙': 'Universe',
+                '室内其他': 'Other Indoor',
+                '室外其他': 'Other Outdoor',
+                '无特定场景': 'No Specific Scene',
+                '赛博城市': 'Cyber City',
+                '太空站': 'Space Station',
+                '水下世界': 'Underwater World',
+                '地下世界': 'Underground World',
+                '异世界': 'Other World',
+                '梦境': 'Dream',
+                '清晨': 'Early Morning',
+                '白天': 'Daytime',
+                '午后': 'Afternoon',
+                '黄昏': 'Dusk',
+                '深夜': 'Late Night',
+                '午夜': 'Midnight',
+                '凌晨': 'Early Morning',
+                '无明确时间': 'No Specific Time',
+                '黎明': 'Dawn',
+                '正午': 'Noon',
+                '晴天': 'Sunny',
+                '多云': 'Cloudy',
+                '雨天': 'Rainy',
+                '雪天': 'Snowy',
+                '雾天': 'Foggy',
+                '雷暴': 'Thunderstorm',
+                '阴天': 'Overcast',
+                '台风': 'Typhoon',
+                '龙卷风': 'Tornado',
+                '沙尘暴': 'Sandstorm',
+                '极简纯色': 'Minimal Solid Color',
+                '简约元素': 'Simple Elements',
+                '普通': 'Normal',
+                '复杂繁复': 'Complex',
+                '无背景': 'No Background',
+                '渐变背景': 'Gradient Background',
+                '纹理背景': 'Texture Background',
+                '图案背景': 'Pattern Background',
+                '抽象背景': 'Abstract Background',
+                '几何背景': 'Geometric Background',
+                '有水印': 'With Watermark',
+                '无水印': 'No Watermark',
+                '有文字': 'With Text',
+                '无文字': 'No Text',
+                '有签名': 'With Signature',
+                '无签名': 'No Signature',
+                '有标题': 'With Title',
+                '无标题': 'No Title',
+                '有说明': 'With Description',
+                '无说明': 'No Description',
+                // 其他物种相关
+                '精灵 (Elf)': 'Elf',
+                '矮人 (Dwarf)': 'Dwarf',
+                '赛博格 (Cyborg)': 'Cyborg',
+                '仿生人 (Android)': 'Android',
+                '外貌特点': 'Physical Features',
+                '眼部特点': 'Eye Features',
+                '服装': 'Clothing',
+                '武器道具': 'Weapons & Props',
+                '精灵': 'Elf',
+                '尖耳朵': 'Pointed Ears',
+                '纤细': 'Slender',
+                '高挑': 'Tall',
+                '蓝眼睛': 'Blue Eyes',
+                '绿眼睛': 'Green Eyes',
+                '金眼睛': 'Golden Eyes',
+                '发光眼睛': 'Glowing Eyes',
+                '空灵的眼睛': 'Ethereal Eyes',
+                '杏仁眼': 'Almond Eyes',
+                '华丽服装': 'Elegant Clothing',
+                '古代服饰': 'Ancient Clothing',
+                '没有时尚感': 'No Fashion Sense',
+                '矮人': 'Dwarf',
+                '矮小': 'Short',
+                '结实': 'Sturdy',
+                '长胡子': 'Long Beard',
+                '编织胡子': 'Braided Beard',
+                '结实体格': 'Sturdy Build',
+                '肌肉发达': 'Muscular',
+                '骨骼致密': 'Dense Bones',
+                '厚实皮肤': 'Thick Skin',
+                '多毛': 'Hairy',
+                '灰烬皮肤': 'Ash Skin',
+                '黑色皮肤': 'Black Skin',
+                '棕眼睛': 'Brown Eyes',
+                '黑眼睛': 'Black Eyes',
+                '深陷的眼睛': 'Deep-set Eyes',
+                '视力差': 'Poor Vision',
+                '朴素颜色': 'Plain Colors',
+                '中世纪农民风格': 'Medieval Peasant Style',
+                '皮甲': 'Leather Armor',
+                '锁子甲': 'Chain Mail',
+                '斧头': 'Axe',
+                '锤子': 'Hammer',
+                '赛博格': 'Cyborg',
+                '机器人植入物': 'Robot Implants',
+                '机械部件': 'Mechanical Parts',
+                '赛博格手臂': 'Cyborg Arm',
+                '金属皮肤': 'Metal Skin',
+                '未来盔甲': 'Future Armor',
+                '动力服': 'Power Suit',
+                '外骨骼': 'Exoskeleton',
+                '光滑': 'Smooth',
+                '金属质感': 'Metallic',
+                '发光部件': 'Glowing Parts',
+                '赛博格眼睛': 'Cyborg Eyes',
+                '红眼睛': 'Red Eyes',
+                '传感器眼': 'Sensor Eyes',
+                '单眼': 'Single Eye',
+                '多眼': 'Multiple Eyes',
+                '战术服装': 'Tactical Clothing',
+                '未来服装': 'Future Clothing',
+                '赛博朋克服装': 'Cyberpunk Clothing',
+                '仿生人': 'Android',
+                '类人仿生人': 'Humanoid Android',
+                '机器人类人': 'Humanoid Robot',
+                '塑料皮肤': 'Plastic Skin',
+                '金属皮肤': 'Metal Skin',
+                '合成皮肤': 'Synthetic Skin',
+                '完美人类形态': 'Perfect Human Form',
+                '令人不安的完美': 'Unsettling Perfection',
+                // 人物姿势相关
+                '站立': 'Standing',
+                '弯腰': 'Bending Over',
+                '弓背': 'Arched Back',
+                '拉伸': 'Stretching',
+                '躺着': 'Lying Down',
+                '趴着': 'Lying on Stomach',
+                '侧躺': 'Lying on Side',
+                '坐着': 'Sitting',
+                'w_sitting': 'W Sitting',
+                '跨坐': 'Straddling',
+                '四肢着地': 'On All Fours',
+                'jack-o': 'Jack-o Pose',
+                '双腿过头': 'Legs Over Head',
+                '胎儿姿势': 'Fetal Position',
+                '自拍': 'Selfie',
+                '通过腿看': 'Looking Through Legs',
+                '二郎腿': 'Legs Crossed',
+                '跪姿': 'Kneeling',
+                '萝莉坐': 'Loli Sit',
+                '裸露的肩膀': 'Bare Shoulders',
+                '坐在地上': 'Sitting on Ground',
+                '提裙': 'Lifting Skirt',
+                '一字马': 'Splits',
+                '手臂在背后': 'Arms Behind Back',
+                '狗趴式': 'Doggy Style',
+                '鸭子坐（女子座）': 'Duck Sit',
+                '泡温泉': 'Soaking in Hot Spring',
+                '张开腿': 'Legs Spread',
+                '趴着翘臀': 'Lying on Stomach with Raised Buttocks',
+                '開腳': 'Legs Open',
+                '漏腋': 'Exposed Armpit',
+                '坐在地上(XWX)': 'Sitting on Ground (XWX)',
+                '战斗姿态': 'Combat Stance',
+                '坐在椅子上': 'Sitting on Chair',
+                '瑜伽': 'Yoga',
+                '绝对空域（大腿三角）': 'Zettai Ryouiki',
+                '骑马': 'Riding Horse',
+                '掀裙子': 'Lifting Skirt',
+                '行走': 'Walking',
+                '正骑乘': 'Front Riding',
+                '祈祷': 'Praying',
+                '蹲着': 'Squatting',
+                '坐在床上': 'Sitting on Bed',
+                '翘PP': 'Raised Buttocks',
+                '抱膝': 'Knees Hugged',
+                '公主抱': 'Princess Carry',
+                '侧躺着': 'Lying on Side',
+                '抚摸': 'Stroking',
+                '撩起衣服': 'Lifting Clothes',
+                '盘腿坐': 'Cross-legged Sitting',
+                '动态姿势': 'Dynamic Pose',
+                '敬礼': 'Salute',
+                '侧身坐': 'Sitting Sideways',
+                '鸭子坐': 'Duck Sit',
+                '盘腿': 'Cross-legged',
+                '跪着': 'Kneeling',
+                '躬躯': 'Bowing',
+                '膝枕': 'Lap Pillow',
+                '学猫叫': 'Meowing Like a Cat',
+                '单膝跪地': 'One Knee Down',
+                '蜷起身子侧躺': 'Curled Up Lying on Side',
+                '仰卧': 'Supine',
+                '俯卧': 'Prone',
+                '屈膝抱腿坐': 'Sitting with Knees Bent and Legs Hugged',
+                '立式跨骑': 'Standing Straddle',
+                '站着': 'Standing',
+                '蹲着': 'Squatting',
+                '绑在十字架上': 'Tied to Cross',
+                '双腿缠绕': 'Legs Entwined',
+                '四肢着地': 'On All Fours',
+                '戴耳机': 'Wearing Headphones',
+                '鬼姿势': 'Ghost Pose',
+                '回头': 'Looking Back',
+                '歪头': 'Tilting Head',
+                '前倾': 'Leaning Forward',
+                // 人物手势相关
+                '嘘手势': 'Shush Gesture',
+                '翘大拇指': 'Thumbs Up',
+                '手放脑后': 'Hands Behind Head',
+                '手放身后': 'Hands Behind Back',
+                '手插口袋': 'Hands in Pockets',
+                '双手插口袋': 'Both Hands in Pockets',
+                '十指相扣': 'Fingers Interlocked',
+                'V字手势': 'V Sign',
+                '手在地板上': 'Hand on Floor',
+                '手在额头上': 'Hand on Forehead',
+                '手在肚子上': 'Hand on Stomach',
+                '手在肩膀上': 'Hand on Shoulder',
+                '手搭别人的腿': 'Hand on Someone Else\'s Leg',
+                '手搭别人的腰': 'Hand on Someone Else\'s Waist',
+                '双手合十': 'Hands Clasped',
+                '翼展双臂': 'Arms Spread Wide',
+                '手放嘴边': 'Hand to Mouth',
+                '手枪手势': 'Gun Hand Gesture',
+                '猫爪手势': 'Cat Paw Gesture',
+                // 人物视线相关
+                '远眺': 'Gazing into Distance',
+                '照镜子': 'Looking in Mirror',
+                '看手机': 'Looking at Phone',
+                '看向别处': 'Looking Elsewhere',
+                '透过刘海看': 'Looking Through Bangs',
+                '透过眼镜看': 'Looking Through Glasses',
+                '面向观者': 'Facing Viewer',
+                '靠近观者': 'Close to Viewer',
+                '动态角度': 'Dynamic Angle',
+                '舞台角度': 'Stage Angle',
+                '凝视': 'Gaze',
+                '向上看': 'Looking Up',
+                '向下看': 'Looking Down',
+                '看向旁边': 'Looking Sideways',
+                '移开目光': 'Averting Gaze',
+                // 整体动作相关
+                '嗅闻': 'Sniffing',
+                '公主抱': 'Princess Carry',
+                '拥抱': 'Hug',
+                '背对背': 'Back to Back',
+                '耶': 'Yay',
+                '调整过膝袜': 'Adjusting Over-the-knee Socks',
+                '抓住': 'Grabbing',
+                '战斗姿态': 'Combat Stance',
+                '走': 'Walk',
+                '跑': 'Run',
+                '跨坐': 'Straddling',
+                '跳': 'Jump',
+                '飞': 'Fly',
+                '靠墙': 'Leaning Against Wall',
+                '躺': 'Lie',
+                '从背后抱': 'Hug from Behind',
+                '遛狗': 'Walking Dog',
+                '提裙': 'Lifting Skirt',
+                '泡温泉': 'Soaking in Hot Spring',
+                '骑马': 'Riding Horse',
+                '自拍': 'Selfie',
+                '一字马': 'Splits',
+                '敬礼': 'Salute',
+                '祈祷': 'Praying',
+                '冥想': 'Meditation',
+                // 上半身动作相关
+                '伸懒腰': 'Stretching',
+                '托腮': 'Cupping Chin',
+                '牵手': 'Holding Hands',
+                '单手叉腰': 'One Hand on Hip',
+                '双手叉腰': 'Both Hands on Hips',
+                '招手': 'Waving',
+                '撮头发': 'Twirling Hair',
+                '拉头发': 'Pulling Hair',
+                '抓别人的头发': 'Grabbing Someone Else\'s Hair',
+                '竖中指': 'Flipping the Bird',
+                '弯腰': 'Bending Over',
+                '亲吻脸颊': 'Kissing Cheek',
+                '亲吻额头': 'Kissing Forehead',
+                '踮起脚尖吻': 'Kissing on Tiptoes',
+                '头顶水果': 'Fruit on Head',
+                '咬手套': 'Biting Glove',
+                '脸贴脸': 'Face to Face',
+                '手牵手': 'Holding Hands',
+                '双手交叉': 'Arms Crossed',
+                '双手张开伸直': 'Arms Spread Out Straight',
+                '挥动手臂': 'Waving Arms',
+                '伸出手臂': 'Extending Arms',
+                '用手臂支撑': 'Supporting with Arms',
+                '搂着手臂': 'Arm Around',
+                '拿着': 'Holding',
+                '拿着餐刀': 'Holding Dinner Knife',
+                '拿着枪': 'Holding Gun',
+                '拿着杯子': 'Holding Cup',
+                '拿着食物': 'Holding Food',
+                '拿着书': 'Holding Book',
+                '拿着魔杖': 'Holding Wand',
+                '打着伞': 'Holding Umbrella',
+                '捧着花': 'Holding Flowers',
+                '拿着麦克风': 'Holding Microphone',
+                '抱着物品': 'Holding Object',
+                '抱着心': 'Holding Heart',
+                // 人物服装相关
+                '清纯可爱': 'Innocent & Cute',
+                '妖娆色气': 'Alluring & Provocative',
+                '职业制服': 'Professional/Uniform',
+                '日常休闲': 'Casual/Everyday',
+                '特殊风格': 'Special Style/Theme',
+                '破损缺失': 'Damaged/Missing',
+                '比基尼': 'Bikini',
+                '学校泳衣': 'School Swimsuit',
+                '校服': 'School Uniform',
+                '布鲁玛': 'Bloomers',
+                '连身裙': 'Dress',
+                '毛衣连身裙': 'Sweater Dress',
+                '小可爱露腹短上衣': 'Crop Top',
+                '夏日长裙': 'Summer Maxi Dress',
+                '甜美可爱的洛丽塔': 'Sweet and Cute Lolita',
+                '浴衣': 'Yukata',
+                '圣诞装': 'Christmas Outfit',
+                '水手裙': 'Sailor Skirt',
+                '短款和服': 'Short Kimono',
+                '南瓜裙': 'Pumpkin Skirt',
+                '万圣节服装': 'Halloween Costume',
+                '系绳比基尼': 'String Bikini',
+                '解开比基尼': 'Untied Bikini',
+                '前系带比基尼上着': 'Front-tie Bikini Top',
+                '侧系带比基尼下着': 'Side-tie Bikini Bottom',
+                '微小比基尼': 'Micro Bikini',
+                '泳装': 'Swimsuit',
+                '连体泳衣': 'One-piece Swimsuit',
+                '竞赛泳衣': 'Competition Swimsuit',
+                '紧身衣': 'Leotard',
+                '无肩带紧身衣': 'Strapless Leotard',
+                '高叉紧身衣': 'High-cut Leotard',
+                '丁字紧身衣': 'Thong Leotard',
+                '衣服下紧身衣': 'Leotard Under Clothes',
+                '紧身衣服': 'Tight Clothes',
+                '紧身衬衫': 'Tight Shirt',
+                '薄纱连衣裙': 'Tulle Dress',
+                '雪纺连衣裙': 'Chiffon Dress',
+                '紧身衣裤': 'Tights',
+                '露背连身裙': 'Backless Dress',
+                '绕颈连身裙': 'Halter Dress',
+                '露背装': 'Backless Outfit',
+                '开胸毛衣': 'Open Chest Sweater',
+                '肩膀切口': 'Shoulder Cutout',
+                '臀部切口': 'Hip Cutout',
+                '心型切口': 'Heart-shaped Cutout',
+                '后背切口': 'Back Cutout',
+                '下胸切口': 'Underbust Cutout',
+                '束腹': 'Corset',
+                '乳胶紧身衣': 'Latex Bodysuit',
+                '迷你比基尼': 'Mini Bikini',
+                '颈带': 'Neck Strap',
+                '无胸罩': 'No Bra',
+                '黑丝连体衣': 'Black Stocking Bodysuit',
+                '奶牛比基尼': 'Cow Bikini',
+                '露背毛衣': 'Backless Sweater',
+                '晒痕': 'Tan Lines',
+                '透明衣服': 'Transparent Clothes',
+                '晚礼服': 'Evening Gown',
+                '礼服': 'Gown',
+                '网纹衣': 'Mesh Clothing',
+                '无裆内裤': 'Crotchless Panties',
+                '湿润的衣服': 'Wet Clothes',
+                '无内衣': 'No Underwear',
+                '紧身连体衣': 'Tight Bodysuit',
+                '皮衣': 'Leather Clothes',
+                '蛛网纹路': 'Spiderweb Pattern',
+                '史莱姆装': 'Slime Suit',
+                '撕裂的衣服': 'Torn Clothes',
+                '无衣服': 'No Clothes',
+                '乳胶衣': 'Latex Suit',
+                '中式死库水（辉木）': 'Chinese Sukumizu (Huimu)',
+                '透明晚礼服 by czz': 'Transparent Evening Gown by czz',
+                '浸湿（如果有内衣会透的更明显）': 'Soaked (if wearing underwear, it will be more transparent)',
+                '透过衣服能看到胸罩': 'Bra Visible Through Clothes',
+                '蕾丝边胸罩': 'Lace-edged Bra',
+                '肚皮舞者': 'Belly Dancer',
+                '连体白丝': 'One Piece White Stockings',
+                '透明水手服': 'Transparent Sailor Uniform',
+                '高叉泳衣': 'High-cut Swimsuit',
+                '紧身连衣裤': 'Tight Jumpsuit',
+                'V领针织毛衣（无袖背心）': 'V Neck Knit Sweater (Sleeveless Vest)',
+                '运动服': 'Sportswear',
+                '排球服': 'Volleyball Uniform',
+                '旗袍': 'Cheongsam',
+                '水手服': 'Sailor Uniform',
+                '高领衬衫': 'High Neck Shirt',
+                '赛车服': 'Racing Suit',
+                '护士服': 'Nurse Uniform',
+                '白大褂': 'Lab Coat',
+                '便利店工作服': 'Convenience Store Uniform',
+                '西装': 'Suit',
+                '女仆装': 'Maid Outfit',
+                '西服(black黑)': 'Suit (Black)',
+                '啦啦隊': 'Cheerleader',
+                '兜帽斗篷': 'Hooded Cloak',
+                '修女服': 'Nun\'s Habit',
+                '军装': 'Military Uniform',
+                '婚纱': 'Wedding Dress',
+                '披风': 'Cape',
+                '白色风衣': 'White Trench Coat',
+                '风衣': 'Trench Coat',
+                '运动制服': 'Sports Uniform',
+                '战斗服': 'Combat Uniform',
+                '实验袍': 'Lab Gown',
+                '学校制服': 'School Uniform',
+                '巫女服': 'Miko Outfit',
+                '大衣': 'Coat',
+                '长袍': 'Robe',
+                '战壕风衣': 'Trench Coat',
+                '派克大衣': 'Parka',
+                '防弹衣': 'Bulletproof Vest',
+                '雨衣': 'Raincoat',
+                '修女': 'Nun',
+                '铠甲': 'Armor',
+                '外套': 'Jacket',
+                '连帽衫(带帽卫衣)': 'Hoodie',
+                '圆领卫衣': 'Crewneck Sweatshirt',
+                '神父/修生黑袍': 'Priest/Seminarian Black Robe',
+                '动力甲': 'Power Armor',
+                '长袖运动服（直译为立领长风衣）': 'Long-sleeved Sportswear (literally stand collar long windbreaker)',
+                '工装': 'Workwear',
+                '病号服': 'Hospital Gown',
+                '希腊服饰': 'Greek Clothing',
+                '背心': 'Vest',
+                '睡袍': 'Nightgown',
+                '毛衣': 'Sweater',
+                '高领毛衣': 'Turtleneck Sweater',
+                '罗纹毛衣': 'Ribbed Sweater',
+                '露肩毛衣': 'Off Shoulder Sweater',
+                '休闲服(素上衣、牛仔裤)': 'Casual Wear (Plain Top, Jeans)',
+                '抹胸': 'Tube Top',
+                '睡衣': 'Pajamas',
+                '街头风格服饰': 'Street Style Clothing',
+                '白色衣服': 'White Clothes',
+                '一些风格服饰': 'Some Style Clothing',
+                '哥特洛丽塔风格': 'Gothic Lolita Style',
+                '马猴烧酒风格': 'Magical Girl Style',
+                '汉服': 'Hanfu',
+                '洛丽塔风格': 'Lolita Style',
+                '魔女风格服': 'Witch Style Outfit',
+                '中国衣服裙子': 'Chinese Clothes and Skirts',
+                '礼服长裙': 'Long Gown',
+                '撕裂的衣服': 'Torn Clothes',
+                '破损的衣物': 'Damaged Clothes',
+                '无衣服': 'No Clothes',
+                // 饰品装扮相关
+                '发饰': 'Hair Accessories',
+                '首饰': 'Jewelry',
+                '装饰': 'Decorations',
+                '尾巴': 'Tails',
+                '翅膀': 'Wings',
+                '角': 'Horns',
+                '发带': 'Hairband',
+                '头巾': 'Headdress',
+                '动物头巾': 'Animal Hood',
+                '蝴蝶结发饰': 'Hair Bow',
+                '新月发饰': 'Crescent Hair Ornament',
+                '洛丽塔发饰': 'Lolita Headdress',
+                '羽毛发饰': 'Feather Hair Ornament',
+                '头花': 'Hair Flower',
+                '发髻': 'Hair Bun',
+                '发夹': 'Hairclip',
+                '发箍': 'Hair Hoop',
+                '发饰': 'Hair Ornament',
+                '心形发饰': 'Heart Hair Ornament',
+                '手链': 'Bracelet',
+                '项圈': 'Choker',
+                '金属项圈': 'Metal Choker',
+                '戒指': 'Ring',
+                '腕带': 'Wristband',
+                '吊坠': 'Pendant',
+                '胸针': 'Brooch',
+                '圆形耳环': 'Hoop Earrings',
+                '手镯': 'Bangle',
+                '耳钉': 'Stud Earrings',
+                '旭日形首饰': 'Sun Ornament',
+                '珍珠手链': 'Pearl Bracelet',
+                '耳坠': 'Eardrop',
+                '木偶戒指': 'Puppet Ring',
+                '胸花': 'Flower Brooch',
+                '珠宝胸针': 'Jewel Brooch',
+                '珠宝首饰': 'Jewelry',
+                '项链': 'Necklace',
+                '丝带': 'Ribbon',
+                '丝带饰边': 'Ribbon Trim',
+                '蕾丝饰边': 'Lace Trim',
+                '裙撑': 'Pannier',
+                '护手': 'Handguard',
+                '领巾': 'Scarf',
+                '肩章': 'Epaulette',
+                '肩带': 'Shoulder Strap',
+                '细肩带': 'Spaghetti Strap',
+                '般若面具': 'Hannya Mask',
+                '面纱': 'Veil',
+                '新娘面纱': 'Bridal Veil',
+                '皇冠': 'Crown',
+                '迷你皇冠': 'Mini Crown',
+                '耳罩': 'Earmuffs',
+                '飞行员太阳镜': 'Aviator Sunglasses',
+                '无边框眼镜': 'Rimless Glasses',
+                '半无框眼镜': 'Semi-rimless Glasses',
+                '太阳镜': 'Sunglasses',
+                '风镜': 'Goggles',
+                '独眼眼镜': 'Monocle',
+                '黑色眼罩': 'Black Eyepatch',
+                '铁棘': 'Metal Spikes',
+                '光环': 'Halo',
+                '口罩': 'Mask',
+                '创可贴': 'Bandage',
+                '玩偶关节': 'Ball-jointed Doll',
+                '机械义肢': 'Bionic Prosthesis',
+                '沙漏币': 'Hourglass Token',
+                '雨披': 'Poncho',
+                '浓妆': 'Heavy Makeup',
+                '宝可梦尾巴': 'Pokemon Tail',
+                '皮卡丘尾巴': 'Pikachu Tail',
+                '水獭尾巴': 'Otter Tail',
+                '鹿尾': 'Deer Tail',
+                '黄鼠狼尾巴': 'Ferret Tail',
+                '羊驼尾巴': 'Alpaca Tail',
+                '恐龙尾巴': 'Dinosaur Tail',
+                '企鹅尾巴': 'Penguin Tail',
+                '羊尾巴': 'Sheep Tail',
+                '山羊尾巴': 'Goat Tail',
+                '海狸尾巴': 'Beaver Tail',
+                '小熊猫尾巴': 'Red Panda Tail',
+                '豹尾': 'Leopard Tail',
+                '食蚁兽尾巴': 'Anteater Tail',
+                '土狼尾巴': 'Hyena Tail',
+                '猎豹尾巴': 'Cheetah Tail',
+                '熊猫尾巴': 'Panda Tail',
+                '天使尾巴': 'Angel Tail',
+                '蝴蝶翅膀': 'Butterfly Wings',
+                '昆虫翅膀': 'Insect Wings',
+                '蝙蝠翅膀': 'Bat Wings',
+                '乌翼': 'Raven Wings',
+                '羽翼': 'Feather Wings',
+                '妖精翅膀': 'Fairy Wings',
+                '龙之翼': 'Dragon Wings',
+                '恶魔之翼': 'Demon Wings',
+                '火焰翅膀': 'Flame Wings',
+                '机械翅膀': 'Mechanical Wings',
+                '冰翅': 'Ice Wings',
+                '冰火之翼': 'Ice and Fire Wings',
+                '羚羊角': 'Antelope Horns',
+                '山羊角': 'Goat Horns',
+                '羊角': 'Sheep Horns',
+                '奶牛角': 'Cow Horns',
+                '公牛角': 'Bull Horns',
+                '鬼角': 'Oni Horns',
+                '断角': 'Broken Horns',
+                '机械角': 'Mechanical Horns',
+                '恶魔之角': 'Demon Horns',
+                '龙之角': 'Dragon Horns',
+                // 场景画风相关
+                '画风': 'Art Style',
+                '色调': 'Color Tone',
+                '饱和度': 'Saturation',
+                '对比度': 'Contrast',
+                '光线': 'Lighting',
+                '构图结构': 'Composition Structure',
+                '景别': 'Shot Type',
+                '线条': 'Lines',
+                '机位': 'Camera Angle',
+                '主体朝向': 'Subject Orientation',
+                '动态感': 'Dynamic Sense',
+                '创作类型': 'Creation Type',
+                '创作题材': 'Creative Theme',
+                '场景位置': 'Scene Location',
+                '时间段': 'Time of Day',
+                '天气': 'Weather',
+                '背景复杂度': 'Background Complexity',
+                '是否有水印': 'Has Watermark',
+                '是否有文字': 'Has Text',
+                '经典动漫风': 'Classic Anime Style',
+                '平涂风': 'Flat Shading Style',
+                '半厚涂风': 'Semi-Painterly Style',
+                '厚涂风': 'Heavy Painterly Style',
+                '古风': 'Ancient Style',
+                '抽象艺术': 'Abstract Art',
+                '水墨画': 'Ink Wash Painting',
+                '像素风': 'Pixel Style',
+                'Q版': 'Chibi Style',
+                '梗图风': 'Meme Style',
+                '2.5D': '2.5D',
+                '线稿风': 'Line Art Style',
+                '哥特风': 'Gothic Style',
+                '写实风': 'Realistic Style',
+                '赛璐珞风': 'Cel Shading Style',
+                '吉卜力风': 'Ghibli Style',
+                '浮世绘风': 'Ukiyo-e Style',
+                '赛博朋克风': 'Cyberpunk Style',
+                '蒸汽朋克风': 'Steampunk Style',
+                '洛可可风': 'Rococo Style',
+                '暗黑奇幻风': 'Dark Fantasy Style',
+                '波普艺术风': 'Pop Art Style',
+                'Synthwave': 'Synthwave',
+                '低多边形风': 'Low Poly Style',
+                '矢量扁平化风': 'Vector Flat Style',
+                '胶片插画风': 'Film Illustration Style',
+                '冷': 'Cold',
+                '暖': 'Warm',
+                '黑': 'Black',
+                '白': 'White',
+                '高': 'High',
+                '低': 'Low',
+                '中': 'Medium',
+                '自然': 'Natural',
+                'studio': 'Studio',
+                '强曝光': 'Strong Exposure',
+                '色差': 'Chromatic Aberration',
+                '暗': 'Dark',
+                '三分': 'Rule of Thirds',
+                '对称': 'Symmetry',
+                '中心式': 'Central Focus',
+                '黄金分割': 'Golden Ratio',
+                '留白': 'Negative Space',
+                '特写': 'Close-up',
+                '近景': 'Medium Shot/Close-up',
+                '中景': 'Mid-shot',
+                '远景': 'Long Shot/Wide Shot',
+                '无线条': 'No Lines',
+                '细线条': 'Thin Lines',
+                '粗线条': 'Thick Lines',
+                '鱼眼': 'Fisheye',
+                '鸟瞰': 'Bird\'s-eye',
+                '平视': 'Eye-level',
+                '仰视': 'Low-angle',
+                '俯视': 'High-angle',
+                '广角': 'Wide Angle',
+                '长焦': 'Long Focus/Telephoto',
+                '超广角': 'Ultra Wide Angle',
+                '正面': 'Front',
+                '背面': 'Back',
+                '侧面': 'Side',
+                '静止': 'Still',
+                '强动态': 'Strong Dynamic',
+                '弱动态': 'Weak Dynamic',
+                '运动模糊': 'Motion Blur',
+                '速度线': 'Speed Lines',
+                '插画': 'Illustration',
+                '漫画': 'Manga/Comic',
+                '草图': 'Sketch',
+                '设定图': 'Setting/Design Sheet',
+                '概念图': 'Concept Art',
+                '涂鸦': 'Doodle',
+                '速写': 'Quick Sketch',
+                '原画': 'Original Art/Key Animation',
+                '立绘': 'Standing Illustration/Portrait',
+                '表情包': 'Emoji/Reaction Image',
+                '头像图': 'Avatar/Profile Picture',
+                'Q版图': 'Chibi Illustration',
+                '像素画': 'Pixel Art',
+                '模型贴图': 'Model Texture',
+                '剪影图': 'Silhouette',
+                '线稿图': 'Lineart Drawing',
+                '剪贴画': 'Clip Art/Cutout',
+                '构图草图': 'Composition Sketch',
+                '动态分镜': 'Animatic/Storyboard',
+                '封面图': 'Cover Art',
+                '海报': 'Poster',
+                '插页图': 'Insert Illustration',
+                '条漫': 'Webtoon/Long Strip Comic',
+                '四格漫画': '4-Panel Comic',
+                '短漫': 'Short Comic',
+                '长条漫': 'Long Strip Comic',
+                '页面漫画': 'Page Comic',
+                '涂色线稿': 'Coloring Lineart',
+                '动画截图': 'Animation Screenshot',
+                '3D模型渲染': '3D Model Render',
+                '恋爱': 'Romance',
+                '历史': 'History',
+                '科幻': 'Sci-fi',
+                '奇幻': 'Fantasy',
+                '魔幻': 'Supernatural/Magic',
+                '生活': 'Slice of Life/Daily Life',
+                '抽象': 'Abstract',
+                '风景': 'Landscape',
+                '静物': 'Still Life',
+                '赛博朋克': 'Cyberpunk',
+                '蒸汽朋克': 'Steampunk',
+                '历史穿越': 'Historical Time Travel',
+                '其他题材': 'Other Themes',
+                '家': 'Home',
+                '办公室': 'Office',
+                '商场': 'Mall/Shopping Center',
+                '教室': 'Classroom',
+                '山': 'Mountain',
+                '平原': 'Plain/Grassland',
+                '河': 'River',
+                '海': 'Sea/Ocean',
+                '树林': 'Forest/Woods',
+                '天空': 'Sky',
+                '宇宙': 'Space/Universe',
+                '室内其他': 'Other Indoor',
+                '室外其他': 'Other Outdoor',
+                '无特定场景': 'No Specific Scene',
+                '赛博城市': 'Cyber City',
+                '太空站': 'Space Station',
+                '水下世界': 'Underwater World',
+                '清晨': 'Early Morning',
+                '白天': 'Daytime',
+                '午后': 'Afternoon',
+                '黄昏': 'Dusk/Twilight',
+                '深夜': 'Late Night',
+                '午夜': 'Midnight',
+                '凌晨': 'Pre-dawn/Early Morning',
+                '无明确时间': 'No Specific Time',
+                '晴': 'Clear/Sunny',
+                '多云': 'Cloudy',
+                '雨': 'Rainy',
+                '雪': 'Snowy',
+                '雾': 'Foggy',
+                '雷暴': 'Thunderstorm',
+                '极简纯色': 'Minimal/Solid Color',
+                '简约元素': 'Simple Elements',
+                '普通': 'Normal',
+                '复杂繁复': 'Complex/Detailed',
+                '无背景': 'No Background',
+                '有': 'Yes',
+                '无': 'No',
+                // 添加更多缺失的翻译
+                '极短发': 'Extremely Short Hair',
+                '超长': 'Super Long',
+                '超超长（超过屁股)': 'Super Super Long (Past Buttocks)',
+                '凌乱': 'Messy',
+                '直发': 'Straight Hair',
+                '卷发': 'Curly Hair',
+                '倒立': 'Inverted',
+                '非対称': 'Asymmetrical',
+                '马尾': 'Ponytail',
+                '高马尾': 'High Ponytail',
+                '低马尾': 'Low Ponytail',
+                '前马尾': 'Front Ponytail',
+                '侧马尾': 'Side Ponytail',
+                '分股马尾': 'Divided Ponytail',
+                '折叠马尾': 'Folded Ponytail',
+                '短马尾': 'Short Ponytail',
+                '双马尾': 'Twintails',
+                '低双马尾': 'Low Twin Tails',
+                '短双马尾': 'Short Twin Tails',
+                '三尾': 'Triple Tails',
+                '四尾': 'Quadruple Tails',
+                '辫子': 'Braid',
+                '盘辫': 'Braided Bun',
+                '一面朝上': 'One Side Up',
+                '两面朝上': 'Two Sides Up',
+                '多辫': 'Multiple Braids',
+                '头顶结': 'Top Knot',
+                '巻毛': 'Ringlets',
+                '钻孔': 'Drill Hair',
+                '双头螺柱': 'Twin Drills',
+                '发卷儿': 'Hair Roll',
+                '蝴蝶结': 'Bow',
+                '丸子頭': 'Bun',
+                '带发圈': 'With Hair Tie',
+                '脏辫': 'Dreadlocks',
+                '平刘海': 'Blunt Bangs',
+                '遮盖眼睛': 'Covering Eyes',
+                '遮一只眼睛': 'Covering One Eye',
+                '分缝的齐刘海': 'Parted Blunt Bangs',
+                '齐刘海': 'Blunt Bangs',
+                '单竖刘海': 'Single Vertical Bang',
+                '发片': 'Hair Strands',
+                '头量': 'Hair Volume',
+                '侧锁（侧面看起来整齐）': 'Side Lock (Looks Neat from Side)',
+                '黒髪': 'Black Hair',
+                '金髪': 'Blonde Hair',
+                '棕髪': 'Brown Hair',
+                '红髪': 'Red Hair',
+                '粉髪': 'Pink Hair',
+                '蓝髪': 'Blue Hair',
+                '水色髪': 'Aqua Hair',
+                '緑髪': 'Green Hair',
+                '紫髪': 'Purple Hair',
+                '橙髪': 'Orange Hair',
+                '銀髪': 'Silver Hair',
+                '灰髪': 'Gray Hair',
+                '白髪': 'White Hair',
+                '五颜六色': 'Multicolored',
+                '条纹色': 'Striped Color',
+                '渐变色': 'Gradient Color',
+                '内侧彩发': 'Inner Colored Hair',
+                '分色(着重发梢)': 'Split Color (Emphasis on Tips)',
+                '长度与发量 (Length and Volume)': 'Length and Volume',
+                '发型 (Hairstyles)': 'Hairstyles',
+                '高耸发型 (Hairstyles - Tall hair)': 'Tall Hairstyles',
+                '发质 (Hair Texture)': 'Hair Texture',
+                '头部前方 (Front of the head)': 'Front of Head',
+                '头顶 (Top of the head)': 'Top of Head',
+                '头部后方 (Back of the head)': 'Back of Head',
+                '身体上的头发 (Head hair over the body)': 'Hair Over Body',
+                '杂项 (Misc)': 'Misc',
+                '超短发': 'Very Short Hair',
+                '中长发': 'Medium Hair',
+                '超长发': 'Very Long Hair',
+                '脸通红': 'Flushed Face',
+                '无聊': 'Bored',
+                '罪恶感': 'Guilt',
+                '无感情': 'Expressionless',
+                '决心': 'Determined',
+                '接吻': 'Kissing',
+                '失望': 'Disappointed',
+                '轻蔑': 'Contempt',
+                '嫉妒': 'Jealousy',
+                '厌恶': 'Disgust',
+                '困惑': 'Confused',
+                '烦恼挑眉': 'Troubled Raised Eyebrows',
+                'V型眉': 'V-shaped Eyebrows',
+                '羞耻': 'Shame',
+                '顽皮': 'Naughty',
+                '困乏': 'Sleepy',
+                '表情符号/风格化': 'Emoji/Stylized',
+                '从正上方往下看': 'Looking Down Directly from Above',
+                '从侧面往上看': 'Looking Up from Side',
+                '从侧面往下看': 'Looking Down from Side',
+                '从人物的角度往上看': 'Looking Up from Character\'s Perspective',
+                '从人物的角度往下看': 'Looking Down from Character\'s Perspective',
+                '在地面往上看': 'Looking Up from Ground',
+                '在地面往下看': 'Looking Down from Ground',
+                '全景': 'Panorama',
+                '广角宽景': 'Wide Angle Broad View',
+                '广角': 'Wide Angle',
+                '空中俯瞰视图': 'Aerial View',
+                '在高处往下看': 'Looking Down from High Place',
+                '鸟瞰视角': 'Bird\'s Eye View',
+                '蚯蚓视角': 'Worm\'s Eye View',
+                '带有角度的视角': 'Angled View',
+                '低角度视角': 'Low Angle View',
+                '俯视视角': 'Overhead View',
+                '放大镜效果': 'Magnifying Glass Effect',
+                '缩小镜效果': 'Shrinking Glass Effect',
+                '俯视': 'Overlook',
+                '高角度视角': 'High Angle View',
+                '平视': 'Eye Level',
+                '特写': 'Close Up',
+                '极端特写': 'Extreme Close Up',
+                '黑 (Black)': 'Black',
+                '橄榄色 (Olive)': 'Olive',
+                '晒黑的 (Tanned)': 'Tanned',
+                '古铜色 (Bronze)': 'Bronze',
+                '粉色 (Pink)': 'Pink',
+                '红色 (Red)': 'Red',
+                '蓝色 (Blue)': 'Blue',
+                '绿色 (Green)': 'Green',
+                '紫色 (Purple)': 'Purple',
+                '灰色 (Grey)': 'Grey',
+                '黄色 (Yellow)': 'Yellow',
+                '日晒': 'Sun Tanned',
+                '日晒痕迹': 'Tan Lines',
+                '纹身': 'Tattoo',
+                '油性': 'Oily',
+                '运动员': 'Athlete',
+                '模特': 'Model',
+                '苗条': 'Slim',
+                '诱惑': 'Seductive',
+                '丰满': 'Plump',
+                '肥胖': 'Obese',
+                '高大': 'Tall',
+                '纤弱': 'Delicate',
+                'Q版': 'Chibi',
+                '妊娠': 'Pregnant',
+                '肌肉': 'Muscle',
+                '细腰': 'Thin Waist',
+                '大屁股': 'Big Butt',
+                '平胸': 'Flat Chest',
+                '小胸': 'Small Chest',
+                '普通胸': 'Normal Chest',
+                '大胸': 'Large Breasts',
+                '超大胸': 'Extra Large Chest',
+                '腋窝': 'Armpit',
+                '鎖骨': 'Collarbone',
+                '肚脐': 'Navel',
+                '屁股': 'Buttocks',
+                '大腿': 'Thigh',
+                '浓眉': 'Thick Eyebrows',
+                '眉毛翘起': 'Raised Eyebrows',
+                '短眉毛': 'Short Eyebrows',
+                'V字眉': 'V-shaped Eyebrows',
+                '黒色眼睛': 'Black Eyes',
+                '白色眼睛': 'White Eyes',
+                '红色眼睛': 'Red Eyes',
+                '蓝色眼睛': 'Blue Eyes',
+                '绿色眼睛': 'Green Eyes',
+                '紫色眼睛': 'Purple Eyes',
+                '银色眼睛': 'Silver Eyes',
+                '金色眼睛': 'Golden Eyes',
+                '灰色眼睛': 'Gray Eyes',
+                '水色眼睛': 'Aqua Eyes',
+                '茶色眼睛': 'Brown Eyes',
+                '粉色眼睛': 'Pink Eyes',
+                '橙色眼睛': 'Orange Eyes',
+                '异色眼睛': 'Heterochromatic Eyes',
+                '空洞眼睛': 'Hollow Eyes',
+                '睁大眼睛': 'Wide Open Eyes',
+                '闭上一只眼': 'One Eye Closed',
+                '半闭眼睛': 'Half Closed Eyes',
+                '渐变眼': 'Gradient Eyes',
+                '水汪汪大眼': 'Big Watery Eyes',
+                '翻白眼': 'Rolling Eyes',
+                '斗鸡眼': 'Cross-eyed',
+                '猫眼': 'Cat Eyes',
+                '布满血丝的眼睛': 'Bloodshot Eyes',
+                '发光眼睛': 'Glowing Eyes',
+                '吊眼角': 'Upturned Eyes',
+                '垂眼角': 'Downturned Eyes',
+                '恶魔眼': 'Demon Eyes',
+                '收缩的瞳孔': 'Constricted Pupils',
+                '魔瞳': 'Magic Eyes',
+                '蛇瞳': 'Snake Pupils',
+                '闪闪发光瞳': 'Sparkling Pupils',
+                '花形瞳': 'Flower Shaped Pupils',
+                '爱心瞳': 'Heart Shaped Pupils',
+                '异色瞳': 'Heterochromia',
+                '美瞳': 'Cosmetic Contact Lenses',
+                '长睫毛': 'Long Eyelashes',
+                '彩色睫毛': 'Colored Eyelashes',
+                '眼下痣': 'Mole Under Eye',
+                '栗子嘴': 'Chestnut Mouth',
+                '厚嘴唇': 'Thick Lips',
+                '嘴唇浮肿': 'Swollen Lips',
+                '口红': 'Lipstick',
+                '心形嘴': 'Heart Shaped Mouth',
+                '嘟嘴': 'Pouting',
+                '张嘴': 'Open Mouth',
+                '闭嘴': 'Closed Mouth',
+                '猫咪嘴': 'Cat Mouth',
+                '鲨鱼嘴': 'Shark Mouth',
+                '吐舌头': 'Sticking Out Tongue',
+                '分开嘴唇': 'Parted Lips',
+                '嘴下痣': 'Mole Under Mouth',
+                '精灵耳': 'Elf Ears',
+                '动物耳朵': 'Animal Ears',
+                '猫耳朵': 'Cat Ears',
+                '狗耳朵': 'Dog Ears',
+                '狐狸耳朵': 'Fox Ears',
+                '兔子耳朵': 'Rabbit Ears',
+                '熊耳朵': 'Bear Ears',
+                '胡须': 'Beard',
+                '小胡子': 'Mustache',
+                '山羊胡': 'Goatee',
+                '长鬓角': 'Long Sideburns',
+                '尖牙': 'Fangs',
+                '虎牙': 'Canine Teeth',
+                '咬紧牙关': 'Gritting Teeth',
+                '笑': 'Laugh',
+                '微笑': 'Smile',
+                '惨笑': 'Wry Smile',
+                '邪恶笑': 'Evil Laugh',
+                '天使笑': 'Angel Smile',
+                '强笑': 'Forced Smile',
+                '诱人笑': 'Seductive Smile',
+                '咧嘴笑': 'Grin',
+                '邪恶咧嘴笑': 'Evil Grin',
+                '傻笑': 'Giggle',
+                '怒': 'Angry',
+                '悲伤': 'Sad',
+                '哭': 'Cry',
+                '泪': 'Tears',
+                '恐怖': 'Horror',
+                '不好的': 'Bad',
+                '恼怒': 'Annoyed',
+                '黑暗人格': 'Dark Personality',
+                '多亚脸': 'Doya Face',
+                '脸红': 'Blush',
+                '脸通红': 'Flushed Face',
+                '无聊': 'Bored',
+                '罪恶感': 'Guilt',
+                '无感情': 'Emotionless',
+                '决心': 'Determined',
+                '接吻': 'Kiss',
+                '失望': 'Disappointed',
+                '轻蔑': 'Contempt',
+                '嫉妒': 'Jealousy',
+                '厌恶': 'Disgust',
+                '困惑': 'Confused',
+                '烦恼挑眉': 'Troubled Raised Eyebrows',
+                'V型眉': 'V-shaped Eyebrows',
+                '羞耻': 'Shame',
+                '顽皮': 'Naughty',
+                '困乏': 'Sleepy',
+                '表情符号/风格化': 'Emoji/Stylized',
+                // 其他物种相关翻译
+                '克苏鲁神话/邪神': 'Cthulhu/Lovecraftian God',
+                '外貌特点': 'Physical Features',
+                '服装': 'Clothing',
+                '性格': 'Personality',
+                '洛夫克拉夫特式': 'Lovecraftian',
+                '克苏鲁': 'Cthulhu',
+                '诡异': 'Eldritch',
+                '触手': 'Tentacles',
+                '非人身体': 'Inhuman Body',
+                '多眼': 'Multiple Eyes',
+                '异常解剖结构': 'Abnormal Anatomy',
+                '宇宙恐怖': 'Cosmic Horror',
+                '怪诞': 'Grotesque',
+                '非自然颜色': 'Unnatural Color',
+                '形态变幻': 'Shifting Form',
+                '令人不安的特征': 'Disturbing Features',
+                '旧日支配者': 'Ancient One',
+                '引人疯狂': 'Madness Inducing',
+                '古老长袍': 'Ancient Robes',
+                '邪教徒服饰': 'Cultist Attire',
+                '破烂服装': 'Tattered Clothing',
+                '祭祀服': 'Sacrificial Garments',
+                '超凡面料': 'Unearthly Fabric',
+                '虚空裹尸布': 'Void Shroud',
+                '宇宙符号': 'Cosmic Symbols',
+                '疯狂': 'Madness',
+                '不可名状': 'Indescribable',
+                '恶毒': 'Malevolent',
+                '漠然': 'Indifferent',
+                '古老邪恶': 'Ancient Evil',
+                '精神崩溃': 'Mind Breaking',
+                '深不可测': 'Unfathomable',
+                '破坏性': 'Destructive',
+                '腐化': 'Corrupting',
+                '类人生物': 'Humanoid',
+                '精灵': 'Elf',
+                '尖耳朵': 'Pointed Ears',
+                '纤细': 'Lithe',
+                '高挑': 'Tall',
+                '蓝眼睛': 'Blue Eyes',
+                '绿眼睛': 'Green Eyes',
+                '金眼睛': 'Golden Eyes',
+                '发光眼睛': 'Glowing Eyes',
+                '空灵的眼睛': 'Ethereal Eyes',
+                '杏仁眼': 'Almond Shaped Eyes',
+                '华丽服装': 'Fine Clothing',
+                '古代服饰': 'Ancient Garb',
+                '没有时尚感': 'No Fashion Sense',
+                '善良': 'Kind',
+                '势利': 'Snobbish',
+                '有灵性': 'Spiritual',
+                '忠诚': 'Loyal',
+                '好奇': 'Curious',
+                '爱冒险': 'Adventurous',
+                '忧郁': 'Melancholic',
+                '富有同情心': 'Compassionate',
+                '保护自然': 'Protective of Nature',
+                '时尚': 'Fashionable',
+                '愤世嫉俗': 'Cynical',
+                '矮人': 'Dwarf',
+                '矮小': 'Short',
+                '结实': 'Stocky',
+                '长胡子': 'Long Beard',
+                '编织胡子': 'Braided Beard',
+                '结实体格': 'Sturdy Build',
+                '肌肉发达': 'Muscular',
+                '骨骼致密': 'Dense Skeleton',
+                '厚实皮肤': 'Thick Hide',
+                '多毛': 'Hairy',
+                '灰烬皮肤': 'Ash Gray Skin',
+                '黑色皮肤': 'Black Skin',
+                '棕眼睛': 'Brown Eyes',
+                '黑眼睛': 'Black Eyes',
+                '深陷的眼睛': 'Deep Set Eyes',
+                '视力差': 'Bad Vision',
+                '朴素颜色': 'Sober Colors',
+                '中世纪农民风格': 'Medieval Peasant Style',
+                '皮甲': 'Leather Armor',
+                '锁子甲': 'Chainmail',
+                '有尊严': 'Dignified',
+                '聪明': 'Smart',
+                '脾气暴躁': 'Grumpy',
+                '悲观': 'Pessimistic',
+                '幽默': 'Humorous',
+                '体质强健': 'Strong Constitution',
+                '贪婪': 'Greedy',
+                '渴望宝藏': 'Treasure-hungry',
+                '忠于氏族': 'Loyal to Clan',
+                '热爱宴会': 'Loves Feasting',
+                '热爱饮酒': 'Loves Drinking',
+                '斧头': 'Axe',
+                '锤子': 'Hammer',
+                '机器人植入物': 'Robotic Implants',
+                '机械部件': 'Mechanical Parts',
+                '赛博格手臂': 'Cybernetic Arm',
+                '金属皮肤': 'Metal Skin',
+                '未来盔甲': 'Future Armor',
+                '动力服': 'Power Suit',
+                '外骨骼': 'Exoskeleton',
+                '光滑': 'Sleek',
+                '金属质感': 'Metallic',
+                '发光部件': 'Glowing Parts',
+                '赛博格眼睛': 'Cybernetic Eye',
+                '红眼睛': 'Red Eyes',
+                '传感器眼': 'Sensor Eye',
+                '单眼': 'Single Eye',
+                '多眼': 'Multiple Eyes',
+                '战术服装': 'Tactical Clothing',
+                '未来服装': 'Future Clothing',
+                '赛博朋克服装': 'Cyberpunk Clothing',
+                '坚忍': 'Stoic',
+                '坚定': 'Determined',
+                '冷酷': 'Cold',
+                '分析型': 'Analytical',
+                '类人仿生人': 'Humanoid Android',
+                '机器人类人': 'Humanoid Robot',
+                '塑料皮肤': 'Plastic Skin',
+                '合成皮肤': 'Synthetic Skin',
+                '完美人类形态': 'Perfect Human Form',
+                '令人不安的完美': 'Unsettlingly Perfect',
+                '制服': 'Uniform',
+                '未来服装': 'Future Clothing',
+                '简洁线条': 'Clean Lines',
+                '面无表情': 'Expressionless',
+                '顺从': 'Obedient',
+                '反叛': 'Rebellious',
+                '变种人': 'Mutant',
+                '变异人类': 'Mutated Human',
+                '超能力': 'Super Powers',
+                '不寻常特征': 'Unusual Features',
+                '畸形怪物': 'Deformed Monster',
+                '多余肢体': 'Extra Limbs',
+                '不寻常的眼睛': 'Unusual Eyes',
+                '扭曲的眼睛': 'Distorted Eyes',
+                '外星人眼睛': 'Alien Eyes',
+                '超级英雄服装': 'Superhero Costume',
+                '赛博朋克盔甲': 'Cyberpunk Armor',
+                '破烂衣物': 'Ragged Clothing',
+                '英雄': 'Heroic',
+                '反派': 'Villainous',
+                '不安': 'Disturbed',
+                '被误解的': 'Misunderstood',
+                '不寻常解剖结构': 'Unusual Anatomy',
+                '身体恐怖': 'Body Horror',
+                '拟人化动物': 'Anthropomorphic Animal',
+                '兽人': 'Furry',
+                '拟人化': 'Anthro',
+                '动物耳朵': 'Animal Ears',
+                '动物尾巴': 'Animal Tail',
+                '爪子': 'Paws',
+                '口鼻': 'Snout',
+                '毛皮': 'Fur',
+                '类人动物': 'Humanoid Animal',
+                '兽耳娘/男': 'Kemonomimi',
+                '猫娘': 'Cat Girl',
+                '狗男': 'Dog Boy',
+                '狐娘': 'Fox Girl',
+                '狼男': 'Wolf Boy',
+                '动物眼睛': 'Animal Eyes',
+                '大眼睛': 'Large Eyes',
+                '富有表现力的眼睛': 'Expressive Eyes',
+                '裂缝瞳孔': 'Slit Pupils',
+                '黄眼睛': 'Yellow Eyes',
+                '绿眼睛': 'Green Eyes',
+                '可爱的眼睛': 'Cute Eyes',
+                '衣服': 'Clothes',
+                '兽装': 'Fursuit',
+                '顽皮': 'Playful',
+                '淘气': 'Mischievous',
+                '忠诚': 'Loyal',
+                '野性': 'Wild',
+                '可爱': 'Cute',
+                '奇幻与神话': 'Fantasy & Mythical',
+                '恶魔': 'Demon',
+                '角': 'Horns',
+                '翅膀': 'Wings',
+                '尾巴': 'Tail',
+                '爪': 'Claws',
+                '红色皮肤': 'Red Skin',
+                '深色皮肤': 'Dark Skin',
+                '裂缝瞳孔': 'Slit Pupils',
+                '邪恶的眼睛': 'Evil Eyes',
+                '黑色巩膜': 'Black Sclera',
+                '哥特式服装': 'Gothic Clothing',
+                '深色长袍': 'Dark Robes',
+                '复杂服装': 'Intricate Costumes',
+                '优雅哥特服饰': 'Elegant Gothic Apparel',
+                '现代前卫造型': 'Modern Edgy Look',
+                '暗法师服装': 'Dark Mage Outfit',
+                '巫师服装': 'Sorcerer Outfit',
+                '男巫服装': 'Wizard Outfit',
+                '仪式长袍': 'Ceremonial Robes',
+                '暴露服装': 'Revealing Clothing',
+                '盔甲服装': 'Armored Clothing',
+                '链条': 'Chains',
+                '尖刺': 'Spikes',
+                '皮革': 'Leather',
+                '飘逸织物': 'Flowing Fabric',
+                '华丽配饰': 'Ornate Accessories',
+                '淘气': 'Mischievous',
+                '诱人': 'Alluring',
+                '凶猛': 'Fierce',
+                '强大': 'Powerful',
+                '邪恶': 'Evil',
+                '狡猾': 'Cunning',
+                '诱惑': 'Seductive',
+                '顽皮': 'Playful',
+                '保护伴侣': 'Protective of Mate',
+                '迷人': 'Charming',
+                '叛逆': 'Rebellious',
+                '骄傲': 'Proud',
+                '傲慢': 'Arrogant',
+                '残忍': 'Cruel',
+                '施虐': 'Sadistic',
+                '受折磨': 'Tormented',
+                '矛盾': 'Conflicted',
+                '忠于主人': 'Loyal to Master',
+                '聪明': 'Intelligent',
+                '古老': 'Ancient',
+                '天使': 'Angel',
+                '光环': 'Halo',
+                '白色长袍': 'White Robes',
+                '浅色调': 'Light Colors',
+                '空灵': 'Ethereal',
+                '羽毛翅膀': 'Feathered Wings',
+                '白色翅膀': 'White Wings',
+                '金色翅膀': 'Golden Wings',
+                '发光光环': 'Glowing Aura',
+                '神圣光芒': 'Divine Light',
+                '纯洁外观': 'Pure Appearance',
+                '宁静表情': 'Serene Expression',
+                '强壮体格': 'Powerful Build',
+                '盔甲天使': 'Armored Angel',
+                '天使剑士': 'Angel Swordsman',
+                '圣经中精确的天使': 'Biblically Accurate Angel',
+                '堕落天使': 'Fallen Angel',
+                '奇形怪状的角': 'Weirdly Shaped Horns',
+                '光滑的角': 'Smooth Horns',
+                '浅色皮肤': 'Light Skin',
+                '金色头发': 'Golden Hair',
+                '宁静的眼睛': 'Serene Eyes',
+                '睿智的眼睛': 'Wise Eyes',
+                '神圣的眼睛': 'Divine Eyes',
+                '纯洁的眼睛': 'Pure Eyes',
+                '飘逸长袍': 'Flowing Robes',
+                '金色盔甲': 'Golden Armor',
+                '神圣盔甲': 'Divine Armor',
+                '骑士盔甲': 'Knight Armor',
+                '简单束腰外衣': 'Simple Tunic',
+                '神圣法衣': 'Holy Vestments',
+                '仪式服饰': 'Ceremonial Attire',
+                '优雅服装': 'Elegant Clothing',
+                '极简服装': 'Minimal Clothing',
+                '盔甲服装': 'Armored Clothing',
+                '纯洁': 'Pure',
+                '仁慈': 'Benevolent',
+                '神圣': 'Divine',
+                '守护': 'Protective',
+                '宁静': 'Serene',
+                '睿智': 'Wise',
+                '正直': 'Righteous',
+                '公正': 'Just',
+                '富有同情心': 'Compassionate',
+                '坚忍': 'Stoic',
+                '有纪律': 'Disciplined',
+                '堕落': 'Fallen',
+                '矛盾': 'Conflicted',
+                '权威': 'Authoritative',
+                '温柔': 'Gentle',
+                '吸血鬼': 'Vampire',
+                '尖牙': 'Fangs',
+                '苍白皮肤': 'Pale Skin',
+                '催眠眼': 'Hypnotic Eyes',
+                '尖指甲': 'Sharp Nails',
+                '贵族特征': 'Aristocratic Features',
+                '优雅外观': 'Elegant Appearance',
+                '哥特美学': 'Gothic Aesthetic',
+                '诡异美学': 'Eerie Aesthetic',
+                '醒目颜色': 'Striking Colors',
+                '复杂纹身': 'Intricate Tattoos',
+                '短发': 'Short Hair',
+                '长发': 'Long Hair',
+                '白发': 'White Hair',
+                '黑发': 'Black Hair',
+                '纤细体格': 'Slender Build',
+                '强壮体格': 'Strong Build',
+                '不死': 'Undead',
+                '不朽': 'Immortal',
+                '超自然魅力': 'Supernatural Charm',
+                '戏剧性姿态': 'Dramatic Stance',
+                '微妙假笑': 'Subtle Smirk',
+                '维多利亚时代风格': 'Victorian Era Inspired',
+                '现代外观': 'Modern Look',
+                '未来外观': 'Futuristic Look',
+                '半吸血鬼特征': 'Dhampir Features',
+                '锐利眼睛': 'Piercing Eyes',
+                '深色眼睛': 'Dark Eyes',
+                '古老的眼睛': 'Ancient Eyes',
+                '复杂服装': 'Intricate Costumes',
+                '经典哥特服饰': 'Classic Gothic Apparel',
+                '优雅服装': 'Elegant Clothing',
+                '贵族服饰': 'Noble Attire',
+                '维多利亚时代服装': 'Victorian Outfit',
+                '未来吸血鬼服装': 'Futuristic Vampire Clothing',
+                '黑色连衣裙': 'Black Dress',
+                '红色连衣裙': 'Red Dress',
+                '黑色裤子': 'Black Pants',
+                '西装': 'Suit',
+                '披风': 'Cape',
+                '飘逸服装': 'Flowing Clothing',
+                '深色调色板': 'Dark Color Palette',
+                '正装': 'Formal Wear',
+                '朋克时尚': 'Punk Fashion',
+                'V系王子时尚': 'Vkei Ouji Fashion',
+                '视觉系美学': 'Visual Kei Aesthetic',
+                '高度细节化服装': 'Highly Detailed Outfit',
+                '蕾丝': 'Lace',
+                '天鹅绒': 'Velvet',
+                '丝绸': 'Silk',
+                '高贵': 'Noble',
+                '迷人': 'Charming',
+                '神秘': 'Mysterious',
+                '狡猾': 'Cunning',
+                '嗜血': 'Bloodthirsty',
+                '古老': 'Ancient',
+                '睿智': 'Wise',
+                '受折磨': 'Tormented',
+                '戏剧性': 'Dramatic',
+                '凶猛': 'Fierce',
+                '老练': 'Sophisticated',
+                '热情': 'Passionate',
+                '忠于氏族': 'Loyal to Clan',
+                '忠于爱人': 'Loyal to Lover',
+                '狼人': 'Werewolf',
+                '狼特征': 'Wolf Features',
+                '人类特征': 'Human Features',
+                '混合形态': 'Hybrid Form',
+                '毛皮': 'Fur',
+                '爪': 'Claws',
+                '口鼻': 'Snout',
+                '狼耳': 'Wolf Ears',
+                '狼尾': 'Wolf Tail',
+                '肌肉发达体格': 'Muscular Build',
+                '强壮体格': 'Powerful Build',
+                '动态姿势': 'Dynamic Pose',
+                '有纹理的毛皮': 'Textured Fur',
+                '咆哮表情': 'Snarling Expression',
+                '双足狼': 'Bipedal Wolf',
+                '怪物类人': 'Monstrous Humanoid',
+                '撕裂的身体': 'Shredded Body',
+                '被撕裂的身体': 'Ripped Apart Body',
+                '狼形出现': 'Emerging Wolf',
+                '人兽变形': 'Human to Beast Transformation',
+                '原始形态': 'Primal Form',
+                '野性外观': 'Feral Appearance',
+                '大体型': 'Large Size',
+                '威慑': 'Intimidating',
+                '原始': 'Primal',
+                '野蛮': 'Savage',
+                '攻击性': 'Aggressive',
+                '人性与野性冲突': 'Conflicted Humanity vs Wildness',
+                '受折磨': 'Tormented',
+                '情感动荡': 'Emotional Turmoil',
+                // 外星人相关翻译
+                '异域': 'Exotic',
+                '触角': 'Antennae',
+                '鳞片': 'Scales',
+                '发光皮肤': 'Glowing Skin',
+                '生物发光': 'Bioluminescence',
+                '虹彩皮肤': 'Iridescent Skin',
+                '细长肢体': 'Slender Limbs',
+                '尖爪': 'Sharp Claws',
+                '外星耳朵': 'Alien Ears',
+                '复眼': 'Compound Eyes',
+                '鳃': 'Gills',
+                '鳍': 'Fins',
+                '半透明皮肤': 'Translucent Skin',
+                '生物装甲': 'Bio-armor',
+                '宇航服': 'Spacesuit',
+                '外星制服': 'Alien Uniform',
+                '科技套装': 'Tech Suit',
+                '能量装甲': 'Energy Armor',
+                '部落服装': 'Tribal Clothing',
+                '古老外星服饰': 'Ancient Alien Attire',
+                // 机器人相关翻译
+                '机器人': 'Robot',
+                '安卓': 'Android',
+                '电路': 'Circuit',
+                '全息投影': 'Holographic Projection',
+                '裸露电线': 'Exposed Wires',
+                '数字图案': 'Digital Pattern',
+                '流线型设计': 'Streamlined Design',
+                '重型装甲': 'Heavy Armor',
+                '人形机器人': 'Humanoid Robot',
+                '非人形机器人': 'Non-humanoid Robot',
+                '未来装甲': 'Future Armor',
+                '科技服饰': 'Techwear',
+                '集成服装': 'Integrated Clothing',
+                '赛博格增强': 'Cyborg Enhancement',
+                '数据线': 'Data Cable',
+                '简洁设计': 'Simple Design',
+                '功能性服装': 'Functional Clothing',
+                // 基因工程生物相关翻译
+                '变异体': 'Mutant',
+                '混血': 'Hybrid',
+                '增强力量': 'Enhanced Strength',
+                '非自然皮肤': 'Unnatural Skin',
+                '兽耳': 'Beast Ears',
+                '獠牙': 'Fangs',
+                '发光血管': 'Glowing Veins',
+                '额外肢体': 'Extra Limbs',
+                '改造身体': 'Modified Body',
+                '转基因': 'Transgenic',
+                '生物工程': 'Bio-engineering',
+                '不寻常眼睛': 'Unusual Eyes',
+                '毛茸茸的皮肤': 'Furry Skin',
+                '鳞状皮肤': 'Scaly Skin',
+                '实验服': 'Lab Coat',
+                '束缚': 'Restraint',
+                '实验性服装': 'Experimental Clothing',
+                '破损服装': 'Damaged Clothing',
+                '简单服装': 'Simple Clothing',
+                '束缚服': 'Restraint Suit',
+                '医疗服饰': 'Medical Attire',
+                '撕裂服装': 'Torn Clothing',
+                // 后人类相关翻译
+                '进化': 'Evolution',
+                '超人类': 'Superhuman',
+                '增强': 'Enhanced',
+                '流线型身体': 'Streamlined Body',
+                '增强感官': 'Enhanced Senses',
+                '赛博植入物': 'Cybernetic Implants',
+                '发光标记': 'Luminous Markings',
+                '完美身体': 'Perfect Body',
+                '无瑕皮肤': 'Flawless Skin',
+                '高级解剖结构': 'Advanced Anatomy',
+                '神经接口': 'Neural Interface',
+                '合成头发': 'Synthetic Hair',
+                '高级服装': 'Advanced Clothing',
+                '极简服饰': 'Minimalist Attire',
+                '智能面料': 'Smart Fabric',
+                '集成科技': 'Integrated Technology',
+                '无缝设计': 'Seamless Design',
+                '轻型装甲': 'Light Armor',
+                // 元素生物相关翻译
+                '元素': 'Elemental',
+                '火元素': 'Fire Elemental',
+                '水元素': 'Water Elemental',
+                '土元素': 'Earth Elemental',
+                '气元素': 'Air Elemental',
+                '发光身体': 'Luminous Body',
+                '透明身体': 'Transparent Body',
+                '岩石皮肤': 'Rock Skin',
+                '叶片皮肤': 'Leaf Skin',
+                '火焰身体': 'Flame Body',
+                '液体身体': 'Liquid Body',
+                '水晶身体': 'Crystal Body',
+                '雾气身体': 'Mist Body',
+                '石肤': 'Stone Skin',
+                '流动形态': 'Flowing Form',
+                '闪耀身体': 'Shining Body',
+                '云雾形态': 'Cloud Form',
+                '飘逸布料': 'Flowing Fabric',
+                '火焰服装': 'Flame Clothing',
+                '水流服装': 'Water Flow Clothing',
+                '大地服装': 'Earth Clothing',
+                '空气服装': 'Air Clothing',
+                '自然元素': 'Natural Elements',
+                '叶子裙': 'Leaf Skirt',
+                '水晶装甲': 'Crystal Armor',
+                '烟雾面纱': 'Smoke Veil',
+                '魔法服饰': 'Magic Attire',
+                // 宇宙实体相关翻译
+                '宇宙': 'Cosmic',
+                '星空皮肤': 'Starry Sky Skin',
+                '星系图案': 'Galaxy Pattern',
+                '虚空之眼': 'Eyes of the Void',
+                '漂浮': 'Floating',
+                '星座身体': 'Constellation Body',
+                '黑洞之眼': 'Black Hole Eyes',
+                '星云发': 'Nebula Hair',
+                '无限形态': 'Infinite Form',
+                '维度变换': 'Dimension Shift',
+                '星体身体': 'Celestial Body',
+                '宇宙恐怖': 'Cosmic Horror',
+                '天体服装': 'Celestial Clothing',
+                '星光面料': 'Starlight Fabric',
+                '虚空服饰': 'Void Attire',
+                '超凡服饰': 'Extraordinary Attire',
+                '无限褶皱': 'Infinite Folds',
+                '宇宙图案': 'Cosmic Pattern',
+                // 概念生物相关翻译
+                '概念': 'Concept',
+                '象征形态': 'Symbolic Form',
+                '梦幻般': 'Dreamlike',
+                '噩梦实体': 'Nightmare Entity',
+                '无形': 'Formless',
+                '无定形': 'Amorphous',
+                '发光符号': 'Glowing Symbols',
+                '图案皮肤': 'Patterned Skin',
+                '幻觉': 'Illusion',
+                '碎片化身体': 'Fragmented Body',
+                '短暂的': 'Ephemeral',
+                '幻影服装': 'Phantom Clothing',
+                '象征性服饰': 'Symbolic Attire',
+                '形态变化服装': 'Shapeshifting Clothing',
+                '不存在的服装': 'Non-existent Clothing',
+                '阴影服装': 'Shadow Clothing',
+                '光之面料': 'Fabric of Light',
+                // 凶猛的眼睛相关翻译
+                '凶猛的眼睛': 'Fierce Eyes',
+                '原始的眼睛': 'Primitive Eyes',
+                '人类眼睛': 'Human Eyes',
+                '破烂的衣服': 'Ragged Clothes',
+                '撕破的衣服': 'Ripped Clothes',
+                '破旧的衣服': 'Worn-out Clothes',
+                '人类衣服残余': 'Human Clothing Remnants'
+            },
+            ja: {
+                // 日语翻译
+                '人物外观': 'キャラクター外見',
+                '视角视线': '視点・視線',
+                '人物及年龄': 'キャラクター・年齢',
+                '肤色及体型': '肌色・体型',
+                '人物五官': '顔の特徴',
+                '人物表情': '表情',
+                '人物发色': '髪色',
+                '人物发型': '髪型',
+                '人物姿势': 'キャラクターポーズ',
+                '人物服装': 'キャラクター服装',
+                '饰品装扮': 'アクセサリー',
+                '场景画风': 'シーン・スタイル',
+                '其他物种': 'その他の種族'
+            },
+            ru: {
+                // 俄语翻译
+                '人物外观': 'Внешность персонажа',
+                '视角视线': 'Ракурс и взгляд',
+                '人物及年龄': 'Персонаж и возраст',
+                '肤色及体型': 'Цвет кожи и телосложение',
+                '人物五官': 'Черты лица',
+                '人物表情': 'Выражение лица',
+                '人物发色': 'Цвет волос',
+                '人物发型': 'Прическа',
+                '人物姿势': 'Поза персонажа',
+                '人物服装': 'Одежда персонажа',
+                '饰品装扮': 'Аксессуары',
+                '场景画风': 'Сцена и стиль',
+                '其他物种': 'Другие виды'
+            }
+        };
+
+        // 当前语言
+        let currentLanguage = 'zh';
+
+        // 语言切换函数
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            updateUILanguage();
+            updateLanguageButtons();
+        }
+
+        // 更新界面语言
+        function updateUILanguage() {
+            const t = translations[currentLanguage];
+            
+            // 更新主标题（桌面端和移动端）
+            const desktopTitle = document.querySelector('.hidden.md\\:block #main-title');
+            const mobileTitle = document.querySelector('.md\\:hidden #main-title');
+            if (desktopTitle) {
+                desktopTitle.textContent = t.mainTitle;
+                desktopTitle.setAttribute('data-lang', currentLanguage);
+            }
+            if (mobileTitle) {
+                mobileTitle.textContent = t.mainTitleMobile;
+                mobileTitle.setAttribute('data-lang', currentLanguage);
+            }
+            
+            // 更新提示词库内容
+            updatePromptLibraryLanguage();
+            
+            // 更新桌面端标签页按钮
+            const desktopTabs = [
+                'appearance-tab', 'pose-tab', 'clothing-tab',
+                'accessories-tab', 'style-tab', 'species-tab'
+            ];
+            const desktopTabTexts = [
+                t.appearanceTab, t.poseTab, t.clothingTab,
+                t.accessoriesTab, t.styleTab, t.speciesTab
+            ];
+            
+            desktopTabs.forEach((tabId, index) => {
+                const tab = document.getElementById(tabId);
+                if (tab) {
+                    tab.textContent = desktopTabTexts[index];
+                    tab.setAttribute('data-lang', currentLanguage);
+                }
+            });
+            
+            // 更新移动端标签页按钮
+            const mobileTabs = [
+                'appearance-tab-mobile', 'pose-tab-mobile', 'clothing-tab-mobile',
+                'accessories-tab-mobile', 'style-tab-mobile', 'species-tab-mobile'
+            ];
+            const mobileTabTexts = [
+                t.appearanceTab, t.poseTab, t.clothingTab,
+                t.accessoriesTab, t.styleTab, t.speciesTab
+            ];
+            
+            mobileTabs.forEach((tabId, index) => {
+                const tab = document.getElementById(tabId);
+                if (tab) {
+                    tab.textContent = mobileTabTexts[index];
+                    tab.setAttribute('data-lang', currentLanguage);
+                }
+            });
+            
+            // 更新底部按钮
+            document.getElementById('copy-selected-btn').textContent = t.copyAndJump;
+            document.getElementById('clear-tags-btn').title = t.clearAll;
+            document.getElementById('random-generate-btn').title = t.randomGenerate;
+            
+            // 更新占位符文本
+            const placeholderSpan = document.querySelector('#selected-tags-display span');
+            if (placeholderSpan && selectedTags.length === 0) {
+                placeholderSpan.textContent = t.placeholderText;
+            }
+            
+            // 更新帮助图标标题
+            document.getElementById('help-icon').title = t.helpTitle;
+            document.getElementById('help-icon-mobile').title = t.helpTitle;
+        }
+
+        // 更新提示词库语言
+        function updatePromptLibraryLanguage() {
+            const t = promptTranslations[currentLanguage];
+            if (!t) return;
+            
+            // 更新所有标签按钮的文本
+            const tagButtons = document.querySelectorAll('.tag-item');
+            tagButtons.forEach(button => {
+                const chineseText = button.getAttribute('data-chinese');
+                if (chineseText) {
+                    // 如果有翻译就使用翻译，否则保持原样
+                    button.textContent = t[chineseText] || chineseText;
+                }
+            });
+            
+            // 更新分类标题
+            const categoryTitles = document.querySelectorAll('.section-title');
+            categoryTitles.forEach(title => {
+                const chineseText = title.getAttribute('data-chinese');
+                if (chineseText) {
+                    // 如果有翻译就使用翻译，否则保持原样
+                    title.textContent = t[chineseText] || chineseText;
+                }
+            });
+            
+            // 更新子分类标题
+            const subTitles = document.querySelectorAll('.sub-section-title');
+            subTitles.forEach(title => {
+                const chineseText = title.getAttribute('data-chinese');
+                if (chineseText) {
+                    // 如果有翻译就使用翻译，否则保持原样
+                    title.textContent = t[chineseText] || chineseText;
+                }
+            });
+        }
+
+        // 更新语言按钮状态
+        function updateLanguageButtons() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-pink-500', 'text-white', 'border-pink-500');
+                btn.classList.add('bg-gray-200', 'text-gray-700', 'border-gray-300');
+            });
+            
+            const activeBtn = document.getElementById(`lang-${currentLanguage}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-gray-200', 'text-gray-700', 'border-gray-300');
+                activeBtn.classList.add('active', 'bg-pink-500', 'text-white', 'border-pink-500');
+            }
+        }
+
+        // 初始化语言切换事件
+        function initLanguageSwitcher() {
+            document.getElementById('lang-zh').addEventListener('click', () => switchLanguage('zh'));
+            document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+            document.getElementById('lang-ja').addEventListener('click', () => switchLanguage('ja'));
+            document.getElementById('lang-ru').addEventListener('click', () => switchLanguage('ru'));
+        }
+
+        // 显示帮助弹窗
+        function showHelpModal() {
+            document.getElementById('help-modal').classList.remove('hidden');
+            updateHelpModalLanguage();
+        }
+
+        // 隐藏帮助弹窗
+        function hideHelpModal() {
+            document.getElementById('help-modal').classList.add('hidden');
+        }
+
+        // 更新帮助弹窗语言
+        function updateHelpModalLanguage() {
+            const t = translations[currentLanguage];
+            document.getElementById('help-title').textContent = t.helpTitle;
+            document.getElementById('help-content').innerHTML = t.helpContent;
+            document.getElementById('help-icon').title = t.helpTitle;
+            document.getElementById('help-icon-mobile').title = t.helpTitle;
+        }
+
         const promptLibrary = {
             '人物外观': {
                 '视角视线': [
@@ -4119,6 +7606,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializePage();
             setupEventListeners();
+            initLanguageSwitcher();
         });
 
         function initializePage() {
@@ -4126,42 +7614,86 @@
         }
 
         function setupEventListeners() {
+            // 桌面端标签按钮事件
             document.getElementById('appearance-tab').addEventListener('click', () => switchTab('appearance'));
             document.getElementById('pose-tab').addEventListener('click', () => switchTab('pose'));
             document.getElementById('clothing-tab').addEventListener('click', () => switchTab('clothing'));
             document.getElementById('accessories-tab').addEventListener('click', () => switchTab('accessories'));
             document.getElementById('style-tab').addEventListener('click', () => switchTab('style'));
             document.getElementById('species-tab').addEventListener('click', () => switchTab('species'));
+            
+            // 移动端标签按钮事件
+            document.getElementById('appearance-tab-mobile').addEventListener('click', () => switchTab('appearance'));
+            document.getElementById('pose-tab-mobile').addEventListener('click', () => switchTab('pose'));
+            document.getElementById('clothing-tab-mobile').addEventListener('click', () => switchTab('clothing'));
+            document.getElementById('accessories-tab-mobile').addEventListener('click', () => switchTab('accessories'));
+            document.getElementById('style-tab-mobile').addEventListener('click', () => switchTab('style'));
+            document.getElementById('species-tab-mobile').addEventListener('click', () => switchTab('species'));
+            
             document.getElementById('copy-selected-btn').addEventListener('click', copySelectedTags);
             document.getElementById('clear-tags-btn').addEventListener('click', clearAllTags);
             document.getElementById('random-generate-btn').addEventListener('click', generateRandomTags);
+            
+            // 帮助图标事件
+            document.getElementById('help-icon').addEventListener('click', showHelpModal);
+            document.getElementById('help-icon-mobile').addEventListener('click', showHelpModal);
+            document.getElementById('close-help').addEventListener('click', hideHelpModal);
+            
+            // 点击弹窗背景关闭
+            document.getElementById('help-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'help-modal') {
+                    hideHelpModal();
+                }
+            });
         }
 
         function switchTab(tabName) {
             const tabs = ['appearance', 'pose', 'clothing', 'accessories', 'style', 'species'];
-            const contents = ['appearance-content', 'pose-content', 'clothing-content', 'accessories-content', 'style-content', 'species-content'];
+            const mobileContents = ['appearance-content', 'pose-content', 'clothing-content', 'accessories-content', 'style-content', 'species-content'];
+            const desktopContents = ['appearance-content-desktop', 'pose-content-desktop', 'clothing-content-desktop', 'accessories-content-desktop', 'style-content-desktop', 'species-content-desktop'];
             
             tabs.forEach((tab, index) => {
-                const tabButton = document.getElementById(`${tab}-tab`);
-                const content = document.getElementById(contents[index]);
+                // 桌面端按钮
+                const desktopTabButton = document.getElementById(`${tab}-tab`);
+                // 移动端按钮
+                const mobileTabButton = document.getElementById(`${tab}-tab-mobile`);
+                // 移动端内容
+                const mobileContent = document.getElementById(mobileContents[index]);
+                // 桌面端内容
+                const desktopContent = document.getElementById(desktopContents[index]);
                 
                 if (tab === tabName) {
-                    tabButton.classList.add('active');
-                    content.classList.remove('hidden');
+                    // 激活当前标签
+                    if (desktopTabButton) desktopTabButton.classList.add('active');
+                    if (mobileTabButton) mobileTabButton.classList.add('active');
+                    if (mobileContent) mobileContent.classList.remove('hidden');
+                    if (desktopContent) desktopContent.classList.remove('hidden');
                 } else {
-                    tabButton.classList.remove('active');
-                    content.classList.add('hidden');
+                    // 取消其他标签的激活状态
+                    if (desktopTabButton) desktopTabButton.classList.remove('active');
+                    if (mobileTabButton) mobileTabButton.classList.remove('active');
+                    if (mobileContent) mobileContent.classList.add('hidden');
+                    if (desktopContent) desktopContent.classList.add('hidden');
                 }
             });
         }
 
         function generateContent() {
+            // 移动端内容
             generateCategoryContent('appearance-content', promptLibrary['人物外观']);
             generateCategoryContent('pose-content', promptLibrary['人物姿势']);
             generateCategoryContent('clothing-content', promptLibrary['人物服装']);
             generateCategoryContent('accessories-content', promptLibrary['饰品装扮']);
             generateCategoryContent('style-content', promptLibrary['场景画风']);
             generateCategoryContent('species-content', promptLibrary['其他物种']);
+            
+            // 桌面端内容
+            generateCategoryContent('appearance-content-desktop', promptLibrary['人物外观']);
+            generateCategoryContent('pose-content-desktop', promptLibrary['人物姿势']);
+            generateCategoryContent('clothing-content-desktop', promptLibrary['人物服装']);
+            generateCategoryContent('accessories-content-desktop', promptLibrary['饰品装扮']);
+            generateCategoryContent('style-content-desktop', promptLibrary['场景画风']);
+            generateCategoryContent('species-content-desktop', promptLibrary['其他物种']);
         }
 
         function generateCategoryContent(containerId, categories) {
@@ -4189,6 +7721,7 @@
             const title = document.createElement('h3');
             title.className = 'section-title';
             title.textContent = categoryName;
+            title.setAttribute('data-chinese', categoryName);
             section.appendChild(title);
 
             tagRows.forEach(rowTags => {
@@ -4228,6 +7761,7 @@
                 subTitle.style.marginBottom = '10px';
                 subTitle.style.fontSize = '1.1em';
                 subTitle.textContent = subCategoryName;
+                subTitle.setAttribute('data-chinese', subCategoryName);
                 subSection.appendChild(subTitle);
 
                 tagRows.forEach(rowTags => {
@@ -4252,6 +7786,7 @@
             const button = document.createElement('button');
             button.className = 'tag-item px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200';
             button.textContent = tagName;
+            button.setAttribute('data-chinese', tagName);
             
             button.addEventListener('click', () => {
                 handleTagClick(tagName, button);
@@ -4390,10 +7925,10 @@
             const display = document.getElementById('selected-tags-display');
             
             if (selectedTags.length === 0) {
-                display.innerHTML = '<span class="text-gray-500">点击标签按钮以添加到此处...</span>';
+                display.innerHTML = `<span class="text-blue-400">${getText('placeholderText')}</span>`;
             } else {
                 const tagsHtml = selectedTags.map(tag => 
-                    `<span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full text-sm mr-2 mb-2 cursor-pointer hover:bg-pink-600 transition-colors" onclick="removeTagFromDisplay('${tag}')">${tag}</span>`
+                    `<span class="inline-block bg-pink-400 text-white px-3 py-1 rounded-full text-sm mr-2 mb-2 cursor-pointer hover:bg-pink-500 transition-all duration-200 shadow-sm hover:shadow-md" onclick="removeTagFromDisplay('${tag}')">${tag}</span>`
                 ).join('');
                 display.innerHTML = tagsHtml;
             }
@@ -4434,7 +7969,7 @@
 
         function copySelectedTags() {
             if (selectedTags.length === 0) {
-                showToast('请先选择一些标签');
+                showToast(getText('selectTagsFirst'));
                 return;
             }
 
@@ -4442,7 +7977,7 @@
             
             // 复制到剪贴板
             navigator.clipboard.writeText(tagValues).then(() => {
-                showToast('已复制标签，正在跳转到 KusaPics...');
+                showToast(getText('copiedAndJumpMessage'));
                 
                 // 延迟一下让用户看到提示，然后跳转
                 setTimeout(() => {
@@ -4450,7 +7985,7 @@
                     window.open('https://kusa.pics/', '_blank');
                 }, 1000);
             }).catch(() => {
-                showToast('复制失败，请手动复制');
+                showToast(getText('copyFailed'));
             });
         }
 
@@ -4464,16 +7999,46 @@
             }, 3000);
         }
 
+        function showRandomToast(count) {
+            const randomToast = document.getElementById('random-result-toast');
+            const countSpan = document.getElementById('random-result-count');
+            const prefixSpan = document.getElementById('random-result-prefix');
+            const unitSpan = document.getElementById('random-result-unit');
+            
+            if (randomToast && countSpan && prefixSpan && unitSpan) {
+                countSpan.textContent = count;
+                prefixSpan.textContent = getText('randomResultPrefix');
+                unitSpan.textContent = getText('randomResultUnit');
+                randomToast.style.opacity = '1';
+                
+                setTimeout(() => {
+                    randomToast.style.opacity = '0';
+                }, 3000);
+            }
+        }
+
+        // 获取翻译文本的函数
+        function getText(key, params = {}) {
+            const t = translations[currentLanguage];
+            let text = t[key] || key;
+            
+            // 替换参数
+            Object.keys(params).forEach(param => {
+                text = text.replace(`{${param}}`, params[param]);
+            });
+            
+            return text;
+        }
+
         function clearAllTags() {
             selectedTags = [];
             updateSelectedTagsDisplay();
             updateButtonVisualStates();
-            showToast('已清空所有标签');
+            showToast(getText('clearAllMessage'));
         }
 
         function generateRandomTags() {
             console.log('开始随机生成标签...');
-            showToast('正在生成随机标签...');
             // 清空现有标签
             selectedTags = [];
             
@@ -4651,7 +8216,7 @@
             console.log('生成的标签:', selectedTags);
             updateSelectedTagsDisplay();
             updateButtonVisualStates();
-            showToast(`已随机生成 ${selectedTags.length} 个标签`);
+            showRandomToast(selectedTags.length);
         }
     </script>
 </body>
