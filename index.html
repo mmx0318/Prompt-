@@ -508,7 +508,7 @@
                 // 中文翻译映射（保持原样）
                 '人物外观': '人物外观',
                 '视角视线': '视角视线',
-                '人物': '人物',
+                '人物数量': '人物数量',
                 '性别': '性别',
                 '年龄': '年龄',
                 '肤色': '肤色',
@@ -538,7 +538,12 @@
                 '向上看': '向上看',
                 '1个女孩': '1个女孩',
                 '1个男孩': '1个男孩',
-                '1个其他人': '1个其他人',
+                '1个人': '1个人',
+                '2个人': '2个人',
+                '3个人': '3个人',
+                '4个人': '4个人',
+                '5个人': '5个人',
+                '一群人': '一群人',
                 '多个女孩': '多个女孩',
                 '无性别': '无性别',
                 '跨性别者': '跨性别者',
@@ -1038,7 +1043,7 @@
             en: {
                 '人物外观': 'Character Appearance',
                 '视角视线': 'View & Gaze',
-                '人物': 'Character',
+                '人物数量': 'Character Count',
                 '性别': 'Gender',
                 '年龄': 'Age',
                 '肤色': 'Skin Color',
@@ -1068,7 +1073,12 @@
                 '向上看': 'Looking Up',
                 '1个女孩': '1 Girl',
                 '1个男孩': '1 Boy',
-                '1个其他人': '1 Other',
+                '1个人': '1 Person',
+                '2个人': '2 People',
+                '3个人': '3 People',
+                '4个人': '4 People',
+                '5个人': '5 People',
+                '一群人': 'Group',
                 '多个女孩': 'Multiple Girls',
                 '无性别': 'Agender',
                 '跨性别者': 'Transgender',
@@ -1564,6 +1574,11 @@
                 '拿着麦克风': 'Holding Microphone',
                 '抱着物品': 'Holding Item',
                 '抱着心': 'Holding Heart',
+                
+                // 翅膀分类标题
+                '动物和昆虫相关的翅膀': 'Animal and Insect Wings',
+                '神话、幻想和特殊类型翅膀': 'Mythical, Fantasy and Special Wings',
+                '翅膀的形态和数量': 'Wing Forms and Quantities',
                 // 人物服装相关
                 '清纯可爱': 'Pure & Cute',
                 '妖娆色气': 'Seductive & Sexy',
@@ -1715,9 +1730,11 @@
                 '发饰 (Hair Accessories)': 'Hair Accessories',
                 '首饰 (Jewelry)': 'Jewelry',
                 '装饰 (Decorations)': 'Decorations',
-                '尾巴 (Tails)': 'Tails',
-                '翅膀 (Wings)': 'Wings',
-                '角 (Horns)': 'Horns',
+                '尾巴': 'Tails',
+                '动物尾巴': 'Animal Tails',
+                '其他生物尾巴': 'Other Creature Tails',
+                '翅膀': 'Wings',
+                '角': 'Horns',
                 '发带': 'Hair Band',
                 '头巾': 'Headscarf',
                 '动物头巾': 'Animal Headscarf',
@@ -1780,6 +1797,21 @@
                 '机械义肢': 'Mechanical Prosthesis',
                 '沙漏币': 'Hourglass Coin',
                 '雨披': 'Rain Poncho',
+                '龙角': 'Dragon Horns',
+                '变种人': 'Mutant',
+                '拟人化动物': 'Anthropomorphic Animal',
+                '恶魔': 'Demon',
+                '天使': 'Angel',
+                '吸血鬼': 'Vampire',
+                '狼人': 'Werewolf',
+                '外星人': 'Alien',
+                '机器人': 'Robot',
+                '基因工程生物': 'Genetically Engineered',
+                '后人类': 'Post Human',
+                '元素生物': 'Elemental',
+                '宇宙实体': 'Cosmic Entity',
+                '概念生物': 'Conceptual Being',
+                '克苏鲁神话': 'Cthulhu Mythos',
                 '浓妆': 'Heavy Makeup',
                 '宝可梦尾巴': 'Pokemon Tail',
                 '皮卡丘尾巴': 'Pikachu Tail',
@@ -1799,18 +1831,56 @@
                 '猎豹尾巴': 'Cheetah Tail',
                 '熊猫尾巴': 'Panda Tail',
                 '天使尾巴': 'Angel Tail',
-                '蝴蝶翅膀': 'Butterfly Wings',
+                '猫尾巴': 'Cat Tail',
+                '狗尾巴': 'Dog Tail',
+                '狐狸尾巴': 'Fox Tail',
+                '狼尾巴': 'Wolf Tail',
+                '兔尾巴': 'Rabbit Tail',
+                '松鼠尾巴': 'Squirrel Tail',
+                '狮子尾巴': 'Lion Tail',
+                '猴子尾巴': 'Monkey Tail',
+                '鸟尾巴': 'Bird Tail',
+                '龙尾巴': 'Dragon Tail',
+                '恶魔尾巴': 'Demonic Tail',
+                '美人鱼尾巴': 'Mermaid Tail',
+                '触手尾巴': 'Tentacle Tail',
+                '多条尾巴': 'Multiple Tails',
+                '机械尾巴': 'Mechanical Tail',
+                '发光的尾巴': 'Glowing Tail',
+                '毛茸茸的尾巴': 'Fluffy Tail',
+                '蓬松的尾巴': 'Bushy Tail',
+                '长尾巴': 'Long Tail',
+                '短尾巴': 'Short Tail',
+                '可抓握的尾巴': 'Prehensile Tail',
+                '鞭状尾巴': 'Whip Tail',
+                // 动物和昆虫相关的翅膀
+                '鸟类翅膀': 'Bird Wings',
+                '羽毛翅膀': 'Feathered Wings',
                 '昆虫翅膀': 'Insect Wings',
+                '蝴蝶翅膀': 'Butterfly Wings',
+                '蜻蜓翅膀': 'Dragonfly Wings',
                 '蝙蝠翅膀': 'Bat Wings',
-                '乌翼': 'Crow Wings',
-                '羽翼': 'Feathered Wings',
+                '龙翅膀': 'Dragon Wings',
+                
+                // 神话、幻想和特殊类型翅膀
+                '天使翅膀': 'Angel Wings',
+                '恶魔翅膀': 'Demonic Wings',
                 '妖精翅膀': 'Fairy Wings',
-                '龙之翼': 'Dragon Wings',
-                '恶魔之翼': 'Demon Wings',
                 '火焰翅膀': 'Fire Wings',
+                '冰霜翅膀': 'Ice Wings',
+                '水之翅膀': 'Water Wings',
                 '机械翅膀': 'Mechanical Wings',
-                '冰翅': 'Ice Wings',
-                '冰火之翼': 'Ice-Fire Wings',
+                '能量翅膀': 'Energy Wings',
+                '武器化翅膀': 'Weaponized Wings',
+                '透明翅膀': 'Transparent Wings',
+                
+                // 翅膀的形态和数量
+                '单个翅膀': 'Single Wing',
+                '多个翅膀': 'Multiple Wings',
+                '巨大的翅膀': 'Large Wings',
+                '小巧的翅膀': 'Small Wings',
+                '折叠起来的翅膀': 'Folded Wings',
+                '展开的翅膀': 'Spread Wings',
                 '羚羊角': 'Antelope Horns',
                 '山羊角': 'Goat Horns',
                 '羊角': 'Sheep Horns',
@@ -1821,6 +1891,11 @@
                 '机械角': 'Mechanical Horns',
                 '恶魔之角': 'Demon Horns',
                 '龙之角': 'Dragon Horns',
+                '特殊特征': 'Special Features',
+                '不寻常解剖结构': 'Unusual Anatomy',
+                '身体恐怖': 'Body Horror',
+                '面无表情的眼睛': 'Expressionless Eyes',
+                '机器人眼睛': 'Robot Eyes',
                 // 场景画风相关
                 '画风风格': 'Art Style',
                 '色调': 'Color Tone',
@@ -2452,8 +2527,26 @@
                 '首饰': 'Jewelry',
                 '装饰': 'Decorations',
                 '尾巴': 'Tails',
+                '动物尾巴': 'Animal Tails',
+                '其他生物尾巴': 'Other Creature Tails',
                 '翅膀': 'Wings',
                 '角': 'Horns',
+                '动物和神话生物相关的角': 'Animal and Mythical Creature Horns',
+                '角的形态和数量': 'Horn Forms and Quantities',
+                '其他特殊类型的角': 'Other Special Types of Horns',
+                '动物角': 'Animal Horns',
+                '鹿角': 'Deer Horns',
+                '绵羊角': 'Sheep Horns',
+                '恶魔角': 'Demon Horns',
+                '单角': 'Single Horn',
+                '多个角': 'Multiple Horns',
+                '小角': 'Small Horns',
+                '大角': 'Large Horns',
+                '螺旋形的角': 'Spiral Horns',
+                '弯曲的角': 'Curved Horns',
+                '发光的角': 'Glowing Horns',
+                '骨头角': 'Bone Horns',
+                '水晶角': 'Crystal Horns',
                 '发带': 'Hairband',
                 '头巾': 'Headdress',
                 '动物头巾': 'Animal Hood',
@@ -2534,18 +2627,56 @@
                 '猎豹尾巴': 'Cheetah Tail',
                 '熊猫尾巴': 'Panda Tail',
                 '天使尾巴': 'Angel Tail',
-                '蝴蝶翅膀': 'Butterfly Wings',
+                '猫尾巴': 'Cat Tail',
+                '狗尾巴': 'Dog Tail',
+                '狐狸尾巴': 'Fox Tail',
+                '狼尾巴': 'Wolf Tail',
+                '兔尾巴': 'Rabbit Tail',
+                '松鼠尾巴': 'Squirrel Tail',
+                '狮子尾巴': 'Lion Tail',
+                '猴子尾巴': 'Monkey Tail',
+                '鸟尾巴': 'Bird Tail',
+                '龙尾巴': 'Dragon Tail',
+                '恶魔尾巴': 'Demonic Tail',
+                '美人鱼尾巴': 'Mermaid Tail',
+                '触手尾巴': 'Tentacle Tail',
+                '多条尾巴': 'Multiple Tails',
+                '机械尾巴': 'Mechanical Tail',
+                '发光的尾巴': 'Glowing Tail',
+                '毛茸茸的尾巴': 'Fluffy Tail',
+                '蓬松的尾巴': 'Bushy Tail',
+                '长尾巴': 'Long Tail',
+                '短尾巴': 'Short Tail',
+                '可抓握的尾巴': 'Prehensile Tail',
+                '鞭状尾巴': 'Whip Tail',
+                // 动物和昆虫相关的翅膀
+                '鸟类翅膀': 'Bird Wings',
+                '羽毛翅膀': 'Feathered Wings',
                 '昆虫翅膀': 'Insect Wings',
+                '蝴蝶翅膀': 'Butterfly Wings',
+                '蜻蜓翅膀': 'Dragonfly Wings',
                 '蝙蝠翅膀': 'Bat Wings',
-                '乌翼': 'Raven Wings',
-                '羽翼': 'Feather Wings',
+                '龙翅膀': 'Dragon Wings',
+                
+                // 神话、幻想和特殊类型翅膀
+                '天使翅膀': 'Angel Wings',
+                '恶魔翅膀': 'Demonic Wings',
                 '妖精翅膀': 'Fairy Wings',
-                '龙之翼': 'Dragon Wings',
-                '恶魔之翼': 'Demon Wings',
-                '火焰翅膀': 'Flame Wings',
+                '火焰翅膀': 'Fire Wings',
+                '冰霜翅膀': 'Ice Wings',
+                '水之翅膀': 'Water Wings',
                 '机械翅膀': 'Mechanical Wings',
-                '冰翅': 'Ice Wings',
-                '冰火之翼': 'Ice and Fire Wings',
+                '能量翅膀': 'Energy Wings',
+                '武器化翅膀': 'Weaponized Wings',
+                '透明翅膀': 'Transparent Wings',
+                
+                // 翅膀的形态和数量
+                '单个翅膀': 'Single Wing',
+                '多个翅膀': 'Multiple Wings',
+                '巨大的翅膀': 'Large Wings',
+                '小巧的翅膀': 'Small Wings',
+                '折叠起来的翅膀': 'Folded Wings',
+                '展开的翅膀': 'Spread Wings',
                 '羚羊角': 'Antelope Horns',
                 '山羊角': 'Goat Horns',
                 '羊角': 'Sheep Horns',
@@ -3160,6 +3291,22 @@
                 '奇幻与神话': 'Fantasy & Mythical',
                 '恶魔': 'Demon',
                 '角': 'Horns',
+                '动物和神话生物相关的角': 'Animal and Mythical Creature Horns',
+                '角的形态和数量': 'Horn Forms and Quantities',
+                '其他特殊类型的角': 'Other Special Types of Horns',
+                '动物角': 'Animal Horns',
+                '鹿角': 'Deer Horns',
+                '绵羊角': 'Sheep Horns',
+                '恶魔角': 'Demon Horns',
+                '单角': 'Single Horn',
+                '多个角': 'Multiple Horns',
+                '小角': 'Small Horns',
+                '大角': 'Large Horns',
+                '螺旋形的角': 'Spiral Horns',
+                '弯曲的角': 'Curved Horns',
+                '发光的角': 'Glowing Horns',
+                '骨头角': 'Bone Horns',
+                '水晶角': 'Crystal Horns',
                 '翅膀': 'Wings',
                 '尾巴': 'Tail',
                 '爪': 'Claws',
@@ -3507,7 +3654,7 @@
                 // 日语翻译
                 '人物外观': 'キャラクター外見',
                 '视角视线': '視点・視線',
-                '人物': 'キャラクター',
+                '人物数量': 'キャラクター数',
                 '性别': '性別',
                 '年龄': '年齢',
                 '肤色': '肌色',
@@ -3521,24 +3668,105 @@
                 '人物姿势': 'キャラクターポーズ',
                 '人物服装': 'キャラクター服装',
                 '饰品装扮': 'アクセサリー',
+                '动物尾巴': '動物の尻尾',
+                '其他生物尾巴': 'その他の生物の尻尾',
                 '场景画风': 'シーン・スタイル',
                 '其他物种': 'その他の種族',
                 '1个女孩': '1人の女の子',
                 '1个男孩': '1人の男の子',
-                '1个其他人': '1人のその他',
+                '1个人': '1人',
+                '2个人': '2人',
+                '3个人': '3人',
+                '4个人': '4人',
+                '5个人': '5人',
+                '一群人': 'グループ',
                 '多个女孩': '複数の女の子',
                 '无性别': '無性別',
                 '跨性别者': 'トランスジェンダー',
                 '扶他那利': 'フタナリ',
                 '假小子': 'お転婆',
                 '美少年': '美少年',
-                '美少女': '美少女'
+                '美少女': '美少女',
+                '宝可梦尾巴': 'ポケモンの尻尾',
+                '皮卡丘尾巴': 'ピカチュウの尻尾',
+                '水獭尾巴': 'カワウソの尻尾',
+                '鹿尾': '鹿の尻尾',
+                '黄鼠狼尾巴': 'イタチの尻尾',
+                '羊驼尾巴': 'アルパカの尻尾',
+                '恐龙尾巴': '恐竜の尻尾',
+                '企鹅尾巴': 'ペンギンの尻尾',
+                '羊尾巴': '羊の尻尾',
+                '山羊尾巴': 'ヤギの尻尾',
+                '海狸尾巴': 'ビーバーの尻尾',
+                '小熊猫尾巴': 'レッサーパンダの尻尾',
+                '豹尾': 'ヒョウの尻尾',
+                '食蚁兽尾巴': 'アリクイの尻尾',
+                '土狼尾巴': 'コヨーテの尻尾',
+                '猎豹尾巴': 'チーターの尻尾',
+                '熊猫尾巴': 'パンダの尻尾',
+                '天使尾巴': '天使の尻尾',
+                '猫尾巴': '猫の尻尾',
+                '狗尾巴': '犬の尻尾',
+                '狐狸尾巴': '狐の尻尾',
+                '狼尾巴': '狼の尻尾',
+                '兔尾巴': 'ウサギの尻尾',
+                '松鼠尾巴': 'リスの尻尾',
+                '狮子尾巴': 'ライオンの尻尾',
+                '猴子尾巴': 'サルの尻尾',
+                '鸟尾巴': '鳥の尻尾',
+                '龙尾巴': 'ドラゴンの尻尾',
+                '恶魔尾巴': '悪魔の尻尾',
+                '美人鱼尾巴': '人魚の尻尾',
+                '触手尾巴': '触手の尻尾',
+                '多条尾巴': '複数の尻尾',
+                '机械尾巴': '機械の尻尾',
+                '发光的尾巴': '光る尻尾',
+                '毛茸茸的尾巴': 'ふわふわの尻尾',
+                '蓬松的尾巴': 'ふさふさの尻尾',
+                '长尾巴': '長い尻尾',
+                '短尾巴': '短い尻尾',
+                '可抓握的尾巴': '物を掴める尻尾',
+                '鞭状尾巴': '鞭のような尻尾',
+                
+                // 动物和昆虫相关的翅膀
+                '鸟类翅膀': '鳥の翼',
+                '羽毛翅膀': '羽根の翼',
+                '昆虫翅膀': '昆虫の翼',
+                '蝴蝶翅膀': '蝶の翼',
+                '蜻蜓翅膀': 'トンボの翼',
+                '蝙蝠翅膀': 'コウモリの翼',
+                '龙翅膀': 'ドラゴンの翼',
+                
+                // 神话、幻想和特殊类型翅膀
+                '天使翅膀': '天使の翼',
+                '恶魔翅膀': '悪魔の翼',
+                '妖精翅膀': '妖精の翼',
+                '火焰翅膀': '炎の翼',
+                '冰霜翅膀': '氷の翼',
+                '水之翅膀': '水の翼',
+                '机械翅膀': '機械の翼',
+                '能量翅膀': 'エネルギーの翼',
+                '武器化翅膀': '武器化された翼',
+                '透明翅膀': '透明な翼',
+                
+                // 翅膀的形态和数量
+                '单个翅膀': '単一の翼',
+                '多个翅膀': '複数の翼',
+                '巨大的翅膀': '巨大な翼',
+                '小巧的翅膀': '小さな翼',
+                '折叠起来的翅膀': '折りたたまれた翼',
+                '展开的翅膀': '広げられた翼',
+                
+                // 翅膀分类标题
+                '动物和昆虫相关的翅膀': '動物と昆虫の翼',
+                '神话、幻想和特殊类型翅膀': '神話、ファンタジーと特殊な翼',
+                '翅膀的形态和数量': '翼の形態と数量'
             },
             ru: {
                 // 俄语翻译
                 '人物外观': 'Внешность персонажа',
                 '视角视线': 'Ракурс и взгляд',
-                '人物': 'Персонаж',
+                '人物数量': 'Количество персонажей',
                 '性别': 'Пол',
                 '年龄': 'Возраст',
                 '肤色': 'Цвет кожи',
@@ -3552,18 +3780,99 @@
                 '人物姿势': 'Поза персонажа',
                 '人物服装': 'Одежда персонажа',
                 '饰品装扮': 'Аксессуары',
+                '动物尾巴': 'Хвосты животных',
+                '其他生物尾巴': 'Хвосты других существ',
                 '场景画风': 'Сцена и стиль',
                 '其他物种': 'Другие виды',
                 '1个女孩': '1 девушка',
                 '1个男孩': '1 мальчик',
-                '1个其他人': '1 другой',
+                '1个人': '1 человек',
+                '2个人': '2 человека',
+                '3个人': '3 человека',
+                '4个人': '4 человека',
+                '5个人': '5 человек',
+                '一群人': 'Группа людей',
                 '多个女孩': 'Несколько девушек',
                 '无性别': 'Агендер',
                 '跨性别者': 'Трансгендер',
                 '扶他那利': 'Футанари',
                 '假小子': 'Сорванец',
                 '美少年': 'Бисёнен',
-                '美少女': 'Бисёдзё'
+                '美少女': 'Бисёдзё',
+                '宝可梦尾巴': 'Хвост покемона',
+                '皮卡丘尾巴': 'Хвост пикачу',
+                '水獭尾巴': 'Хвост выдры',
+                '鹿尾': 'Олений хвост',
+                '黄鼠狼尾巴': 'Хвост ласки',
+                '羊驼尾巴': 'Хвост альпаки',
+                '恐龙尾巴': 'Хвост динозавра',
+                '企鹅尾巴': 'Хвост пингвина',
+                '羊尾巴': 'Овечий хвост',
+                '山羊尾巴': 'Козий хвост',
+                '海狸尾巴': 'Хвост бобра',
+                '小熊猫尾巴': 'Хвост красной панды',
+                '豹尾': 'Хвост леопарда',
+                '食蚁兽尾巴': 'Хвост муравьеда',
+                '土狼尾巴': 'Хвост койота',
+                '猎豹尾巴': 'Хвост гепарда',
+                '熊猫尾巴': 'Хвост панды',
+                '天使尾巴': 'Ангельский хвост',
+                '猫尾巴': 'Кошачий хвост',
+                '狗尾巴': 'Собачий хвост',
+                '狐狸尾巴': 'Лисьий хвост',
+                '狼尾巴': 'Волчий хвост',
+                '兔尾巴': 'Кроличий хвост',
+                '松鼠尾巴': 'Белкин хвост',
+                '狮子尾巴': 'Львиный хвост',
+                '猴子尾巴': 'Обезьяний хвост',
+                '鸟尾巴': 'Птичий хвост',
+                '龙尾巴': 'Драконий хвост',
+                '恶魔尾巴': 'Демонический хвост',
+                '美人鱼尾巴': 'Русалочий хвост',
+                '触手尾巴': 'Хвост-щупальце',
+                '多条尾巴': 'Множественные хвосты',
+                '机械尾巴': 'Механический хвост',
+                '发光的尾巴': 'Светящийся хвост',
+                '毛茸茸的尾巴': 'Пушистый хвост',
+                '蓬松的尾巴': 'Лохматый хвост',
+                '长尾巴': 'Длинный хвост',
+                '短尾巴': 'Короткий хвост',
+                '可抓握的尾巴': 'Хватательный хвост',
+                '鞭状尾巴': 'Кнутовидный хвост',
+                
+                // 动物和昆虫相关的翅膀
+                '鸟类翅膀': 'Птичьи крылья',
+                '羽毛翅膀': 'Пернатые крылья',
+                '昆虫翅膀': 'Крылья насекомых',
+                '蝴蝶翅膀': 'Крылья бабочки',
+                '蜻蜓翅膀': 'Крылья стрекозы',
+                '蝙蝠翅膀': 'Крылья летучей мыши',
+                '龙翅膀': 'Крылья дракона',
+                
+                // 神话、幻想和特殊类型翅膀
+                '天使翅膀': 'Крылья ангела',
+                '恶魔翅膀': 'Крылья демона',
+                '妖精翅膀': 'Крылья феи',
+                '火焰翅膀': 'Огненные крылья',
+                '冰霜翅膀': 'Ледяные крылья',
+                '水之翅膀': 'Водяные крылья',
+                '机械翅膀': 'Механические крылья',
+                '能量翅膀': 'Энергетические крылья',
+                '武器化翅膀': 'Вооруженные крылья',
+                '透明翅膀': 'Прозрачные крылья',
+                
+                // 翅膀的形态和数量
+                '单个翅膀': 'Одно крыло',
+                '多个翅膀': 'Множественные крылья',
+                '巨大的翅膀': 'Огромные крылья',
+                '小巧的翅膀': 'Маленькие крылья',
+                '折叠起来的翅膀': 'Сложенные крылья',
+                '展开的翅膀': 'Расправленные крылья',
+                
+                // 翅膀分类标题
+                '动物和昆虫相关的翅膀': 'Крылья животных и насекомых',
+                '神话、幻想和特殊类型翅膀': 'Мифические, фантастические и особые крылья',
+                '翅膀的形态和数量': 'Формы и количество крыльев'
             }
         };
 
@@ -3648,6 +3957,17 @@
             document.getElementById('help-icon-mobile').title = t.helpTitle;
         }
 
+        // 获取显示文本（处理双语标题）
+        function getDisplayText(text) {
+            // 检查是否是双语格式：中文 (English)
+            const match = text.match(/^(.+?)\s*\(([A-Za-z\s]+)\)$/);
+            if (match && currentLanguage === 'en') {
+                // 英文状态下只显示英文部分
+                return match[2].trim();
+            }
+            return text;
+        }
+
         // 更新提示词库语言
         function updatePromptLibraryLanguage() {
             const t = promptTranslations[currentLanguage];
@@ -3658,8 +3978,8 @@
             tagButtons.forEach(button => {
                 const chineseText = button.getAttribute('data-chinese');
                 if (chineseText) {
-                    // 如果有翻译就使用翻译，否则保持原样
-                    button.textContent = t[chineseText] || chineseText;
+                    // 如果有翻译就使用翻译，否则使用getDisplayText处理双语标题
+                    button.textContent = t[chineseText] || getDisplayText(chineseText);
                     
                     // 保持选中状态
                     const danbooruTags = chineseToDanbooruMap[chineseText];
@@ -3678,8 +3998,8 @@
             categoryTitles.forEach(title => {
                 const chineseText = title.getAttribute('data-chinese');
                 if (chineseText) {
-                    // 如果有翻译就使用翻译，否则保持原样
-                    title.textContent = t[chineseText] || chineseText;
+                    // 如果有翻译就使用翻译，否则使用getDisplayText处理双语标题
+                    title.textContent = t[chineseText] || getDisplayText(chineseText);
                 }
             });
             
@@ -3688,8 +4008,8 @@
             subTitles.forEach(title => {
                 const chineseText = title.getAttribute('data-chinese');
                 if (chineseText) {
-                    // 如果有翻译就使用翻译，否则保持原样
-                    title.textContent = t[chineseText] || chineseText;
+                    // 如果有翻译就使用翻译，否则使用getDisplayText处理双语标题
+                    title.textContent = t[chineseText] || getDisplayText(chineseText);
                 }
             });
         }
@@ -3760,8 +4080,8 @@
                     ['蚯蚓视角', '带有角度的视角', '低角度视角', '俯视视角', '放大镜效果', '缩小镜效果', '俯视', '高角度视角', '平视', '特写', '极端特写'],
                     ['面对画面或观众', '两个角色对视', '看着别的方', '回头看', '向上看']
                 ],
-                '人物': [
-                    ['1个女孩', '1个男孩', '1个其他人', '多个女孩']
+                '人物数量': [
+                    ['1个女孩', '1个男孩', '1个人', '2个人', '3个人', '4个人', '5个人', '一群人', '多个女孩']
                 ],
                 '性别': [
                     ['无性别', '跨性别者', '扶他那利', '假小子', '美少年', '美少女']
@@ -3894,15 +4214,37 @@
                 '装饰 (Decorations)': [
                     ['丝带', '丝带饰边', '蕾丝饰边', '裙撑', '护手', '领巾', '肩章', '肩带', '细肩带', '般若面具', '面纱', '新娘面纱', '皇冠', '迷你皇冠', '耳罩', '飞行员太阳镜', '无边框眼镜', '半无框眼镜', '太阳镜', '风镜', '独眼眼镜', '黑色眼罩', '铁棘', '光环', '口罩', '创可贴', '指甲油', '玩偶关节', '机械义肢', '沙漏币', '雨披', '浓妆']
                 ],
-                '尾巴 (Tails)': [
-                    ['宝可梦尾巴', '皮卡丘尾巴', '水獭尾巴', '鹿尾', '黄鼠狼尾巴', '羊驼尾巴', '恐龙尾巴', '企鹅尾巴', '羊尾巴', '山羊尾巴', '海狸尾巴', '小熊猫尾巴', '豹尾', '食蚁兽尾巴', '土狼尾巴', '猎豹尾巴', '熊猫尾巴', '天使尾巴']
-                ],
-                '翅膀 (Wings)': [
-                    ['蝴蝶翅膀', '昆虫翅膀', '蝙蝠翅膀', '乌翼', '羽翼', '妖精翅膀', '龙之翼', '恶魔之翼', '火焰翅膀', '机械翅膀', '冰翅', '冰火之翼']
-                ],
-                '角 (Horns)': [
-                    ['羚羊角', '山羊角', '羊角', '奶牛角', '公牛角', '鬼角', '断角', '机械角', '恶魔之角', '龙之角']
-                ]
+                '尾巴': {
+                    '动物尾巴': [
+                        ['宝可梦尾巴', '皮卡丘尾巴', '水獭尾巴', '鹿尾', '黄鼠狼尾巴', '羊驼尾巴', '恐龙尾巴', '企鹅尾巴', '羊尾巴', '山羊尾巴', '海狸尾巴', '小熊猫尾巴', '豹尾', '食蚁兽尾巴', '土狼尾巴', '猎豹尾巴', '熊猫尾巴'],
+                        ['猫尾巴', '狗尾巴', '狐狸尾巴', '狼尾巴', '兔尾巴', '松鼠尾巴', '狮子尾巴', '猴子尾巴', '鸟尾巴']
+                    ],
+                    '其他生物尾巴': [
+                        ['天使尾巴', '龙尾巴', '恶魔尾巴', '美人鱼尾巴', '触手尾巴', '多条尾巴', '机械尾巴', '发光的尾巴', '毛茸茸的尾巴', '蓬松的尾巴', '长尾巴', '短尾巴', '可抓握的尾巴', '鞭状尾巴']
+                    ]
+                },
+                '翅膀': {
+                    '动物和昆虫相关的翅膀': [
+                        ['鸟类翅膀', '羽毛翅膀', '昆虫翅膀', '蝴蝶翅膀', '蜻蜓翅膀', '蝙蝠翅膀', '龙翅膀']
+                    ],
+                    '神话、幻想和特殊类型翅膀': [
+                        ['天使翅膀', '恶魔翅膀', '妖精翅膀', '火焰翅膀', '冰霜翅膀', '水之翅膀', '机械翅膀', '能量翅膀', '武器化翅膀', '透明翅膀']
+                    ],
+                    '翅膀的形态和数量': [
+                        ['单个翅膀', '多个翅膀', '巨大的翅膀', '小巧的翅膀', '折叠起来的翅膀', '展开的翅膀']
+                    ]
+                },
+                '角': {
+                    '动物和神话生物相关的角': [
+                        ['动物角', '鹿角', '山羊角', '绵羊角', '奶牛角', '公牛角', '恶魔角', '鬼角', '龙角']
+                    ],
+                    '角的形态和数量': [
+                        ['单角', '多个角', '小角', '大角', '螺旋形的角', '断角', '弯曲的角']
+                    ],
+                    '其他特殊类型的角': [
+                        ['机械角', '发光的角', '骨头角', '水晶角']
+                    ]
+                }
             },
             '场景画风': {
                 '画风风格': [
@@ -3982,23 +4324,23 @@
                     '眼部特点': [['发光眼睛', '蓝眼睛', '红眼睛', '面无表情的眼睛', '机器人眼睛', '传感器眼', '单眼']],
                     '服装': [['制服', '未来服装', '简洁线条']]
                 },
-                '变种人 (Mutant)': {
+                '变种人': {
                     '外貌特点': [['变种人', '变异人类', '超能力', '不寻常特征', '畸形怪物', '多余肢体', '多眼', '触手']],
                     '眼部特点': [['不寻常的眼睛', '发光眼睛', '扭曲的眼睛', '外星人眼睛']],
                     '服装': [['超级英雄服装', '赛博朋克盔甲', '破烂衣物']],
                     '特殊特征': [['不寻常解剖结构', '身体恐怖']]
                 },
-                '拟人化动物 (Anthropomorphic Animal)': {
+                '拟人化动物': {
                     '外貌特点': [['兽人', '拟人化', '动物耳朵', '动物尾巴', '爪子', '口鼻', '毛皮', '类人动物', '兽耳娘/男', '猫娘', '狗男', '狐娘', '狼男']],
                     '眼部特点': [['动物眼睛', '大眼睛', '富有表现力的眼睛', '裂缝瞳孔', '黄眼睛', '绿眼睛', '可爱的眼睛']],
                     '服装': [['衣服', '兽装']]
                 },
-                '恶魔 (Demon)': {
+                '恶魔': {
                     '外貌特点': [['恶魔', '角', '翅膀', '尾巴', '爪', '红色皮肤', '深色皮肤']],
                     '眼部特点': [['发光眼睛', '红眼睛', '裂缝瞳孔', '邪恶的眼睛', '黑色巩膜']],
                     '服装': [['哥特式服装', '深色长袍', '复杂服装', '优雅哥特服饰', '现代前卫造型', '暗法师服装', '巫师服装', '男巫服装', '仪式长袍', '暴露服装', '盔甲服装', '链条', '尖刺', '皮革', '飘逸织物', '华丽配饰']]
                 },
-                '天使 (Angel)': {
+                '天使': {
                     '外貌特点': [['天使', '翅膀', '光环', '白色长袍', '浅色调', '空灵', '羽毛翅膀', '白色翅膀', '金色翅膀', '发光光环', '神圣光芒', '纯洁外观', '宁静表情', '强壮体格', '肌肉发达', '盔甲天使', '天使剑士', '圣经中精确的天使', '堕落天使', '奇形怪状的角', '光滑的角', '浅色皮肤', '金色头发', '长发', '短发']],
                     '眼部特点': [['发光眼睛', '宁静的眼睛', '睿智的眼睛', '神圣的眼睛', '金眼睛', '蓝眼睛', '多眼', '虚空之眼', '纯洁的眼睛']],
                     '服装': [['飘逸长袍', '白色长袍', '金色盔甲', '神圣盔甲', '骑士盔甲', '简单束腰外衣', '神圣法衣', '仪式服饰', '优雅服装', '极简服装', '盔甲服装']]
@@ -4119,7 +4461,12 @@
             // 年龄相关
             '1个女孩': ['1girl'],
             '1个男孩': ['1boy'],
-            '1个其他人': ['1_other_person'],
+            '1个人': ['solo'],
+            '2个人': ['duo'],
+            '3个人': ['trio'],
+            '4个人': ['quartet'],
+            '5个人': ['quintuplet'],
+            '一群人': ['group'],
             '多个女孩': ['multiple_girls'],
             '无性别': ['agender'],
             '跨性别者': ['transgender'],
@@ -5675,28 +6022,76 @@
             '猎豹尾巴': ['cheetah_tail'],
             '熊猫尾巴': ['panda_tail'],
             '天使尾巴': ['angel_tail'],
-            '蝴蝶翅膀': ['butterfly_wings'],
+            '猫尾巴': ['cat_tail'],
+            '狗尾巴': ['dog_tail'],
+            '狐狸尾巴': ['fox_tail'],
+            '狼尾巴': ['wolf_tail'],
+            '兔尾巴': ['rabbit_tail'],
+            '松鼠尾巴': ['squirrel_tail'],
+            '狮子尾巴': ['lion_tail'],
+            '猴子尾巴': ['monkey_tail'],
+            '鸟尾巴': ['bird_tail'],
+            '龙尾巴': ['dragon_tail'],
+            '恶魔尾巴': ['demonic_tail'],
+            '美人鱼尾巴': ['mermaid_tail'],
+            '触手尾巴': ['tentacle_tail'],
+            '多条尾巴': ['multiple_tails'],
+            '机械尾巴': ['mechanical_tail'],
+            '发光的尾巴': ['glowing_tail'],
+            '毛茸茸的尾巴': ['fluffy_tail'],
+            '蓬松的尾巴': ['bushy_tail'],
+            '长尾巴': ['long_tail'],
+            '短尾巴': ['short_tail'],
+            '可抓握的尾巴': ['prehensile_tail'],
+            '鞭状尾巴': ['whip_tail'],
+            // 动物和昆虫相关的翅膀
+            '鸟类翅膀': ['bird_wings'],
+            '羽毛翅膀': ['feathered_wings'],
             '昆虫翅膀': ['insect_wings'],
+            '蝴蝶翅膀': ['butterfly_wings'],
+            '蜻蜓翅膀': ['dragonfly_wings'],
             '蝙蝠翅膀': ['bat_wings'],
-            '乌翼': ['raven_wings'],
-            '羽翼': ['feather_wings'],
+            '龙翅膀': ['dragon_wings'],
+            
+            // 神话、幻想和特殊类型翅膀
+            '天使翅膀': ['angel_wings'],
+            '恶魔翅膀': ['demonic_wings'],
             '妖精翅膀': ['fairy_wings'],
-            '龙之翼': ['dragon_wings'],
-            '恶魔之翼': ['demon_wings'],
-            '火焰翅膀': ['flame_wings'],
+            '火焰翅膀': ['fire_wings'],
+            '冰霜翅膀': ['ice_wings'],
+            '水之翅膀': ['water_wings'],
             '机械翅膀': ['mechanical_wings'],
-            '冰翅': ['ice_wings'],
-            '冰火之翼': ['ice_and_fire_wings'],
-            '羚羊角': ['antelope_horns'],
+            '能量翅膀': ['energy_wings'],
+            '武器化翅膀': ['weaponized_wings'],
+            '透明翅膀': ['transparent_wings'],
+            
+            // 翅膀的形态和数量
+            '单个翅膀': ['single_wing'],
+            '多个翅膀': ['multiple_wings'],
+            '巨大的翅膀': ['large_wings'],
+            '小巧的翅膀': ['small_wings'],
+            '折叠起来的翅膀': ['folded_wings'],
+            '展开的翅膀': ['spread_wings'],
+            '动物角': ['animal_horns'],
+            '鹿角': ['deer_horns', 'antlers'],
             '山羊角': ['goat_horns'],
-            '羊角': ['sheep_horns'],
+            '绵羊角': ['sheep_horns'],
             '奶牛角': ['cow_horns'],
             '公牛角': ['bull_horns'],
+            '恶魔角': ['devil_horns'],
             '鬼角': ['oni_horns'],
-            '断角': ['broken_horns'],
+            '龙角': ['dragon_horns'],
+            '单角': ['single_horn'],
+            '多个角': ['multiple_horns'],
+            '小角': ['small_horns'],
+            '大角': ['large_horns'],
+            '螺旋形的角': ['spiral_horns'],
+            '断角': ['broken_horn'],
+            '弯曲的角': ['curved_horn'],
             '机械角': ['mechanical_horns'],
-            '恶魔之角': ['demon_horns'],
-            '龙之角': ['dragon_horns'],
+            '发光的角': ['glowing_horns'],
+            '骨头角': ['bone_horns'],
+            '水晶角': ['crystal_horns'],
             
             // 其他物种相关
             '精灵': ['elf'],
@@ -6759,6 +7154,28 @@
             '猎豹尾巴': ['cheetah_tail'],
             '熊猫尾巴': ['panda_tail'],
             '天使尾巴': ['angel_tail'],
+            '猫尾巴': ['cat_tail'],
+            '狗尾巴': ['dog_tail'],
+            '狐狸尾巴': ['fox_tail'],
+            '狼尾巴': ['wolf_tail'],
+            '兔尾巴': ['rabbit_tail'],
+            '松鼠尾巴': ['squirrel_tail'],
+            '狮子尾巴': ['lion_tail'],
+            '猴子尾巴': ['monkey_tail'],
+            '鸟尾巴': ['bird_tail'],
+            '龙尾巴': ['dragon_tail'],
+            '恶魔尾巴': ['demonic_tail'],
+            '美人鱼尾巴': ['mermaid_tail'],
+            '触手尾巴': ['tentacle_tail'],
+            '多条尾巴': ['multiple_tails'],
+            '机械尾巴': ['mechanical_tail'],
+            '发光的尾巴': ['glowing_tail'],
+            '毛茸茸的尾巴': ['fluffy_tail'],
+            '蓬松的尾巴': ['bushy_tail'],
+            '长尾巴': ['long_tail'],
+            '短尾巴': ['short_tail'],
+            '可抓握的尾巴': ['prehensile_tail'],
+            '鞭状尾巴': ['whip_tail'],
             '蝴蝶翅膀': ['butterfly_wings'],
             '昆虫翅膀': ['insect_wings'],
             '蝙蝠翅膀': ['bat_wings'],
@@ -6771,16 +7188,26 @@
             '机械翅膀': ['mechanical_wings'],
             '冰翅': ['ice_wings'],
             '冰火之翼': ['ice_and_fire_wings'],
-            '羚羊角': ['antelope_horns'],
+            '动物角': ['animal_horns'],
+            '鹿角': ['deer_horns', 'antlers'],
             '山羊角': ['goat_horns'],
-            '羊角': ['sheep_horns'],
+            '绵羊角': ['sheep_horns'],
             '奶牛角': ['cow_horns'],
             '公牛角': ['bull_horns'],
+            '恶魔角': ['devil_horns'],
             '鬼角': ['oni_horns'],
-            '断角': ['broken_horns'],
+            '龙角': ['dragon_horns'],
+            '单角': ['single_horn'],
+            '多个角': ['multiple_horns'],
+            '小角': ['small_horns'],
+            '大角': ['large_horns'],
+            '螺旋形的角': ['spiral_horns'],
+            '断角': ['broken_horn'],
+            '弯曲的角': ['curved_horn'],
             '机械角': ['mechanical_horns'],
-            '恶魔之角': ['demon_horns'],
-            '龙之角': ['dragon_horns'],
+            '发光的角': ['glowing_horns'],
+            '骨头角': ['bone_horns'],
+            '水晶角': ['crystal_horns'],
             
             // 其他物种相关
             '精灵': ['elf'],
@@ -7831,7 +8258,7 @@
             
             const title = document.createElement('h3');
             title.className = 'section-title';
-            title.textContent = categoryName;
+            title.textContent = getDisplayText(categoryName);
             title.setAttribute('data-chinese', categoryName);
             section.appendChild(title);
 
@@ -7856,7 +8283,8 @@
             
             const title = document.createElement('h3');
             title.className = 'section-title';
-            title.textContent = categoryName;
+            title.textContent = getDisplayText(categoryName);
+            title.setAttribute('data-chinese', categoryName);
             section.appendChild(title);
 
             Object.entries(nestedData).forEach(([subCategoryName, tagRows]) => {
@@ -7871,7 +8299,7 @@
                 subTitle.style.fontWeight = '600';
                 subTitle.style.marginBottom = '10px';
                 subTitle.style.fontSize = '1.1em';
-                subTitle.textContent = subCategoryName;
+                subTitle.textContent = getDisplayText(subCategoryName);
                 subTitle.setAttribute('data-chinese', subCategoryName);
                 subSection.appendChild(subTitle);
 
@@ -8253,11 +8681,11 @@
                     'dramatic_lighting', 'moody', 'bright', 'dark'
                 ],
                 
-                // 艺术风格
-                style: [
-                    'anime_style', 'realistic', 'cartoon', 'chibi', 'detailed',
-                    'simple', 'colorful', 'monochrome', 'vintage', 'modern'
-                ]
+                // 艺术风格（已移除，避免与画风风格冲突）
+                // style: [
+                //     'anime_style', 'realistic', 'cartoon', 'chibi', 'detailed',
+                //     'simple', 'colorful', 'monochrome', 'vintage', 'modern'
+                // ]
             };
             
             // 必选类别（每个类别至少选择1个）
@@ -8285,9 +8713,14 @@
                 }
             }
             
-            // 从所有可用标签中随机补充到目标数量
+            // 从所有可用标签中随机补充到目标数量（排除画风风格和创作类型）
             const allAvailableTags = [];
-            Object.values(promptLibrary).forEach(category => {
+            Object.entries(promptLibrary).forEach(([categoryName, category]) => {
+                // 跳过场景画风类别，因为它包含画风风格和创作类型
+                if (categoryName === '场景画风') {
+                    return;
+                }
+                
                 if (typeof category === 'object' && !Array.isArray(category)) {
                     Object.values(category).forEach(subCategory => {
                         if (Array.isArray(subCategory)) {
