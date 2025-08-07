@@ -8657,6 +8657,22 @@
                 targetCount = Math.floor(Math.random() * 14) + 12; // 12-25个
             }
             
+            // 定义相互冲突的标签类别组
+            const conflictingGroups = {
+                // 肤色组：只能选择一种肤色
+                skinGroup: ['skin'],
+                // 姿势组：只能选择一种姿势（包括整体动作）
+                poseGroup: ['pose', 'overallAction'],
+                // 表情组：只能选择一种表情
+                expressionGroup: ['expression'],
+                // 服装组：只能选择一种主要服装
+                clothingGroup: ['clothing'],
+                // 视角组：只能选择一种视角
+                angleGroup: ['angle'],
+                // 视线组：人物视线和视角视线只能选择一种，避免冲突
+                gazeGroup: ['characterGaze', 'perspectiveGaze']
+            };
+            
             // 扩展的标签类别
             const tagCategories = {
                 // 基础角色信息
@@ -8669,6 +8685,20 @@
                     'dynamic_angle', 'looking_at_viewer', 'looking_away', 'looking_up', 'looking_down',
                     'close-up', 'medium_shot', 'long_shot', 'full_body', 'portrait', 'bust',
                     'from_behind', 'from_side', 'from_above', 'from_below'
+                ],
+                
+                // 人物视线（与视角视线冲突）
+                characterGaze: [
+                    'gazing_at_viewer', 'looking_away', 'looking_up', 'looking_down', 'looking_to_side',
+                    'averting_gaze', 'staring', 'gaze', 'looking_through_bangs', 'looking_through_glasses'
+                ],
+                
+                // 视角视线（与人物视线冲突）
+                perspectiveGaze: [
+                    'dynamic_angle', 'from_left_angle', 'from_right_angle', 'from_above', 'from_below',
+                    'looking_up_from_below', 'looking_down_from_above', 'looking_up_from_side', 'looking_down_from_side',
+                    'panorama', 'wide_angle', 'aerial_view', 'bird_eye_view', 'worm_eye_view',
+                    'angled_view', 'low_angle', 'high_angle', 'eye_level', 'extreme_closeup'
                 ],
                 
                 // 肤色
@@ -8715,6 +8745,12 @@
                     'waving', 'salute', 'praying', 'meditation', 'dancing', 'running'
                 ],
                 
+                // 整体动作（与姿势冲突）
+                overallAction: [
+                    'walking', 'running', 'jumping', 'flying', 'fighting', 'dancing',
+                    'swimming', 'climbing', 'falling', 'floating', 'teleporting'
+                ],
+                
                 // 服装
                 clothing: [
                     'strapless_leotard', 'lolita_style', 'school_uniform', 'maid_outfit',
@@ -8752,13 +8788,7 @@
                     'natural_light', 'studio_light', 'backlight', 'side_light',
                     'soft_light', 'harsh_light', 'warm_light', 'cool_light',
                     'dramatic_lighting', 'moody', 'bright', 'dark'
-                ],
-                
-                // 艺术风格（已移除，避免与画风风格冲突）
-                // style: [
-                //     'anime_style', 'realistic', 'cartoon', 'chibi', 'detailed',
-                //     'simple', 'colorful', 'monochrome', 'vintage', 'modern'
-                // ]
+                ]
             };
             
             // 根据模式设置必选类别
@@ -8776,14 +8806,36 @@
             } else {
                 // 全部随机模式：包含所有类别
                 requiredCategories = ['baseCharacter', 'angle', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle', 'pose', 'clothing', 'scene'];
+                // 添加视线相关类别到可选类别中，让冲突处理机制来选择
             }
             
-            // 先添加必选标签
+            // 处理冲突组：每个冲突组只选择一个类别
+            const selectedFromConflicts = {};
+            Object.entries(conflictingGroups).forEach(([groupName, categories]) => {
+                // 从冲突组中随机选择一个类别
+                const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                selectedFromConflicts[groupName] = randomCategory;
+            });
+            
+            // 先添加必选标签，但确保冲突组中只选择一个
             requiredCategories.forEach(category => {
-                const tags = tagCategories[category];
-                const randomTag = tags[Math.floor(Math.random() * tags.length)];
-                if (!selectedTags.includes(randomTag)) {
-                    selectedTags.push(randomTag);
+                // 检查这个类别是否属于某个冲突组
+                let shouldAdd = true;
+                Object.entries(conflictingGroups).forEach(([groupName, categories]) => {
+                    if (categories.includes(category)) {
+                        // 如果这个类别不在当前冲突组的选择中，则跳过
+                        if (selectedFromConflicts[groupName] !== category) {
+                            shouldAdd = false;
+                        }
+                    }
+                });
+                
+                if (shouldAdd) {
+                    const tags = tagCategories[category];
+                    const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                    if (!selectedTags.includes(randomTag)) {
+                        selectedTags.push(randomTag);
+                    }
                 }
             });
             
@@ -8791,23 +8843,157 @@
             let optionalCategories;
             if (mode === 'character') {
                 // 人物立绘模式：排除场景、光效和背景相关标签，但可以包含饰品和特殊特征
-                optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat) && cat !== 'scene' && cat !== 'lighting');
+                optionalCategories = Object.keys(tagCategories).filter(cat => 
+                    !requiredCategories.includes(cat) && 
+                    cat !== 'scene' && 
+                    cat !== 'lighting' &&
+                    // 确保冲突组中只选择一个
+                    !Object.values(conflictingGroups).some(group => 
+                        group.includes(cat) && 
+                        Object.values(selectedFromConflicts).includes(cat)
+                    )
+                );
             } else if (mode === 'avatar') {
                 // 头像模式：只包含头像相关的可选类别
                 optionalCategories = ['accessories', 'special'].filter(cat => !requiredCategories.includes(cat));
             } else {
-                // 全部随机模式：包含所有可选类别
-                optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat));
+                // 全部随机模式：包含所有可选类别，但确保冲突组中只选择一个
+                optionalCategories = Object.keys(tagCategories).filter(cat => 
+                    !requiredCategories.includes(cat) &&
+                    // 确保冲突组中只选择一个
+                    !Object.values(conflictingGroups).some(group => 
+                        group.includes(cat) && 
+                        Object.values(selectedFromConflicts).includes(cat)
+                    )
+                );
+                // 添加视线相关类别到可选类别中
+                if (!optionalCategories.includes('characterGaze') && !optionalCategories.includes('perspectiveGaze')) {
+                    // 如果视线类别没有被冲突处理机制选中，则添加到可选类别中
+                    if (!Object.values(selectedFromConflicts).includes('characterGaze') && !Object.values(selectedFromConflicts).includes('perspectiveGaze')) {
+                        optionalCategories.push('characterGaze', 'perspectiveGaze');
+                    }
+                }
             }
             
-            const numOptionalCategories = Math.floor(Math.random() * 6) + 3; // 3-8个可选类别
-            
-            for (let i = 0; i < numOptionalCategories; i++) {
-                const category = optionalCategories[Math.floor(Math.random() * optionalCategories.length)];
-                const tags = tagCategories[category];
-                const randomTag = tags[Math.floor(Math.random() * tags.length)];
-                if (!selectedTags.includes(randomTag)) {
-                    selectedTags.push(randomTag);
+            // 特殊处理饰品装扮的随机选择规则
+            if (mode === 'full') {
+                // 全随机模式：从饰品装扮中随机选择1-6种类型
+                const accessoryCategories = ['发饰', '首饰', '装饰', '尾巴', '翅膀', '角'];
+                const numAccessoryTypes = Math.floor(Math.random() * 6) + 1; // 1-6种
+                const selectedAccessoryTypes = [];
+                
+                // 随机选择饰品类型
+                for (let i = 0; i < numAccessoryTypes; i++) {
+                    const availableTypes = accessoryCategories.filter(type => !selectedAccessoryTypes.includes(type));
+                    if (availableTypes.length > 0) {
+                        const randomType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+                        selectedAccessoryTypes.push(randomType);
+                    }
+                }
+                
+                // 为每种选中的饰品类型添加一个随机标签
+                selectedAccessoryTypes.forEach(type => {
+                    let tags = [];
+                    if (type === '发饰') {
+                        tags = promptLibrary['饰品装扮']['发饰 (Hair Accessories)'][0];
+                    } else if (type === '首饰') {
+                        tags = promptLibrary['饰品装扮']['首饰 (Jewelry)'][0];
+                    } else if (type === '装饰') {
+                        tags = promptLibrary['饰品装扮']['装饰 (Decorations)'][0];
+                    } else if (type === '尾巴') {
+                        // 从尾巴的两个子类别中随机选择
+                        const tailSubcategories = Object.values(promptLibrary['饰品装扮']['尾巴']);
+                        const randomSubcategory = tailSubcategories[Math.floor(Math.random() * tailSubcategories.length)];
+                        const randomTailGroup = randomSubcategory[Math.floor(Math.random() * randomSubcategory.length)];
+                        tags = randomTailGroup;
+                    } else if (type === '翅膀') {
+                        // 从翅膀的三个子类别中随机选择
+                        const wingSubcategories = Object.values(promptLibrary['饰品装扮']['翅膀']);
+                        const randomSubcategory = wingSubcategories[Math.floor(Math.random() * wingSubcategories.length)];
+                        const randomWingGroup = randomSubcategory[Math.floor(Math.random() * randomSubcategory.length)];
+                        tags = randomWingGroup;
+                    } else if (type === '角') {
+                        // 从角的三个子类别中随机选择
+                        const hornSubcategories = Object.values(promptLibrary['饰品装扮']['角']);
+                        const randomSubcategory = hornSubcategories[Math.floor(Math.random() * hornSubcategories.length)];
+                        const randomHornGroup = randomSubcategory[Math.floor(Math.random() * randomSubcategory.length)];
+                        tags = randomHornGroup;
+                    }
+                    
+                    if (tags.length > 0) {
+                        const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                        // 转换为Danbooru标签
+                        if (chineseToDanbooruMap[randomTag]) {
+                            const danbooruTags = chineseToDanbooruMap[randomTag];
+                            const randomDanbooruTag = danbooruTags[Math.floor(Math.random() * danbooruTags.length)];
+                            if (!selectedTags.includes(randomDanbooruTag)) {
+                                selectedTags.push(randomDanbooruTag);
+                            }
+                        }
+                    }
+                });
+                
+                // 从其他可选类别中随机选择
+                const otherOptionalCategories = optionalCategories.filter(cat => cat !== 'accessories' && cat !== 'special');
+                const numOtherCategories = Math.floor(Math.random() * 4) + 2; // 2-5个其他类别
+                
+                for (let i = 0; i < numOtherCategories; i++) {
+                    const category = otherOptionalCategories[Math.floor(Math.random() * otherOptionalCategories.length)];
+                    const tags = tagCategories[category];
+                    const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                    if (!selectedTags.includes(randomTag)) {
+                        selectedTags.push(randomTag);
+                    }
+                }
+            } else if (mode === 'avatar') {
+                // 随机头像模式：确保发饰、首饰、装饰每种至少选一个
+                const avatarAccessoryTypes = ['发饰', '首饰', '装饰'];
+                const selectedAvatarTypes = [];
+                
+                // 确保每种类型至少选择一个
+                avatarAccessoryTypes.forEach(type => {
+                    let tags = [];
+                    if (type === '发饰') {
+                        tags = promptLibrary['饰品装扮']['发饰 (Hair Accessories)'][0];
+                    } else if (type === '首饰') {
+                        tags = promptLibrary['饰品装扮']['首饰 (Jewelry)'][0];
+                    } else if (type === '装饰') {
+                        tags = promptLibrary['饰品装扮']['装饰 (Decorations)'][0];
+                    }
+                    
+                    if (tags.length > 0) {
+                        const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                        // 转换为Danbooru标签
+                        if (chineseToDanbooruMap[randomTag]) {
+                            const danbooruTags = chineseToDanbooruMap[randomTag];
+                            const randomDanbooruTag = danbooruTags[Math.floor(Math.random() * danbooruTags.length)];
+                            if (!selectedTags.includes(randomDanbooruTag)) {
+                                selectedTags.push(randomDanbooruTag);
+                            }
+                        }
+                    }
+                });
+                
+                // 从特殊特征中随机选择一些
+                const specialTags = tagCategories['special'];
+                const numSpecialTags = Math.floor(Math.random() * 3) + 1; // 1-3个特殊特征
+                for (let i = 0; i < numSpecialTags; i++) {
+                    const randomTag = specialTags[Math.floor(Math.random() * specialTags.length)];
+                    if (!selectedTags.includes(randomTag)) {
+                        selectedTags.push(randomTag);
+                    }
+                }
+            } else {
+                // 人物立绘模式：使用原有的随机选择逻辑
+                const numOptionalCategories = Math.floor(Math.random() * 6) + 3; // 3-8个可选类别
+                
+                for (let i = 0; i < numOptionalCategories; i++) {
+                    const category = optionalCategories[Math.floor(Math.random() * optionalCategories.length)];
+                    const tags = tagCategories[category];
+                    const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                    if (!selectedTags.includes(randomTag)) {
+                        selectedTags.push(randomTag);
+                    }
                 }
             }
             
