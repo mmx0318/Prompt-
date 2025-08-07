@@ -385,6 +385,41 @@
         </div>
     </div>
 
+    <!-- 随机生成选项弹窗 -->
+    <div id="random-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl max-w-md mx-4 p-6 relative">
+            <button id="close-random" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="flex items-start mb-4">
+                <div class="flex-shrink-0">
+                    <svg class="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                </div>
+                <div class="ml-3 w-full">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4" id="random-title">选择随机生成方式</h3>
+                    <div class="space-y-3">
+                        <button id="random-full" class="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all duration-200">
+                            <div class="font-medium text-gray-900">全部随机（包含场景&人物）</div>
+                            <div class="text-sm text-gray-600 mt-1">生成包含场景和人物的完整标签组合</div>
+                        </button>
+                        <button id="random-character" class="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all duration-200">
+                            <div class="font-medium text-gray-900">随机人物立绘（无背景）</div>
+                            <div class="text-sm text-gray-600 mt-1">生成人物立绘标签，自动添加：solo, full body, standing, white background</div>
+                        </button>
+                        <button id="random-avatar" class="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all duration-200">
+                            <div class="font-medium text-gray-900">随机人物头像</div>
+                            <div class="text-sm text-gray-600 mt-1">生成人物头像相关的标签组合</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // 多语言文本映射
         const translations = {
@@ -415,6 +450,13 @@
                 randomGeneratedUnit: '个标签',
                 randomResultPrefix: '随机生成',
                 randomResultUnit: '个tag',
+                randomModalTitle: '选择随机生成方式',
+                randomFullTitle: '全部随机（包含场景&人物）',
+                randomFullDesc: '生成包含场景和人物的完整标签组合',
+                randomCharacterTitle: '随机人物立绘（无背景）',
+                randomCharacterDesc: '生成人物立绘标签，自动添加：solo, full body, standing, white background',
+                randomAvatarTitle: '随机人物头像',
+                randomAvatarDesc: '生成人物头像相关的标签组合，生图时选择1:1的比例效果最好',
                 helpContent: '<p><strong>基本操作：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>点击标签按钮选择对应的Danbooru标签</li><li>选中的标签会自动添加到下方文本框</li><li>再次点击已选中的标签可以移除</li><li>点击"复制并跳转"将标签复制到剪贴板并跳转到KusaPics</li></ul><p class="mt-3"><strong>快捷功能：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>点击垃圾桶图标清空所有标签</li><li>点击随机图标自动生成12-25个标签</li><li>支持多语言切换（右上角语言按钮）</li></ul><p class="mt-3"><strong>使用提示：</strong></p><p>点击"复制并跳转"后，标签已复制到剪贴板。在新打开的 KusaPics 页面中，按 Ctrl+V 粘贴即可。</p>'
             },
             en: {
@@ -444,6 +486,13 @@
                 randomGeneratedUnit: 'tags',
                 randomResultPrefix: 'Randomly generated',
                 randomResultUnit: 'tags',
+                randomModalTitle: 'Select Random Generation Mode',
+                randomFullTitle: 'Full Random (Scene & Character)',
+                randomFullDesc: 'Generate complete tag combinations including scenes and characters',
+                randomCharacterTitle: 'Random Character Illustration (No Background)',
+                randomCharacterDesc: 'Generate character illustration tags, automatically add: solo, full body, standing, white background',
+                randomAvatarTitle: 'Random Character Avatar',
+                randomAvatarDesc: 'Generate character avatar related tag combinations, 1:1 aspect ratio works best for image generation',
                 helpContent: '<p><strong>Basic Operations:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Click tag buttons to select corresponding Danbooru tags</li><li>Selected tags will be automatically added to the text box below</li><li>Click selected tags again to remove them</li><li>Click "Copy & Jump" to copy tags to clipboard and jump to KusaPics</li></ul><p class="mt-3"><strong>Quick Features:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Click trash icon to clear all tags</li><li>Click random icon to auto-generate 12-25 tags</li><li>Support multi-language switching (language buttons in top right)</li></ul><p class="mt-3"><strong>Usage Tip:</strong></p><p>After clicking "Copy & Jump", tags have been copied to clipboard. Press Ctrl+V to paste in the new KusaPics page.</p>'
             },
             ja: {
@@ -471,6 +520,13 @@
                 helpTitle: '使用ガイド',
                 randomResultPrefix: 'ランダム生成',
                 randomResultUnit: '個のタグ',
+                randomModalTitle: 'ランダム生成方式を選択',
+                randomFullTitle: '全ランダム（シーン＆キャラクター含む）',
+                randomFullDesc: 'シーンとキャラクターを含む完全なタグ組み合わせを生成',
+                randomCharacterTitle: 'ランダムキャラクターイラスト（背景なし）',
+                randomCharacterDesc: 'キャラクターイラストタグを生成、自動追加：solo, full body, standing, white background',
+                randomAvatarTitle: 'ランダムキャラクターアバター',
+                randomAvatarDesc: 'キャラクターアバター関連のタグ組み合わせを生成、画像生成時は1:1のアスペクト比が最適です',
                 helpContent: '<p><strong>基本操作：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>タグボタンをクリックして対応するDanbooruタグを選択</li><li>選択されたタグは自動的に下のテキストボックスに追加されます</li><li>選択されたタグを再度クリックして削除</li><li>「コピー＆ジャンプ」をクリックしてタグをクリップボードにコピーし、KusaPicsにジャンプ</li></ul><p class="mt-3"><strong>クイック機能：</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>ゴミ箱アイコンをクリックしてすべてのタグをクリア</li><li>ランダムアイコンをクリックして12-25個のタグを自動生成</li><li>多言語切り替えをサポート（右上の言語ボタン）</li></ul><p class="mt-3"><strong>使用ヒント：</strong></p><p>「コピー＆ジャンプ」をクリック後、タグがクリップボードにコピーされました。新しいKusaPicsページでCtrl+Vを押して貼り付けてください。</p>'
             },
             ru: {
@@ -498,6 +554,13 @@
                 helpTitle: 'Руководство пользователя',
                 randomResultPrefix: 'Случайно сгенерировано',
                 randomResultUnit: 'тегов',
+                randomModalTitle: 'Выберите режим случайной генерации',
+                randomFullTitle: 'Полная случайная (Сцена и персонаж)',
+                randomFullDesc: 'Генерировать полные комбинации тегов, включая сцены и персонажей',
+                randomCharacterTitle: 'Случайная иллюстрация персонажа (Без фона)',
+                randomCharacterDesc: 'Генерировать теги иллюстрации персонажа, автоматически добавлять: solo, full body, standing, white background',
+                randomAvatarTitle: 'Случайный аватар персонажа',
+                randomAvatarDesc: 'Генерировать комбинации тегов, связанных с аватаром персонажа, соотношение сторон 1:1 лучше всего подходит для генерации изображений',
                 helpContent: '<p><strong>Основные операции:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Нажмите кнопки тегов для выбора соответствующих тегов Danbooru</li><li>Выбранные теги автоматически добавляются в текстовое поле ниже</li><li>Нажмите выбранные теги снова, чтобы удалить их</li><li>Нажмите "Копировать и перейти" для копирования тегов в буфер обмена и перехода на KusaPics</li></ul><p class="mt-3"><strong>Быстрые функции:</strong></p><ul class="list-disc list-inside space-y-1 ml-2"><li>Нажмите значок корзины для очистки всех тегов</li><li>Нажмите значок случайного выбора для автоматической генерации 12-25 тегов</li><li>Поддержка переключения языков (кнопки языков в правом верхнем углу)</li></ul><p class="mt-3"><strong>Совет по использованию:</strong></p><p>После нажатия "Копировать и перейти" теги скопированы в буфер обмена. Нажмите Ctrl+V для вставки на новой странице KusaPics.</p>'
             }
         };
@@ -3955,6 +4018,15 @@
             // 更新帮助图标标题
             document.getElementById('help-icon').title = t.helpTitle;
             document.getElementById('help-icon-mobile').title = t.helpTitle;
+            
+            // 更新随机生成弹窗文本
+            document.getElementById('random-title').textContent = t.randomModalTitle;
+            document.getElementById('random-full').querySelector('.font-medium').textContent = t.randomFullTitle;
+            document.getElementById('random-full').querySelector('.text-sm').textContent = t.randomFullDesc;
+            document.getElementById('random-character').querySelector('.font-medium').textContent = t.randomCharacterTitle;
+            document.getElementById('random-character').querySelector('.text-sm').textContent = t.randomCharacterDesc;
+            document.getElementById('random-avatar').querySelector('.font-medium').textContent = t.randomAvatarTitle;
+            document.getElementById('random-avatar').querySelector('.text-sm').textContent = t.randomAvatarDesc;
         }
 
         // 获取显示文本（处理双语标题）
@@ -4153,7 +4225,7 @@
             '人物姿势': {
                 '人物姿势': [
                     ['站立', '弯腰', '弓背', '拉伸', '躺着', '趴着', '侧躺', '坐着', 'w_sitting', '跨坐', '四肢着地'],
-                    ['jack-o', '双腿过头', '胎儿姿势', '自拍', '通过腿看', '二郎腿', '跪姿', '萝莉坐', '裸露的肩膀', '坐在地上', '提裙'],
+                    ['jack-o', '双腿过头', '胎儿姿势', '自拍', '通过腿看', '二郎腿', '跪姿', '萝莉坐', '裸露的肩膀', '坐在地上', '提裙子'],
                     ['一字马', '手臂在背后', '狗趴式', '鸭子坐（女子座）', '泡温泉', '张开腿', '趴着翘臀', '開腳', '漏腋', '坐在地上(XWX)'],
                     ['战斗姿态', '坐在椅子上', '瑜伽', '绝对空域（大腿三角）', '骑马', '掀裙子', '行走', '正骑乘', '祈祷', '蹲着', '坐在床上'],
                     ['翘PP', '抱膝', '公主抱', '侧躺着', '抚摸', '撩起衣服', '盘腿坐', '动态姿势', '敬礼', '侧身坐', '鸭子坐', '盘腿', '跪着', '躬躯', '膝枕', '学猫叫', '单膝跪地', '蜷起身子侧躺', '仰卧', '俯卧', '坐着', '屈膝抱腿坐', '立式跨骑', '站着', '蹲着', '绑在十字架上', '双腿缠绕', '四肢着地', '戴耳机', '鬼姿势', '回头', '歪头', '前倾']
@@ -4338,7 +4410,7 @@
                 '恶魔': {
                     '外貌特点': [['恶魔', '角', '翅膀', '尾巴', '爪', '红色皮肤', '深色皮肤']],
                     '眼部特点': [['发光眼睛', '红眼睛', '裂缝瞳孔', '邪恶的眼睛', '黑色巩膜']],
-                    '服装': [['哥特式服装', '深色长袍', '复杂服装', '优雅哥特服饰', '现代前卫造型', '暗法师服装', '巫师服装', '男巫服装', '仪式长袍', '暴露服装', '盔甲服装', '链条', '尖刺', '皮革', '飘逸织物', '华丽配饰']]
+                    '服装': [['哥特式服装', '深色长袍', '复杂服装', '优雅哥特服饰', '现代前卫造型', '吉卜力服装', '巫师服装', '男巫服装', '仪式长袍', '暴露服装', '盔甲服装', '链条', '尖刺', '皮革', '飘逸织物', '华丽配饰']]
                 },
                 '天使': {
                     '外貌特点': [['天使', '翅膀', '光环', '白色长袍', '浅色调', '空灵', '羽毛翅膀', '白色翅膀', '金色翅膀', '发光光环', '神圣光芒', '纯洁外观', '宁静表情', '强壮体格', '肌肉发达', '盔甲天使', '天使剑士', '圣经中精确的天使', '堕落天使', '奇形怪状的角', '光滑的角', '浅色皮肤', '金色头发', '长发', '短发']],
@@ -6012,19 +6084,6 @@
             '羊驼尾巴': ['alpaca_tail'],
             '恐龙尾巴': ['dinosaur_tail'],
             '企鹅尾巴': ['penguin_tail'],
-            '羊尾巴': ['sheep_tail'],
-            '山羊尾巴': ['goat_tail'],
-            '海狸尾巴': ['beaver_tail'],
-            '小熊猫尾巴': ['red_panda_tail'],
-            '豹尾': ['leopard_tail'],
-            '食蚁兽尾巴': ['anteater_tail'],
-            '土狼尾巴': ['hyena_tail'],
-            '猎豹尾巴': ['cheetah_tail'],
-            '熊猫尾巴': ['panda_tail'],
-            '天使尾巴': ['angel_tail'],
-            '猫尾巴': ['cat_tail'],
-            '狗尾巴': ['dog_tail'],
-            '狐狸尾巴': ['fox_tail'],
             '狼尾巴': ['wolf_tail'],
             '兔尾巴': ['rabbit_tail'],
             '松鼠尾巴': ['squirrel_tail'],
@@ -6044,6 +6103,7 @@
             '短尾巴': ['short_tail'],
             '可抓握的尾巴': ['prehensile_tail'],
             '鞭状尾巴': ['whip_tail'],
+            
             // 动物和昆虫相关的翅膀
             '鸟类翅膀': ['bird_wings'],
             '羽毛翅膀': ['feathered_wings'],
@@ -7144,19 +7204,6 @@
             '羊驼尾巴': ['alpaca_tail'],
             '恐龙尾巴': ['dinosaur_tail'],
             '企鹅尾巴': ['penguin_tail'],
-            '羊尾巴': ['sheep_tail'],
-            '山羊尾巴': ['goat_tail'],
-            '海狸尾巴': ['beaver_tail'],
-            '小熊猫尾巴': ['red_panda_tail'],
-            '豹尾': ['leopard_tail'],
-            '食蚁兽尾巴': ['anteater_tail'],
-            '土狼尾巴': ['hyena_tail'],
-            '猎豹尾巴': ['cheetah_tail'],
-            '熊猫尾巴': ['panda_tail'],
-            '天使尾巴': ['angel_tail'],
-            '猫尾巴': ['cat_tail'],
-            '狗尾巴': ['dog_tail'],
-            '狐狸尾巴': ['fox_tail'],
             '狼尾巴': ['wolf_tail'],
             '兔尾巴': ['rabbit_tail'],
             '松鼠尾巴': ['squirrel_tail'],
@@ -8170,7 +8217,7 @@
             
             document.getElementById('copy-selected-btn').addEventListener('click', copySelectedTags);
             document.getElementById('clear-tags-btn').addEventListener('click', clearAllTags);
-            document.getElementById('random-generate-btn').addEventListener('click', generateRandomTags);
+            document.getElementById('random-generate-btn').addEventListener('click', showRandomModal);
             
             // 帮助图标事件
             document.getElementById('help-icon').addEventListener('click', showHelpModal);
@@ -8181,6 +8228,19 @@
             document.getElementById('help-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'help-modal') {
                     hideHelpModal();
+                }
+            });
+            
+            // 随机生成选项弹窗事件
+            document.getElementById('random-full').addEventListener('click', () => generateRandomTags('full'));
+            document.getElementById('random-character').addEventListener('click', () => generateRandomTags('character'));
+            document.getElementById('random-avatar').addEventListener('click', () => generateRandomTags('avatar'));
+            document.getElementById('close-random').addEventListener('click', hideRandomModal);
+            
+            // 点击弹窗背景关闭
+            document.getElementById('random-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'random-modal') {
+                    hideRandomModal();
                 }
             });
         }
@@ -8576,13 +8636,26 @@
             showToast(getText('clearAllMessage'));
         }
 
-        function generateRandomTags() {
-            console.log('开始随机生成标签...');
+        function showRandomModal() {
+            document.getElementById('random-modal').classList.remove('hidden');
+        }
+
+        function hideRandomModal() {
+            document.getElementById('random-modal').classList.add('hidden');
+        }
+
+        function generateRandomTags(mode) {
+            console.log('开始随机生成标签...', mode);
             // 清空现有标签
             selectedTags = [];
             
-            // 目标标签数量：12-25个
-            const targetCount = Math.floor(Math.random() * 14) + 12; // 12-25个
+            // 根据模式设置目标标签数量
+            let targetCount;
+            if (mode === 'avatar') {
+                targetCount = Math.floor(Math.random() * 8) + 8; // 8-15个（头像较少）
+            } else {
+                targetCount = Math.floor(Math.random() * 14) + 12; // 12-25个
+            }
             
             // 扩展的标签类别
             const tagCategories = {
@@ -8688,8 +8761,22 @@
                 // ]
             };
             
-            // 必选类别（每个类别至少选择1个）
-            const requiredCategories = ['baseCharacter', 'angle', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle', 'pose', 'clothing', 'scene'];
+            // 根据模式设置必选类别
+            let requiredCategories;
+            if (mode === 'character') {
+                // 人物立绘模式：不包含场景，但包含人物相关标签
+                requiredCategories = ['baseCharacter', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle', 'clothing'];
+                // 自动添加立绘相关标签，固定朝向为正面，固定姿态为站立，强调全身展示
+                selectedTags.push('solo', '(full_body:1.2)', 'standing', 'white_background', 'facing_viewer');
+            } else if (mode === 'avatar') {
+                // 头像模式：只包含头像相关标签
+                requiredCategories = ['baseCharacter', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle'];
+                // 自动添加头像相关标签
+                selectedTags.push('portrait', 'bust', 'close-up');
+            } else {
+                // 全部随机模式：包含所有类别
+                requiredCategories = ['baseCharacter', 'angle', 'skin', 'facial', 'expression', 'hairColor', 'hairStyle', 'pose', 'clothing', 'scene'];
+            }
             
             // 先添加必选标签
             requiredCategories.forEach(category => {
@@ -8700,8 +8787,19 @@
                 }
             });
             
-            // 随机选择其他类别
-            const optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat));
+            // 根据模式随机选择其他类别
+            let optionalCategories;
+            if (mode === 'character') {
+                // 人物立绘模式：排除场景、光效和背景相关标签，但可以包含饰品和特殊特征
+                optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat) && cat !== 'scene' && cat !== 'lighting');
+            } else if (mode === 'avatar') {
+                // 头像模式：只包含头像相关的可选类别
+                optionalCategories = ['accessories', 'special'].filter(cat => !requiredCategories.includes(cat));
+            } else {
+                // 全部随机模式：包含所有可选类别
+                optionalCategories = Object.keys(tagCategories).filter(cat => !requiredCategories.includes(cat));
+            }
+            
             const numOptionalCategories = Math.floor(Math.random() * 6) + 3; // 3-8个可选类别
             
             for (let i = 0; i < numOptionalCategories; i++) {
@@ -8761,6 +8859,9 @@
             updateSelectedTagsDisplay();
             updateButtonVisualStates();
             showRandomToast(selectedTags.length);
+            
+            // 关闭弹窗
+            hideRandomModal();
         }
     </script>
 </body>
